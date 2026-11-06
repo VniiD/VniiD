@@ -246,9 +246,11 @@ function createSnakeSvg(grid, variant) {
     segmentStyles.push(
       `.segment-${segment}{animation:segment-${segment} ${duration} steps(1,end) infinite}@keyframes segment-${segment}{${frames.join("")}}`,
     );
-    const color = interpolateColor(gradient, (segment - 1) / Math.max(1, tailLimit - 1));
+    const tailPosition = (segment - 1) / Math.max(1, tailLimit - 1);
+    const color = interpolateColor(gradient, 1 - tailPosition);
+    const opacity = 1 - tailPosition;
     segmentElements.push(
-      `<rect class="tail-segment segment-${segment}" x="-6" y="-6" width="12" height="12" rx="2" fill="${color}"/>`,
+      `<rect class="tail-segment segment-${segment}" x="-6" y="-6" width="12" height="12" rx="2" fill="${color}" fill-opacity="${opacity.toFixed(2)}"/>`,
     );
   }
 
@@ -289,18 +291,17 @@ function createSnakeSvg(grid, variant) {
       const angle = (Math.PI * 2 * fragment) / fragmentCount;
       const dx = Math.round(Math.cos(angle) * 14);
       const dy = Math.round(Math.sin(angle) * 14);
-      const color = segment === 0
-        ? gradient[0]
-        : interpolateColor(
-            gradient,
-            (segment - 1) / Math.max(1, tailLimit - 1),
-          );
+      const tailPosition = segment === 0
+        ? 0
+        : (segment - 1) / Math.max(1, tailLimit - 1);
+      const color = interpolateColor(gradient, 1 - tailPosition);
+      const opacity = 1 - tailPosition;
       const name = `burst-${burstIndex}-segment-${segment}`;
       explosionStyles.push(
         `.spark-${name}{animation:${name} ${duration} linear infinite}@keyframes ${name}{0%,${start}%{opacity:0;transform:translate(${x}px,${y}px) scale(.15)}${reveal}%{opacity:1;transform:translate(${x}px,${y}px) scale(1)}${spread}%{opacity:1;transform:translate(${x + dx}px,${y + dy}px) scale(1.05)}${end}%,100%{opacity:0;transform:translate(${x + dx}px,${y + dy}px) scale(.2)}}`,
       );
       explosionElements.push(
-        `<rect class="spark spark-${name}" x="-6" y="-6" width="12" height="12" rx="2" fill="${color}"/>`,
+        `<rect class="spark spark-${name}" x="-6" y="-6" width="12" height="12" rx="2" fill="${color}" fill-opacity="${opacity.toFixed(2)}"/>`,
       );
     }
   }
@@ -308,8 +309,8 @@ function createSnakeSvg(grid, variant) {
   const firstPoint = points[0];
   const lastPoint = points.at(-1);
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title description">
-<title id="title">Minhoca de olhos abertos que cresce com as contribuições de VniiD</title>
-<desc id="description">A cada quadrado ativo, a cauda cresce. Ao chegar a 24 quadrados no corpo, incluindo a cabeça, pisca três vezes e explode nesses mesmos quadrados, continuando no mesmo ponto da grade.</desc>
+<title id="title">Minhoca pixel-art que cresce com as contribuições de VniiD</title>
+<desc id="description">A minhoca percorre a grade original de contribuições. A cada quadrado ativo, a cauda cresce com um gradiente que vai do claro ao escuro e desaparece suavemente. Ao chegar a 24 quadrados no corpo, pisca três vezes e explode nesses mesmos quadrados, continuando no mesmo ponto da grade.</desc>
 <defs><filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><clipPath id="grid-clip"><rect width="${width}" height="${height}"/></clipPath></defs>
 <style>
 .grid-cell{shape-rendering:crispEdges}
@@ -326,7 +327,7 @@ ${explosionStyles.join("")}
 </style>
 <rect width="${width}" height="${height}" fill="${variant.emptyColor}"/>
 ${cells.join("")}
-<g class="worm">${segmentElements.join("")}<g class="snake-head"><rect x="-6" y="-6" width="12" height="12" rx="2" fill="${gradient[0]}" stroke="${gradient[1]}" stroke-width="1.5"/><circle cx="-2.5" cy="-2" r="1.35" fill="#f8fafc"/><circle cx="2.5" cy="-2" r="1.35" fill="#f8fafc"/><circle cx="-2.5" cy="-2" r=".55" fill="#0b1220"/><circle cx="2.5" cy="-2" r=".55" fill="#0b1220"/></g></g>
+<g class="worm">${segmentElements.join("")}<g class="snake-head"><rect x="-6" y="-6" width="12" height="12" rx="2" fill="${gradient.at(-1)}" stroke="${gradient.at(-2)}" stroke-width="1.5"/></g></g>
 <g class="explosions" aria-hidden="true" clip-path="url(#grid-clip)">${explosionElements.join("")}</g>
 <desc>Grade percorrida da posição ${firstPoint[0]},${firstPoint[1]} até ${lastPoint[0]},${lastPoint[1]}.</desc>
 </svg>`;

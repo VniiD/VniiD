@@ -1,6 +1,14 @@
 name: Generate contribution snake
 
 on:
+  push:
+    branches:
+      - master
+    paths:
+      - "README.md"
+      - ".github/pages/**"
+      - ".github/scripts/**"
+      - ".github/workflows/snake.yml"
   schedule:
     - cron: "17 3 * * *"
   workflow_dispatch:
@@ -28,6 +36,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           node .github/scripts/generate-profile-cover.mjs
+          node .github/scripts/generate-section-banners.mjs
           node .github/scripts/customize-snake.mjs
           node .github/scripts/generate-language-chart.mjs
       - name: Publish snake SVGs
