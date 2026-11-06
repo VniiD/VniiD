@@ -17,8 +17,38 @@ jobs:
         with:
           github_user_name: VniiD
           outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake.svg?color_snake=%230F766E
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=%2322D3EE
+      - name: Keep the snake inside the contribution grid
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFile, writeFile } from "node:fs/promises";
+
+          for (const file of [
+            "dist/github-contribution-grid-snake.svg",
+            "dist/github-contribution-grid-snake-dark.svg",
+          ]) {
+            const svg = await readFile(file, "utf8");
+            const bounded = svg.replace(
+              /translate\((-?\d+)px,(-?\d+)px\)/g,
+              (_, x, y) =>
+                `translate(${Math.max(0, Math.min(832, Number(x)))}px,${Math.max(0, Math.min(96, Number(y)))}px)`,
+            );
+            const positions = [...bounded.matchAll(/translate\((-?\d+)px,(-?\d+)px\)/g)];
+
+            if (positions.length === 0) {
+              throw new Error(`No snake positions found in ${file}`);
+            }
+
+            for (const [, x, y] of positions) {
+              if (Number(x) < 0 || Number(x) > 832 || Number(y) < 0 || Number(y) > 96) {
+                throw new Error(`Snake escaped the contribution grid in ${file}`);
+              }
+            }
+
+            await writeFile(file, bounded);
+          }
+          NODE
       - name: Publish snake SVGs
         uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453
         with:
