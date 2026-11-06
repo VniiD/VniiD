@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 
 const username = "VniiD";
 const token = process.env.GITHUB_TOKEN;
@@ -43,14 +43,23 @@ const repositories = await getRepositories();
 const languageData = await Promise.all(
   repositories.map(async (repo) => {
     const { body } = await fetchJson(repo.languages_url);
-    return body;
+    return { repository: repo.name, languages: body };
   }),
 );
 const totals = new Map();
+const repositoryCounts = new Map();
 
-for (const repositoryLanguages of languageData) {
-  for (const [language, bytes] of Object.entries(repositoryLanguages)) {
+for (const { repository, languages } of languageData) {
+  for (const [language, bytes] of Object.entries(languages)) {
+    if (typeof bytes !== "number" || bytes < 0) {
+      throw new Error(`Invalid language byte count for ${language}`);
+    }
+
     totals.set(language, (totals.get(language) ?? 0) + bytes);
+    if (!repositoryCounts.has(language)) {
+      repositoryCounts.set(language, new Set());
+    }
+    repositoryCounts.get(language).add(repository);
   }
 }
 
@@ -66,6 +75,11 @@ if (remainder > 0) {
 }
 
 const totalBytes = top.reduce((sum, [, bytes]) => sum + bytes, 0);
+const otherRepositories = new Set(
+  sorted
+    .slice(5)
+    .flatMap(([language]) => [...(repositoryCounts.get(language) ?? [])]),
+);
 const colors = {
   C: "#A8B9CC",
   "C#": "#9B4F96",
@@ -89,6 +103,10 @@ const slices = top.map(([language, bytes], index) => {
 
   return {
     language,
+    bytes,
+    repositories: language === "Outros"
+      ? otherRepositories.size
+      : repositoryCounts.get(language)?.size ?? 0,
     ratio,
     color,
     dash: `${length.toFixed(2)} ${(circumference - length).toFixed(2)}`,
@@ -111,7 +129,7 @@ const legend = slices.map((slice, index) => {
   return `<g><circle cx="238" cy="${y - 4}" r="5" fill="${slice.color}"/><text x="252" y="${y}" class="label">${escapeXml(slice.language)}</text><text x="420" y="${y}" text-anchor="end" class="value">${percent}</text></g>`;
 }).join("");
 const rings = slices.map((slice, index) =>
-  `<circle class="slice slice-${index}" cx="104" cy="104" r="58" fill="none" stroke="${slice.color}" stroke-width="24" stroke-dasharray="${slice.dash}" stroke-dashoffset="-${slice.offset}" pathLength="${circumference.toFixed(2)}" style="--dash:${slice.dash}"/>`,
+  `<circle class="slice slice-${index}" cx="104" cy="104" r="58" fill="none" stroke="${slice.color}" stroke-width="24" stroke-dasharray="${slice.dash}" stroke-dashoffset="-${slice.offset}" pathLength="${circumference.toFixed(2)}" style="--dash:${slice.dash}"><title>${escapeXml(slice.language)} · ${(slice.ratio * 100).toFixed(1)}% · ${slice.repositories} repositórios</title></circle>`,
 ).join("");
 const animationDelays = slices.map((_, index) =>
   `.slice-${index}{animation-delay:${index * 100}ms}`,
@@ -125,6 +143,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="480" height="208" vi
 .label{fill:#cbd5e1;font-size:13px}.value{fill:#f8fafc;font-size:13px;font-weight:700}
 .center-title{fill:#f8fafc;font-size:14px;font-weight:700}.center-subtitle{fill:#94a3b8;font-size:10px}
 .slice{transform:rotate(-90deg);transform-origin:104px 104px;stroke-dasharray:0 ${circumference.toFixed(2)};animation:draw 1.15s cubic-bezier(.2,.8,.2,1) both}
+.slice:hover{stroke-width:30}
 @keyframes draw{to{stroke-dasharray:var(--dash);opacity:1}}
 ${animationDelays}
 @media(prefers-reduced-motion:reduce){.slice{animation:none}}
@@ -140,3 +159,17 @@ ${legend}
 
 await mkdir("dist", { recursive: true });
 await writeFile("dist/github-language-donut.svg", svg);
+await writeFile(
+  "dist/languages.json",
+  JSON.stringify(
+    {
+      updatedAt: new Date().toISOString(),
+      repositoryCount: repositories.length,
+      totalBytes,
+      languages: slices,
+    },
+    null,
+    2,
+  ),
+);
+await writeFile("dist/index.html", await readFile(".github/pages/index.html", "utf8"));

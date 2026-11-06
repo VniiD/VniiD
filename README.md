@@ -1,51 +1,69 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B1020,45:123B55,100:0F766E&height=190&section=header&text=Engenheiro%20de%20Software%20J%C3%BAnior&fontSize=30&fontColor=F8FAFC&animation=fadeIn&fontAlignY=38&desc=Do%20ch%C3%A3o%20de%20f%C3%A1brica%20ao%20backend%20%7C%20Engenharia%20em%20movimento&descAlignY=62&descSize=16" width="100%" alt="Engenheiro de Software Júnior, do chão de fábrica ao backend, engenharia em movimento">
+  <img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/profile-cover.svg" alt="Capa animada: Engenharia de Software, Backend, arquitetura e sistemas distribuídos">
 </p>
 
 <p align="center">
-  <strong>Observar o sistema. Encontrar o gargalo. Construir uma solução.</strong><br>
-  Engenharia de software · Backend · Arquitetura e system design
-</p>
-
-<p align="center">
-  <a href="https://github.com/VniiD?tab=repositories"><img src="https://img.shields.io/badge/PROJETOS-Explorar-0F766E?style=for-the-badge&logo=github&logoColor=white" alt="Explorar meus projetos"></a>
-  <img src="https://img.shields.io/badge/FOCO-Engenharia%20de%20Software%20J%C3%BAnior-155E75?style=for-the-badge" alt="Foco em engenharia de software júnior">
+  <a href="https://www.linkedin.com/in/viniciusdeaferreira/"><img src="https://img.shields.io/badge/LinkedIn-Conectar-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="Conectar com Vinícius no LinkedIn"></a>
+  <a href="https://github.com/VniiD?tab=repositories"><img src="https://img.shields.io/badge/GitHub-Projetos-181717?style=for-the-badge&logo=github&logoColor=white" alt="Explorar projetos no GitHub"></a>
   <img src="https://img.shields.io/badge/42%20S%C3%A3o%20Paulo-Cadete-111827?style=for-the-badge&logo=42&logoColor=white" alt="Cadete da 42 São Paulo">
 </p>
 
-### Código é uma parte da engenharia
+> Gosto de começar antes do código: entender o problema, modelar o domínio, definir contratos e só então escolher como construir.
+>
+> ADS e GTI concluídos · Engenharia de Software, 7º semestre · Cadete no Common Core V2 da 42SP.
 
-Passei 10 anos trabalhando com processos industriais, produção e melhoria contínua. Em uma linha do New Fiesta, participei de uma melhoria que elevou a produtividade em **25% em uma semana**. Hoje aplico o mesmo raciocínio a software: entender o problema real, desenhar o sistema e cuidar dos detalhes.
+### Como penso software
 
-ADS e GTI concluídos · Engenharia de Software na Unicesumar, 7º semestre · Cadete no Common Core V2 da 42SP.
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <strong>01 · Entender antes de implementar</strong><br>
+      Requisitos, regras de domínio, atores e limites do sistema. Diagramas C4 para tornar contexto e decisões visíveis.
+    </td>
+    <td width="50%" valign="top">
+      <strong>02 · Arquitetura é trade-off</strong><br>
+      Monólito modular, microsserviços ou eventos: a escolha depende de consistência, latência, escala, operação e contexto do negócio.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <strong>03 · Contratos e fronteiras</strong><br>
+      DDD, limites transacionais e contratos explícitos, como OpenAPI e Protocol Buffers, para reduzir ambiguidades entre componentes.
+    </td>
+    <td width="50%" valign="top">
+      <strong>04 · Segurança desde o desenho</strong><br>
+      Modelagem de ameaças, menor privilégio, proteção de segredos e validações automatizadas no ciclo de desenvolvimento.
+    </td>
+  </tr>
+</table>
+
+### IA no fluxo, engenharia no comando
+
+Uso IA como acelerador de tarefas, não como autoridade arquitetural. Requisitos e contratos vêm antes da geração; código sugerido precisa de revisão, testes e validação de dependências. Segredos não entram em prompts. O objetivo é reduzir trabalho repetitivo sem terceirizar decisões, segurança ou responsabilidade.
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/viniciusdeaferreira/"><img src="https://img.shields.io/badge/Artigos-Arquitetura%20%7C%20Security%20by%20Design-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="Artigos de arquitetura de software e Security by Design no LinkedIn"></a>
+</p>
 
 ### No meu laboratório
 
-<p>
-  <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C">
-  <img src="https://img.shields.io/badge/C%23-68217A?style=for-the-badge&logo=csharp&logoColor=white" alt="C sharp">
-  <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt=".NET">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go">
-  <img src="https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white" alt="Rust">
-</p>
-<p>
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI">
-  <img src="https://img.shields.io/badge/Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white" alt="Apache Kafka">
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=c,cs,dotnet,python,java,js,ts,go,rust,react,docker,postgres,mongodb,azure,aws,gcp&perline=8" alt="Ícones de C, C sharp, .NET, Python, Java, JavaScript, TypeScript, Go, Rust, React, Docker, PostgreSQL, MongoDB, Azure, AWS e Google Cloud">
 </p>
 
 <p align="center">
-  <sub>Também exploro Java, JavaScript, R, Azure, AWS e Google Cloud. Aprofundando Go; Rust está no horizonte.</sub>
+  <sub>Backend · APIs · sistemas distribuídos · dados · cloud. Aprofundando Go; Rust no horizonte.</sub><br>
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI">
+  <img src="https://img.shields.io/badge/Apache%20Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white" alt="Apache Kafka">
+  <img src="https://img.shields.io/badge/SQL%20Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white" alt="SQL Server">
+  <img src="https://img.shields.io/badge/R-276DC3?style=flat-square&logo=r&logoColor=white" alt="R">
 </p>
 
 <p align="center">
-  <strong>O que sai do teclado</strong><br>
-  <sub>Distribuição das linguagens nos meus repositórios públicos, calculada a partir dos dados do GitHub.</sub><br><br>
-  <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-language-donut.svg" alt="Gráfico de rosca animado com a distribuição das linguagens nos repositórios públicos">
+  <strong>Mapa do código</strong><br>
+  <sub>Linguagens por bytes nos repositórios públicos. Passe o mouse ou use Tab no gráfico interativo.</sub><br><br>
+  <a href="https://vniid.github.io/VniiD/"><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-language-donut.svg" alt="Abrir gráfico interativo de linguagens do GitHub"></a><br>
+  <a href="https://vniid.github.io/VniiD/">↗ Explorar gráfico interativo</a>
 </p>
 
 ### Projetos que contam uma história
@@ -115,6 +133,12 @@ ADS e GTI concluídos · Engenharia de Software na Unicesumar, 7º semestre · C
       <td>Análise de Dados em R.</td>
     </tr>
   </table>
+  <p>
+    <img src="https://img.shields.io/badge/Cisco-Cybersecurity%20%7C%20Networking-049FD9?style=flat-square&logo=cisco&logoColor=white" alt="Cursos Cisco em cibersegurança e redes">
+    <img src="https://img.shields.io/badge/DIO-.NET%20%7C%20APIs%20%7C%20Azure-7B2CBF?style=flat-square" alt="Formação DIO em .NET, APIs e Azure">
+    <img src="https://img.shields.io/badge/Google%20Cybersecurity-7%2F9%20m%C3%B3dulos-4285F4?style=flat-square&logo=google&logoColor=white" alt="Google Cybersecurity, 7 de 9 módulos">
+    <img src="https://img.shields.io/badge/42SP-Piscine%20aprovada%20%7C%20Python%20100%25-111827?style=flat-square&logo=42&logoColor=white" alt="Piscine aprovada e Missão Python 100 por cento na 42 São Paulo">
+  </p>
 </details>
 
 <p align="center">
@@ -127,10 +151,10 @@ ADS e GTI concluídos · Engenharia de Software na Unicesumar, 7º semestre · C
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/VniiD/VniiD/output/github-contribution-grid-snake-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/VniiD/VniiD/output/github-contribution-grid-snake.svg">
-    <img width="100%" alt="Minhoca em pixel-art cresce a cauda ao comer cada quadrado de commit" src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-contribution-grid-snake.svg">
+    <img width="100%" alt="Minhoca de olhos abertos em pixel-art cresce a cauda ao comer cada quadrado ativo" src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-contribution-grid-snake.svg">
   </picture>
   <br>
-  <sub>A cada quadrado de commit comido, cresce exatamente um quadrado degradê na cauda.</sub>
+  <sub>Cada quadrado ativo some e acrescenta um bloco à cauda. Ao chegar a 24 segmentos, a minhoca explode em pixels e continua do mesmo ponto; ao fim da grade, o ciclo recomeça.</sub>
 </p>
 
 <details>

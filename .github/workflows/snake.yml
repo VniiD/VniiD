@@ -23,10 +23,11 @@ jobs:
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-      - name: Customize snake and generate language chart
+      - name: Generate animated profile and language explorer
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          node .github/scripts/generate-profile-cover.mjs
           node .github/scripts/customize-snake.mjs
           node .github/scripts/generate-language-chart.mjs
       - name: Publish snake SVGs
