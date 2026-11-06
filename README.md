@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B1020,45:123B55,100:0F766E&height=190&section=header&text=V%20%7C%20Engenharia%20em%20movimento&fontSize=32&fontColor=F8FAFC&animation=fadeIn&fontAlignY=38&desc=Do%20ch%C3%A3o%20de%20f%C3%A1brica%20ao%20backend&descAlignY=62&descSize=17" width="100%" alt="V, engenharia em movimento, do chão de fábrica ao backend">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B1020,45:123B55,100:0F766E&height=190&section=header&text=Engenheiro%20de%20Software%20J%C3%BAnior&fontSize=30&fontColor=F8FAFC&animation=fadeIn&fontAlignY=38&desc=Do%20ch%C3%A3o%20de%20f%C3%A1brica%20ao%20backend%20%7C%20Engenharia%20em%20movimento&descAlignY=62&descSize=16" width="100%" alt="Engenheiro de Software Júnior, do chão de fábrica ao backend, engenharia em movimento">
 </p>
 
 <p align="center">
@@ -9,7 +9,7 @@
 
 <p align="center">
   <a href="https://github.com/VniiD?tab=repositories"><img src="https://img.shields.io/badge/PROJETOS-Explorar-0F766E?style=for-the-badge&logo=github&logoColor=white" alt="Explorar meus projetos"></a>
-  <img src="https://img.shields.io/badge/FOCO-Est%C3%A1gio%20%7C%20Trainee-155E75?style=for-the-badge" alt="Em busca de estágio ou trainee">
+  <img src="https://img.shields.io/badge/FOCO-Engenharia%20de%20Software%20J%C3%BAnior-155E75?style=for-the-badge" alt="Foco em engenharia de software júnior">
   <img src="https://img.shields.io/badge/42%20S%C3%A3o%20Paulo-Cadete-111827?style=for-the-badge&logo=42&logoColor=white" alt="Cadete da 42 São Paulo">
 </p>
 
@@ -40,6 +40,12 @@ ADS e GTI concluídos · Engenharia de Software na Unicesumar, 7º semestre · C
 
 <p align="center">
   <sub>Também exploro Java, JavaScript, R, Azure, AWS e Google Cloud. Aprofundando Go; Rust está no horizonte.</sub>
+</p>
+
+<p align="center">
+  <strong>O que sai do teclado</strong><br>
+  <sub>Distribuição das linguagens nos meus repositórios públicos, calculada a partir dos dados do GitHub.</sub><br><br>
+  <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-language-donut.svg" alt="Gráfico de rosca animado com a distribuição das linguagens nos repositórios públicos">
 </p>
 
 ### Projetos que contam uma história
@@ -118,14 +124,17 @@ ADS e GTI concluídos · Engenharia de Software na Unicesumar, 7º semestre · C
 ### Sinais de atividade
 
 <p align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=VniiD&show_icons=true&hide_border=true&theme=tokyonight&count_private=false" alt="Resumo das estatísticas públicas do GitHub">
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=VniiD&layout=compact&langs_count=6&hide_border=true&theme=tokyonight" alt="Linguagens dos repositórios públicos">
-</p>
-
-<p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/VniiD/VniiD/output/github-contribution-grid-snake-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/VniiD/VniiD/output/github-contribution-grid-snake.svg">
-    <img alt="Minhoca neon cresce ao percorrer os commits, sempre dentro da grade de contribuições" src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-contribution-grid-snake.svg">
+    <img width="100%" alt="Minhoca em pixel-art cresce a cauda ao comer cada quadrado de commit" src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-contribution-grid-snake.svg">
   </picture>
+  <br>
+  <sub>A cada quadrado de commit comido, cresce exatamente um quadrado degradê na cauda.</sub>
 </p>
+
+<details>
+  <summary>🧪 Easter egg da 42: abrir sob risco de encontrar um bug</summary>
+  <br>
+  “Funciona na minha máquina” é só o primeiro teste. O peer review é o teste de integração.
+</details>
