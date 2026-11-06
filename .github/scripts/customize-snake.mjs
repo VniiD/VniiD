@@ -1,7 +1,11 @@
 import { readFile, writeFile } from "node:fs/promises";
 
 const cellSize = 16;
-const maxTailLength = 24;
+const maxBodyLength = 24;
+const maxTailLength = maxBodyLength - 1;
+const blinkCount = 3;
+const blinkHalfPeriod = 0.6;
+const blinkDuration = blinkCount * blinkHalfPeriod * 2;
 const explosionPause = 6;
 const variants = [
   {
@@ -126,9 +130,13 @@ function getGrid(svg, variant) {
 
 function createSnakeSvg(grid, variant) {
   const { route, columns, rows, activeCells, gradient } = grid;
-  const width = columns.at(-1) + 14;
-  const height = rows.at(-1) + 14;
-  const points = route.map((cell) => [cell.x + 6, cell.y + 6]);
+  const canvasPadding = 16;
+  const width = columns.at(-1) + 14 + canvasPadding * 2;
+  const height = rows.at(-1) + 14 + canvasPadding * 2;
+  const points = route.map((cell) => [
+    cell.x + 6 + canvasPadding,
+    cell.y + 6 + canvasPadding,
+  ]);
   const tailLimit = Math.min(maxTailLength, activeCells);
   const stepTimes = [];
   const tailLengths = [];
@@ -144,9 +152,15 @@ function createSnakeSvg(grid, variant) {
     tailLengths[index] = tailLength;
 
     if (tailLength === tailLimit) {
-      bursts.push({ index, time: time + 0.1, pause: explosionPause });
+      bursts.push({
+        index,
+        blinkStart: time + 0.1,
+        time: time + blinkDuration + 0.1,
+        pause: explosionPause,
+        segments: tailLength,
+      });
       tailLength = 0;
-      time += explosionPause + 0.1;
+      time += blinkDuration + explosionPause + 0.1;
     }
 
     if (index < route.length - 1) {
@@ -157,11 +171,13 @@ function createSnakeSvg(grid, variant) {
   if (bursts.at(-1)?.index !== route.length - 1) {
     bursts.push({
       index: route.length - 1,
-      time: time + 0.1,
+      blinkStart: time + 0.1,
+      time: time + blinkDuration + 0.1,
       pause: explosionPause,
+      segments: tailLengths.at(-1),
       final: true,
     });
-    time += explosionPause + 0.1;
+    time += blinkDuration + explosionPause + 0.1;
   } else {
     bursts.at(-1).final = true;
   }
@@ -191,7 +207,7 @@ function createSnakeSvg(grid, variant) {
       );
     }
     cells.push(
-      `<rect class="${className}" x="${cell.x}" y="${cell.y}" width="12" height="12" rx="2" fill="${cell.fill}"/>`,
+      `<rect class="${className}" x="${cell.x + canvasPadding}" y="${cell.y + canvasPadding}" width="12" height="12" rx="2" fill="${cell.fill}"/>`,
     );
     headFrames.push(`${stepPercent}%{transform:translate(${point[0]}px,${point[1]}px)}`);
 
@@ -238,46 +254,63 @@ function createSnakeSvg(grid, variant) {
 
   const visibilityFrames = ["0%{opacity:1}"];
   for (const burst of bursts) {
+    const blinkStart = percentAt(burst.blinkStart);
+    visibilityFrames.push(`${blinkStart}%{opacity:1}`);
+    for (let blink = 0; blink < blinkCount; blink += 1) {
+      const blinkStartTime =
+        burst.blinkStart + blink * blinkHalfPeriod * 2;
+      const dim = percentAt(blinkStartTime + blinkHalfPeriod);
+      const bright = percentAt(blinkStartTime + blinkHalfPeriod * 2);
+      visibilityFrames.push(`${dim}%{opacity:.12}${bright}%{opacity:1}`);
+    }
+
     const start = percentAt(burst.time);
     const hidden = percentAt(burst.time + 0.01);
+    const resumeHold = percentAt(burst.time + burst.pause - 0.01);
     const resume = percentAt(burst.time + burst.pause);
     visibilityFrames.push(
-      `${start}%{opacity:1}${hidden}%{opacity:0}${resume}%{opacity:${burst.final ? 0 : 1}}`,
+      `${start}%{opacity:1}${hidden}%{opacity:0}${resumeHold}%{opacity:0}${resume}%{opacity:${burst.final ? 0 : 1}}`,
     );
   }
   visibilityFrames.push("100%{opacity:0}");
   const explosionElements = [];
   const explosionStyles = [];
   for (const [burstIndex, burst] of bursts.entries()) {
-    const [x, y] = points[burst.index];
+    const fragmentCount = burst.segments + 1;
     const start = percentAt(burst.time);
-    const peak = percentAt(burst.time + burst.pause * 0.35);
-    const spread = percentAt(burst.time + burst.pause * 0.75);
+    const reveal = percentAt(burst.time + 0.05);
+    const spread = percentAt(burst.time + burst.pause * 0.45);
     const end = percentAt(burst.time + burst.pause);
 
-    for (let particle = 0; particle < 8; particle += 1) {
-      const angle = (Math.PI * 2 * particle) / 8;
+    for (let fragment = 0; fragment < fragmentCount; fragment += 1) {
+      const segment = fragment;
+      const pointIndex = Math.max(0, burst.index - segment);
+      const [x, y] = points[pointIndex];
+      const angle = (Math.PI * 2 * fragment) / fragmentCount;
       const dx = Math.round(Math.cos(angle) * 14);
       const dy = Math.round(Math.sin(angle) * 14);
-      const color = interpolateColor(gradient, particle / 7);
-      const name = `burst-${burstIndex}-${particle}`;
+      const color = segment === 0
+        ? gradient[0]
+        : interpolateColor(
+            gradient,
+            (segment - 1) / Math.max(1, tailLimit - 1),
+          );
+      const name = `burst-${burstIndex}-segment-${segment}`;
       explosionStyles.push(
-        `.spark-${name}{animation:${name} ${duration} linear infinite}@keyframes ${name}{0%,${start}%{opacity:0;transform:translate(${x}px,${y}px) scale(.15)}${peak}%{opacity:1;transform:translate(${x}px,${y}px) scale(1)}${spread}%{opacity:1;transform:translate(${x + dx}px,${y + dy}px) scale(1.1)}${end}%,100%{opacity:0;transform:translate(${x + dx}px,${y + dy}px) scale(.2)}}`,
+        `.spark-${name}{animation:${name} ${duration} linear infinite}@keyframes ${name}{0%,${start}%{opacity:0;transform:translate(${x}px,${y}px) scale(.15)}${reveal}%{opacity:1;transform:translate(${x}px,${y}px) scale(1)}${spread}%{opacity:1;transform:translate(${x + dx}px,${y + dy}px) scale(1.05)}${end}%,100%{opacity:0;transform:translate(${x + dx}px,${y + dy}px) scale(.2)}}`,
       );
       explosionElements.push(
-        `<rect class="spark spark-${name}" x="-3" y="-3" width="6" height="6" rx="1" fill="${color}"/>`,
+        `<rect class="spark spark-${name}" x="-6" y="-6" width="12" height="12" rx="2" fill="${color}"/>`,
       );
     }
   }
 
   const firstPoint = points[0];
   const lastPoint = points.at(-1);
-  const clipWidth = columns.length * cellSize;
-  const clipHeight = rows.length * cellSize;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title description">
 <title id="title">Minhoca de olhos abertos que cresce com as contribuições de VniiD</title>
-<desc id="description">A cada quadrado ativo, a cauda cresce. A cada 24 segmentos, explode em pixels e continua no mesmo ponto da grade.</desc>
-<defs><filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><clipPath id="grid-clip"><rect x="2" y="2" width="${clipWidth}" height="${clipHeight}"/></clipPath></defs>
+<desc id="description">A cada quadrado ativo, a cauda cresce. Ao chegar a 24 quadrados no corpo, incluindo a cabeça, pisca três vezes e explode nesses mesmos quadrados, continuando no mesmo ponto da grade.</desc>
+<defs><filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><clipPath id="grid-clip"><rect width="${width}" height="${height}"/></clipPath></defs>
 <style>
 .grid-cell{shape-rendering:crispEdges}
 .worm{animation:worm-visibility ${duration} linear infinite}

@@ -10,7 +10,7 @@
 
 > Gosto de começar antes do código: entender o problema, modelar o domínio, definir contratos e só então escolher como construir.
 >
-> ADS e GTI concluídos · Engenharia de Software, 7º semestre · Cadete no Common Core V2 da 42SP.
+> ADS e GTI concluídos em 2026 · Engenharia de Software, 7º semestre (conclusão prevista para dez/2027) · Cadete no Common Core V2 da 42SP.
 
 ### Como penso software
 
@@ -52,7 +52,7 @@ Uso IA como acelerador de tarefas, não como autoridade arquitetural. Requisitos
 </p>
 
 <p align="center">
-  <sub>Backend · APIs · sistemas distribuídos · dados · cloud. Aprofundando Go; Rust no horizonte.</sub><br>
+  <sub>Backend · APIs · sistemas distribuídos · dados · cloud. Construindo com C#, .NET, Python e Go; aprofundando fundamentos e novas ferramentas.</sub><br>
   <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI">
   <img src="https://img.shields.io/badge/Apache%20Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white" alt="Apache Kafka">
   <img src="https://img.shields.io/badge/SQL%20Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white" alt="SQL Server">
@@ -61,7 +61,7 @@ Uso IA como acelerador de tarefas, não como autoridade arquitetural. Requisitos
 
 <p align="center">
   <strong>Mapa do código</strong><br>
-  <sub>Linguagens por bytes nos repositórios públicos. Passe o mouse ou use Tab no gráfico interativo.</sub><br><br>
+  <sub>Bytes de código em repositórios públicos. Ao selecionar uma fatia com o mouse ou teclado, veja quais projetos usam aquela linguagem.</sub><br><br>
   <a href="https://vniid.github.io/VniiD/"><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-language-donut.svg" alt="Abrir gráfico interativo de linguagens do GitHub"></a><br>
   <a href="https://vniid.github.io/VniiD/">↗ Explorar gráfico interativo</a>
 </p>
@@ -72,8 +72,8 @@ Uso IA como acelerador de tarefas, não como autoridade arquitetural. Requisitos
   <tr>
     <td width="50%" valign="top">
       <strong><a href="https://github.com/VniiD/SplitPay">SplitPay POS</a></strong><br>
-      Do checkout ao recibo: simulador de ponto de venda com Pix, cartões, split de pagamentos e gestão financeira.<br>
-      <sub>C# · .NET · pagamentos · regras de negócio</sub>
+      Simulador de pagamentos de ponta a ponta: checkout, Pix/cartões, split determinístico e ledger. Reaproveita um pipeline assíncrono de outbox, Kafka e processamento; inclui suíte automatizada e testes de propriedade.<br>
+      <sub>C# · .NET · Blazor · Kafka · MongoDB · SQL Server</sub>
     </td>
     <td width="50%" valign="top">
       <strong><a href="https://github.com/VniiD/split-payment-platform">Split Payment Platform</a></strong><br>
@@ -84,24 +84,33 @@ Uso IA como acelerador de tarefas, não como autoridade arquitetural. Requisitos
   <tr>
     <td width="50%" valign="top">
       <strong><a href="https://github.com/VniiD/Hackathon_Marlabs_XP_G7">Plataforma XP G7</a></strong><br>
-      Produto para assessores e clientes, com contexto financeiro, API e recursos de IA.<br>
+      Liderei o backend de um produto para assessores e clientes; copilot com function calling, regras validadas no servidor e transcrição local. A equipe recebeu destaque de inovação no hackathon.<br>
       <sub>React · TypeScript · FastAPI · PostgreSQL · Redis</sub>
     </td>
     <td width="50%" valign="top">
       <strong><a href="https://github.com/VniiD/A_maze_ing">A-Maze-ing</a></strong><br>
-      Algoritmos de grafos para gerar e resolver labirintos; Python com foco em estrutura e reuso.<br>
-      <sub>Python · grafos · busca em largura</sub>
+      Geração de labirintos com Recursive Backtracker, Prim e Kruskal; resolução com BFS, tipagem estrita e foco em estrutura e reuso.<br>
+      <sub>Python · grafos · BFS · mypy</sub>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">
+      <strong><a href="https://github.com/VniiD/PIXCore">PixCore</a></strong><br>
+      Ledger de partidas dobradas para uma infraestrutura de pagamentos Pix, com gRPC/mTLS, PostgreSQL, Kafka e SDK Go. A etapa do ledger está implementada; os serviços restantes e os critérios de produção seguem documentados no roadmap.<br>
+      <sub>Go · ledger · arquitetura hexagonal · eventos · segurança por evidências</sub>
     </td>
   </tr>
 </table>
 
 <p align="center">
+  <strong>Fundamentos de sistemas na 42</strong><br>
+  <a href="https://github.com/VniiD/Push_Swap">Push_swap</a>: 660 operações para 100 números e 4.930 para 500 ·
+  <a href="https://github.com/VniiD/Libft">Libft</a> ·
+  <a href="https://github.com/VniiD/Printf">ft_printf</a> ·
+  <a href="https://github.com/VniiD/Get_Next_Line">get_next_line</a><br>
+  <sub>C · estruturas de dados · algoritmos · Norminette · Valgrind</sub><br>
   <a href="https://github.com/VniiD/.Net_Fundamentos">.NET Fundamentos</a> ·
-  <a href="https://github.com/VniiD/Python42SP">Python OOP</a> ·
-  <a href="https://github.com/VniiD/Push_Swap">Push_Swap</a> ·
-  <a href="https://github.com/VniiD/Get_Next_Line">Get_Next_Line</a> ·
-  <a href="https://github.com/VniiD/Printf">Printf</a> ·
-  <a href="https://github.com/VniiD/Libft">Libft</a>
+  <a href="https://github.com/VniiD/Python42SP">Python OOP</a>
 </p>
 
 <details>
@@ -110,7 +119,7 @@ Uso IA como acelerador de tarefas, não como autoridade arquitetural. Requisitos
   <table>
     <tr>
       <td>🎓 <strong>Graduações</strong></td>
-      <td>ADS e Gestão da Tecnologia da Informação, concluídas.<br>Engenharia de Software, Unicesumar, 7º semestre.</td>
+      <td>ADS e Gestão da Tecnologia da Informação, concluídas em 2026.<br>Engenharia de Software, Unicesumar, 7º semestre; conclusão prevista para dez/2027.</td>
     </tr>
     <tr>
       <td>🧑‍💻 <strong>42 São Paulo</strong></td>
@@ -154,7 +163,7 @@ Uso IA como acelerador de tarefas, não como autoridade arquitetural. Requisitos
     <img width="100%" alt="Minhoca de olhos abertos em pixel-art cresce a cauda ao comer cada quadrado ativo" src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-contribution-grid-snake.svg">
   </picture>
   <br>
-  <sub>Cada quadrado ativo some e acrescenta um bloco à cauda. Ao chegar a 24 segmentos, a minhoca explode em pixels e continua do mesmo ponto; ao fim da grade, o ciclo recomeça.</sub>
+  <sub>Cada quadrado ativo some e acrescenta um bloco à cauda. Ao chegar a 24 quadrados de corpo, incluindo a cabeça, ela pisca três vezes e explode nesses mesmos blocos; continua do mesmo ponto e reinicia ao fim da grade.</sub>
 </p>
 
 <details>

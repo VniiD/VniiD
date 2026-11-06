@@ -174,6 +174,58 @@
       font: 700 .85rem ui-monospace, SFMono-Regular, Consolas, monospace;
     }
 
+    .project-card {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      border: 1px solid #1e3a4b;
+      border-radius: 1rem;
+      background: rgb(8 17 31 / 55%);
+    }
+
+    .project-card h2 {
+      margin: 0 0 .5rem;
+      color: #f8fafc;
+      font-size: 1rem;
+    }
+
+    .project-summary {
+      margin: 0 0 .75rem;
+      color: #94a3b8;
+      font-size: .82rem;
+      line-height: 1.5;
+    }
+
+    .project-list {
+      display: grid;
+      gap: .5rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .project-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: baseline;
+    }
+
+    .project-item a {
+      color: #a5f3fc;
+      overflow-wrap: anywhere;
+      text-decoration: none;
+    }
+
+    .project-item a:hover {
+      text-decoration: underline;
+    }
+
+    .project-metric {
+      color: #94a3b8;
+      font-size: .75rem;
+      white-space: nowrap;
+    }
+
     .note,
     .updated {
       color: #64748b;
@@ -242,6 +294,11 @@
       <div>
         <div id="legend" class="legend" aria-label="Legenda de linguagens"></div>
         <p id="chart-note" class="note">Calculando a distribuição dos repositórios públicos...</p>
+        <section class="project-card" aria-labelledby="projects-title">
+          <h2 id="projects-title">Projetos nessa linguagem</h2>
+          <p id="project-summary" class="project-summary" aria-live="polite"></p>
+          <ul id="project-list" class="project-list"></ul>
+        </section>
       </div>
     </section>
     <p id="updated" class="updated"></p>
@@ -254,6 +311,10 @@
       maximumFractionDigits: 1,
       style: "percent",
     });
+    const repositoryCount = (count) =>
+      `${formatter.format(count)} ${count === 1 ? "repositório" : "repositórios"}`;
+    const publicRepositoryCount = (count) =>
+      `${repositoryCount(count)} ${count === 1 ? "público" : "públicos"}`;
     const numberBytes = (bytes) => {
       if (bytes < 1024) return `${formatter.format(bytes)} bytes`;
       const units = ["KB", "MB", "GB"];
@@ -270,6 +331,26 @@
       document.querySelector("#center-name").textContent = language.language;
       document.querySelector("#center-detail").textContent =
         `${percentFormatter.format(language.ratio)} · ${numberBytes(language.bytes)}`;
+      document.querySelector("#projects-title").textContent =
+        `Projetos com ${language.language}`;
+      document.querySelector("#project-summary").textContent =
+        `${publicRepositoryCount(language.projects.length)} · ${percentFormatter.format(language.ratio)} do código total`;
+      const projectList = document.querySelector("#project-list");
+      projectList.replaceChildren();
+      for (const project of language.projects) {
+        const item = document.createElement("li");
+        item.className = "project-item";
+        const link = document.createElement("a");
+        link.href = project.url;
+        link.textContent = project.name;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        const metric = document.createElement("span");
+        metric.className = "project-metric";
+        metric.textContent = numberBytes(project.bytes);
+        item.append(link, metric);
+        projectList.append(item);
+      }
       for (const [index, slice] of slices.entries()) {
         slice.setAttribute("aria-pressed", String(slice.dataset.language === language.language));
         legendButtons[index].setAttribute(
@@ -308,7 +389,7 @@
         slice.setAttribute("aria-pressed", "false");
         slice.setAttribute(
           "aria-label",
-          `${language.language}, ${percentFormatter.format(language.ratio)}, ${numberBytes(language.bytes)}, ${language.repositories} repositórios`,
+          `${language.language}, ${percentFormatter.format(language.ratio)}, ${numberBytes(language.bytes)}, ${repositoryCount(language.repositories)}`,
         );
         slice.dataset.language = language.language;
         slice.style.color = language.color;
@@ -343,7 +424,7 @@
       }
 
       document.querySelector("#chart-note").textContent =
-        `${data.languages.length} grupos de linguagens · ${data.repositoryCount} repositórios públicos · Passe o mouse ou use Tab.`;
+        `${data.languages.length} grupos de linguagens · ${publicRepositoryCount(data.repositoryCount)} · Passe o mouse ou use Tab.`;
       document.querySelector("#updated").textContent =
         `Dados atualizados em ${new Date(data.updatedAt).toLocaleString("pt-BR")}. Percentuais calculados sobre bytes de código.`;
       if (data.languages.length > 0) {

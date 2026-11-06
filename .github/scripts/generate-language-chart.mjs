@@ -28,7 +28,7 @@ async function fetchJson(url) {
 
 async function getRepositories() {
   const repositories = [];
-  let url = `https://api.github.com/users/${username}/repos?type=owner&per_page=100&sort=pushed`;
+  let url = `https://api.github.com/users/${username}/repos?type=owner&visibility=public&per_page=100&sort=pushed`;
 
   while (url) {
     const result = await fetchJson(url);
@@ -36,18 +36,19 @@ async function getRepositories() {
     url = result.link?.match(/<([^>]+)>;\s*rel="next"/)?.[1] ?? "";
   }
 
-  return repositories.filter((repo) => !repo.fork && !repo.archived && repo.name !== username);
+  return repositories.filter(
+    (repo) => !repo.private && !repo.fork && !repo.archived && repo.name !== username,
+  );
 }
 
 const repositories = await getRepositories();
 const languageData = await Promise.all(
   repositories.map(async (repo) => {
     const { body } = await fetchJson(repo.languages_url);
-    return { repository: repo.name, languages: body };
+    return { repository: repo.name, url: repo.html_url, languages: body };
   }),
 );
 const totals = new Map();
-const repositoryCounts = new Map();
 
 for (const { repository, languages } of languageData) {
   for (const [language, bytes] of Object.entries(languages)) {
@@ -56,10 +57,6 @@ for (const { repository, languages } of languageData) {
     }
 
     totals.set(language, (totals.get(language) ?? 0) + bytes);
-    if (!repositoryCounts.has(language)) {
-      repositoryCounts.set(language, new Set());
-    }
-    repositoryCounts.get(language).add(repository);
   }
 }
 
@@ -68,18 +65,20 @@ if (sorted.length === 0) {
   throw new Error("No public repository language data was returned");
 }
 
-const top = sorted.slice(0, 5);
-const remainder = sorted.slice(5).reduce((sum, [, bytes]) => sum + bytes, 0);
+const topLanguageNames = new Set(sorted.slice(0, 5).map(([language]) => language));
+if (totals.has("Go")) {
+  topLanguageNames.add("Go");
+}
+const topLanguages = sorted.filter(([language]) => topLanguageNames.has(language));
+const otherLanguages = sorted.filter(([language]) => !topLanguageNames.has(language));
+const top = [...topLanguages];
+const remainder = otherLanguages.reduce((sum, [, bytes]) => sum + bytes, 0);
 if (remainder > 0) {
   top.push(["Outros", remainder]);
 }
 
 const totalBytes = top.reduce((sum, [, bytes]) => sum + bytes, 0);
-const otherRepositories = new Set(
-  sorted
-    .slice(5)
-    .flatMap(([language]) => [...(repositoryCounts.get(language) ?? [])]),
-);
+const otherLanguageNames = new Set(otherLanguages.map(([language]) => language));
 const colors = {
   C: "#A8B9CC",
   "C#": "#9B4F96",
@@ -100,13 +99,28 @@ const slices = top.map(([language, bytes], index) => {
   const color = colors[language] ?? palette[index % palette.length];
   const currentOffset = offset;
   offset += length;
+  const includedLanguages = language === "Outros"
+    ? otherLanguageNames
+    : new Set([language]);
+  const projects = languageData
+    .map(({ repository, url, languages }) => {
+      const projectBytes = Object.entries(languages).reduce(
+        (sum, [projectLanguage, projectLanguageBytes]) =>
+          sum + (includedLanguages.has(projectLanguage) ? projectLanguageBytes : 0),
+        0,
+      );
+      return projectBytes > 0
+        ? { name: repository, url, bytes: projectBytes }
+        : null;
+    })
+    .filter((project) => project !== null)
+    .sort((first, second) => second.bytes - first.bytes);
 
   return {
     language,
     bytes,
-    repositories: language === "Outros"
-      ? otherRepositories.size
-      : repositoryCounts.get(language)?.size ?? 0,
+    repositories: projects.length,
+    projects,
     ratio,
     color,
     dash: `${length.toFixed(2)} ${(circumference - length).toFixed(2)}`,
