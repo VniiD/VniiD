@@ -1,6 +1,6 @@
 <picture>
-  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/VniiD/VniiD/output/profile-cover-mobile.svg">
-  <img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/profile-cover.svg" alt="Vinícius Ferreira, Engenheiro de Software com foco em back-end, arquitetura pragmática, System Design e segurança">
+  <source media="(max-width: 600px)" srcset="https://github.com/VniiD/VniiD/raw/refs/heads/output/profile-cover-mobile.svg">
+  <img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/profile-cover.svg" alt="Vinícius Ferreira, Engenheiro de Software com foco em back-end, arquitetura pragmática, System Design e segurança">
 </picture>
 
 
@@ -69,4 +69,4 @@
 
 <p><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-activity.svg" alt="Atividade"></p>
 
-<img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-contribution-grid-snake.svg" alt="Minhoca neon enrola e explode em partículas radiais sobre uma grade escura quadriculada de contribuições">
+<img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/github-contribution-grid-snake.svg" alt="Minhoca neon enrola e explode em partículas radiais sobre uma grade escura quadriculada de contribuições">

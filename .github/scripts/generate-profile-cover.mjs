@@ -10,32 +10,40 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" v
   <radialGradient id="cyan-halo"><stop stop-color="#06B6D4" stop-opacity=".24"/><stop offset="1" stop-color="#06B6D4" stop-opacity="0"/></radialGradient>
   <radialGradient id="violet-halo"><stop stop-color="#8B5CF6" stop-opacity=".25"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>
   <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#94A3B8" stroke-opacity=".09"/></pattern>
+  <clipPath id="cover-clip"><rect width="1200" height="340" rx="26"/></clipPath>
   <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs>
 <style>
-.base{fill:url(#background)}.grid{fill:url(#grid)}.halo{opacity:.9}
+.base{fill:url(#background)}.grid{fill:url(#grid);animation:grid-pulse 8s ease-in-out infinite alternate}.halo{opacity:.9;transform-box:fill-box;transform-origin:center;animation:halo-drift 9s ease-in-out infinite alternate}
 .eyebrow{fill:#67E8F9;font:700 18px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:4px}
 .name{fill:url(#text);font:800 57px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-1.5px}
 .role{fill:#F8FAFC;font:700 25px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.7px}
 .focus{fill:#C4B5FD;font:600 18px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:1.4px}
 .tag{fill:#E0F2FE;font:700 18px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:1px}
-.tag-box{fill:#0E1B31;stroke:url(#neon);stroke-opacity:.55;stroke-width:1}
+.tag-box{fill:#0E1B31;stroke:url(#neon);stroke-opacity:.55;stroke-width:1;animation:tag-glow 5s ease-in-out infinite alternate}
 .frame{fill:none;stroke:#64748B;stroke-opacity:.42}
-.network{fill:none;stroke:url(#neon);stroke-opacity:.42;stroke-width:2}
+.network{fill:none;stroke:url(#neon);stroke-opacity:.42;stroke-width:2;animation:network-pulse 6s ease-in-out infinite alternate}
 .orbit{fill:none;stroke:url(#neon);stroke-width:2;stroke-dasharray:3 10;transform-origin:1006px 166px;animation:rotate 24s linear infinite}
 .node{fill:#0D1728;stroke:url(#neon);stroke-width:3;filter:url(#glow)}
 .pulse{fill:#A5F3FC;filter:url(#glow);animation:pulse 2.4s ease-in-out infinite alternate}
 .scan{stroke:url(#neon);stroke-width:2;stroke-dasharray:24 20;animation:scan 5s linear infinite}
+.sweep{opacity:.06;fill:url(#neon);animation:sweep 16s linear infinite}
+@keyframes grid-pulse{to{opacity:.62}}
+@keyframes halo-drift{to{transform:scale(1.05);opacity:.65}}
+@keyframes tag-glow{to{stroke-opacity:.9}}
+@keyframes network-pulse{to{stroke-opacity:.72}}
+@keyframes sweep{from{transform:translateX(-140px)}to{transform:translateX(1200px)}}
 @keyframes rotate{to{transform:rotate(360deg)}}
 @keyframes pulse{from{opacity:.2;transform:scale(.7)}to{opacity:1;transform:scale(1.25)}}
 @keyframes scan{to{stroke-dashoffset:-176}}
-@media(prefers-reduced-motion:reduce){.orbit,.pulse,.scan{animation:none}}
+@media(prefers-reduced-motion:reduce){.grid,.halo,.tag-box,.network,.sweep,.orbit,.pulse,.scan{animation:none}}
 </style>
 <rect class="base" width="1200" height="340" rx="26"/>
 <rect class="grid" x="1" y="1" width="1198" height="338" rx="25"/>
 <ellipse class="halo" cx="358" cy="166" rx="490" ry="260" fill="url(#cyan-halo)"/>
 <ellipse class="halo" cx="1020" cy="172" rx="360" ry="255" fill="url(#violet-halo)"/>
 <rect class="frame" x=".5" y=".5" width="1199" height="339" rx="26"/>
+<g clip-path="url(#cover-clip)" aria-hidden="true"><rect class="sweep" x="0" y="1" width="140" height="338"/></g>
 <text x="54" y="66" class="eyebrow">SOFTWARE ENGINEERING · BACK-END</text>
 <text x="50" y="139" class="name">VINÍCIUS FERREIRA</text>
 <text x="56" y="185" class="role">Engenheiro de Software · Back-end</text>
@@ -71,29 +79,37 @@ const mobileSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="7
   <linearGradient id="text" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#F8FAFC"/><stop offset=".63" stop-color="#C4B5FD"/><stop offset="1" stop-color="#67E8F9"/></linearGradient>
   <radialGradient id="halo"><stop stop-color="#8B5CF6" stop-opacity=".24"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>
   <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#94A3B8" stroke-opacity=".09"/></pattern>
+  <clipPath id="cover-clip"><rect width="640" height="720" rx="26"/></clipPath>
   <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs>
 <style>
-.base{fill:url(#background)}.grid{fill:url(#grid)}.halo{fill:url(#halo)}
+.base{fill:url(#background)}.grid{fill:url(#grid);animation:grid-pulse 8s ease-in-out infinite alternate}.halo{fill:url(#halo);transform-box:fill-box;transform-origin:center;animation:halo-drift 9s ease-in-out infinite alternate}
 .eyebrow{fill:#67E8F9;font:700 21px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:3px}
 .name{fill:url(#text);font:800 66px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-1px}
 .role{fill:#F8FAFC;font:700 31px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
 .focus{fill:#C4B5FD;font:700 22px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:1px}
 .tag{fill:#E0F2FE;font:700 24px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:1px}
-.tag-box{fill:#0E1B31;stroke:url(#neon);stroke-opacity:.65;stroke-width:2}
+.tag-box{fill:#0E1B31;stroke:url(#neon);stroke-opacity:.65;stroke-width:2;animation:tag-glow 5s ease-in-out infinite alternate}
 .frame{fill:none;stroke:#64748B;stroke-opacity:.42}
-.network{fill:none;stroke:url(#neon);stroke-opacity:.55;stroke-width:3}
+.network{fill:none;stroke:url(#neon);stroke-opacity:.55;stroke-width:3;animation:network-pulse 6s ease-in-out infinite alternate}
 .orbit{fill:none;stroke:url(#neon);stroke-width:2;stroke-dasharray:3 10;transform-origin:320px 595px;animation:rotate 24s linear infinite}
 .node{fill:#0D1728;stroke:url(#neon);stroke-width:3;filter:url(#glow)}
 .pulse{fill:#A5F3FC;filter:url(#glow);animation:pulse 2.4s ease-in-out infinite alternate}
+.sweep{opacity:.06;fill:url(#neon);animation:sweep 16s linear infinite}
+@keyframes grid-pulse{to{opacity:.62}}
+@keyframes halo-drift{to{transform:scale(1.05);opacity:.65}}
+@keyframes tag-glow{to{stroke-opacity:.9}}
+@keyframes network-pulse{to{stroke-opacity:.78}}
+@keyframes sweep{from{transform:translateX(-100px)}to{transform:translateX(640px)}}
 @keyframes rotate{to{transform:rotate(360deg)}}
 @keyframes pulse{from{opacity:.2;transform:scale(.7)}to{opacity:1;transform:scale(1.25)}}
-@media(prefers-reduced-motion:reduce){.orbit,.pulse{animation:none}}
+@media(prefers-reduced-motion:reduce){.grid,.halo,.tag-box,.network,.sweep,.orbit,.pulse{animation:none}}
 </style>
 <rect class="base" width="640" height="720" rx="26"/>
 <rect class="grid" x="1" y="1" width="638" height="718" rx="25"/>
 <ellipse class="halo" cx="320" cy="590" rx="280" ry="180"/>
 <rect class="frame" x=".5" y=".5" width="639" height="719" rx="26"/>
+<g clip-path="url(#cover-clip)" aria-hidden="true"><rect class="sweep" x="0" y="1" width="100" height="718"/></g>
 <text x="38" y="62" class="eyebrow">SOFTWARE ENGINEERING</text>
 <text x="34" y="153" class="name">VINÍCIUS</text>
 <text x="34" y="230" class="name">FERREIRA</text>

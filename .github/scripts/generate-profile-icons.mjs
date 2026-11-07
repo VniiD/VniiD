@@ -160,12 +160,12 @@ const projectTiles = [
 ];
 
 const sectionBanners = [
-  { file: "section-articles.svg", title: "Artigos", icon: "articles" },
-  { file: "section-code-map.svg", title: "No meu laboratório", icon: "code-map" },
-  { file: "section-projects.svg", title: "Projetos", icon: "projects" },
-  { file: "section-education.svg", title: "Formação", icon: "education" },
-  { file: "section-courses.svg", title: "Cursos", icon: "courses" },
-  { file: "section-activity.svg", title: "Atividade", icon: "activity" },
+  { file: "section-articles.svg", title: "Artigos", icon: "articles", motion: "pages" },
+  { file: "section-code-map.svg", title: "No meu laboratório", icon: "code-map", motion: "network" },
+  { file: "section-projects.svg", title: "Projetos", icon: "projects", motion: "tilt" },
+  { file: "section-education.svg", title: "Formação", icon: "education", motion: "rise" },
+  { file: "section-courses.svg", title: "Cursos", icon: "courses", motion: "trace" },
+  { file: "section-activity.svg", title: "Atividade", icon: "activity", motion: "signal" },
 ];
 
 function escapeXml(text) {
@@ -178,7 +178,7 @@ function escapeXml(text) {
   })[character]);
 }
 
-function createSectionBanner({ title, icon }) {
+function createSectionBanner({ title, icon, motion }) {
   const { accent, markup } = icons[icon];
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="112" viewBox="0 0 1200 112" role="img" aria-labelledby="title description">
 <title id="title">${escapeXml(title)}</title>
@@ -191,14 +191,26 @@ function createSectionBanner({ title, icon }) {
 <style>
 .title{fill:#F8FAFC;font:700 30px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.4px}
 .mark{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.banner-icon{transform-box:fill-box;transform-origin:center;animation:${motion} 4s ease-in-out infinite}
+.banner-sweep{pointer-events:none}
+@keyframes pages{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+@keyframes network{0%,100%{transform:scale(.94);opacity:.7}50%{transform:scale(1.04);opacity:1}}
+@keyframes tilt{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+@keyframes rise{0%,100%{transform:translateY(2px)}50%{transform:translateY(-3px)}}
+@keyframes trace{0%,100%{stroke-dasharray:1 0;opacity:.78}50%{stroke-dasharray:5 2;opacity:1}}
+@keyframes signal{0%,100%{transform:scaleX(.92);opacity:.7}50%{transform:scaleX(1.08);opacity:1}}
+@media(prefers-reduced-motion:reduce){.banner-icon{animation:none}.banner-sweep{display:none}}
 </style>
 <rect x="2" y="2" width="1196" height="108" rx="16" fill="url(#background)" stroke="url(#border)" stroke-width="2"/>
 <rect x="3" y="3" width="1194" height="106" rx="15" fill="url(#grid)"/>
+<rect class="banner-sweep" x="-180" y="3" width="160" height="106" fill="${accent}" opacity=".05">
+  <animate attributeName="x" values="-180;1200" dur="16s" repeatCount="indefinite"/>
+</rect>
 <svg x="28" y="24" width="64" height="64" viewBox="0 0 64 64" style="color:${accent}">
   <circle cx="32" cy="32" r="30" fill="${accent}" fill-opacity=".08" stroke="${accent}" stroke-opacity=".5">
     <animate attributeName="stroke-opacity" values=".25;.8;.25" dur="3s" repeatCount="indefinite"/>
   </circle>
-  <g class="mark">${markup}</g>
+  <g class="mark banner-icon motion-${motion}">${markup}</g>
 </svg>
 <text x="116" y="68" class="title">${escapeXml(title)}</text>
 </svg>`;
