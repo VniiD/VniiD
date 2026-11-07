@@ -60,7 +60,7 @@
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-42.svg" width="32" alt=""> **42 São Paulo, formação de desenvolvedor** — Cadete no Common Core V2, Piscine aprovada e Missão Python concluída a 100%.
 
 
-<p><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-courses.svg" alt="Cursos"></p>
+<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-courses.svg" width="48" alt=""> Cursos</h2>
 
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-cisco.svg" width="32" alt=""> **Cisco** — Introdução à Cibersegurança, Networking Basics e Python Essentials 1.
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-dio.svg" width="32" alt=""> **DIO** — Data Analytics com Python. Cursando Developer .NET/C#, APIs e Azure.

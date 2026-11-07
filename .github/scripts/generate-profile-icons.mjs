@@ -164,7 +164,6 @@ const sectionBanners = [
   { file: "section-code-map.svg", title: "No meu laboratório", icon: "code-map", motion: "network" },
   { file: "section-projects.svg", title: "Projetos", icon: "projects", motion: "tilt" },
   { file: "section-education.svg", title: "Formação", icon: "education", motion: "rise" },
-  { file: "section-courses.svg", title: "Cursos", icon: "courses", motion: "trace" },
   { file: "section-activity.svg", title: "Atividade", icon: "activity", motion: "signal" },
 ];
 

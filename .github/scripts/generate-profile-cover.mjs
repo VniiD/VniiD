@@ -22,21 +22,30 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" v
 .tag{fill:#E0F2FE;font:700 18px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:1px}
 .tag-box{fill:#0E1B31;stroke:url(#neon);stroke-opacity:.55;stroke-width:1;animation:tag-glow 5s ease-in-out infinite alternate}
 .frame{fill:none;stroke:#64748B;stroke-opacity:.42}
-.network{fill:none;stroke:url(#neon);stroke-opacity:.42;stroke-width:2;animation:network-pulse 6s ease-in-out infinite alternate}
-.orbit{fill:none;stroke:url(#neon);stroke-width:2;stroke-dasharray:3 10;transform-origin:1006px 166px;animation:rotate 24s linear infinite}
-.node{fill:#0D1728;stroke:url(#neon);stroke-width:3;filter:url(#glow)}
-.pulse{fill:#A5F3FC;filter:url(#glow);animation:pulse 2.4s ease-in-out infinite alternate}
+.art-orbit{fill:none;stroke:url(#neon);stroke-opacity:.42;stroke-width:1.5;stroke-dasharray:3 9;transform-box:view-box;transform-origin:1000px 174px;animation:rotate 32s linear infinite}
+.art-orbit-inner{stroke-opacity:.26;stroke-dasharray:2 7;animation:rotate-reverse 24s linear infinite}
+.art-route{fill:none;stroke:url(#neon);stroke-opacity:.48;stroke-width:1.5;stroke-dasharray:7 9;animation:route-flow 5s linear infinite}
+.art-route-delay{animation-delay:-2.5s}
+.art-node{fill:#0D1728;stroke:url(#neon);stroke-width:2.5;filter:url(#glow);transform-box:fill-box;transform-origin:center;animation:node-pulse 3s ease-in-out infinite}
+.art-node-delay{animation-delay:-1.5s}
+.art-core{fill:#0D1728;stroke:url(#neon);stroke-width:2;filter:url(#glow);transform-box:fill-box;transform-origin:center;animation:core-pulse 4s ease-in-out infinite}
+.art-core-lines{fill:none;stroke:#A5F3FC;stroke-opacity:.85;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.art-packet{fill:#A5F3FC;filter:url(#glow);animation:packet-pulse 2s ease-in-out infinite}
+.art-packet-delay{animation-delay:-1s}
 .scan{stroke:url(#neon);stroke-width:2;stroke-dasharray:24 20;animation:scan 5s linear infinite}
 .sweep{opacity:.06;fill:url(#neon);animation:sweep 16s linear infinite}
 @keyframes grid-pulse{to{opacity:.62}}
 @keyframes halo-drift{to{transform:scale(1.05);opacity:.65}}
 @keyframes tag-glow{to{stroke-opacity:.9}}
-@keyframes network-pulse{to{stroke-opacity:.72}}
 @keyframes sweep{from{transform:translateX(-140px)}to{transform:translateX(1200px)}}
 @keyframes rotate{to{transform:rotate(360deg)}}
-@keyframes pulse{from{opacity:.2;transform:scale(.7)}to{opacity:1;transform:scale(1.25)}}
+@keyframes rotate-reverse{to{transform:rotate(-360deg)}}
+@keyframes route-flow{to{stroke-dashoffset:-64}}
+@keyframes node-pulse{0%,100%{opacity:.58;transform:scale(.78)}50%{opacity:1;transform:scale(1.18)}}
+@keyframes core-pulse{0%,100%{transform:scale(.96)}50%{transform:scale(1.04)}}
+@keyframes packet-pulse{0%,100%{opacity:.28;transform:scale(.65)}50%{opacity:1;transform:scale(1.35)}}
 @keyframes scan{to{stroke-dashoffset:-176}}
-@media(prefers-reduced-motion:reduce){.grid,.halo,.tag-box,.network,.sweep,.orbit,.pulse,.scan{animation:none}}
+@media(prefers-reduced-motion:reduce){.grid,.halo,.tag-box,.sweep,.art-orbit,.art-orbit-inner,.art-route,.art-node,.art-core,.art-packet,.scan{animation:none}}
 </style>
 <rect class="base" width="1200" height="340" rx="26"/>
 <rect class="grid" x="1" y="1" width="1198" height="338" rx="25"/>
@@ -55,18 +64,22 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" v
 <text x="118" y="282" text-anchor="middle" class="tag">.NET / C#</text>
 <text x="257" y="282" text-anchor="middle" class="tag">PYTHON</text>
 <text x="396" y="282" text-anchor="middle" class="tag">GO</text>
-<text x="542" y="282" text-anchor="middle" class="tag">42 SÃO PAULO</text>
+<text x="542" y="282" text-anchor="middle" class="tag">42 SP</text>
 <path class="scan" d="M0 326H1200"/>
 <g aria-hidden="true">
-  <path class="network" d="M864 112 1006 74 1117 137 1056 254 914 242 864 112M1006 74l50 180m-192-142 192 142m61-117L914 242"/>
-  <circle class="orbit" cx="1006" cy="166" r="115"/>
-  <circle class="node" cx="864" cy="112" r="9"/>
-  <circle class="node" cx="1006" cy="74" r="9"/>
-  <circle class="node" cx="1117" cy="137" r="9"/>
-  <circle class="node" cx="1056" cy="254" r="9"/>
-  <circle class="node" cx="914" cy="242" r="9"/>
-  <circle class="node" cx="1006" cy="166" r="17"/>
-  <circle class="pulse" cx="1006" cy="166" r="6"/>
+  <circle class="art-orbit" cx="1000" cy="174" r="132"/>
+  <ellipse class="art-orbit art-orbit-inner" cx="1000" cy="174" rx="102" ry="55"/>
+  <path class="art-route" d="M870 112C908 112 918 144 958 158M1128 112C1090 112 1082 144 1042 158M1118 250C1082 238 1065 214 1040 196M880 250C918 238 936 214 960 196M1000 44C1000 82 1000 108 1000 137"/>
+  <path class="art-route art-route-delay" d="M870 112C908 112 918 144 958 158M1128 112C1090 112 1082 144 1042 158"/>
+  <circle class="art-node" cx="870" cy="112" r="6"/>
+  <circle class="art-node art-node-delay" cx="1128" cy="112" r="6"/>
+  <circle class="art-node" cx="1118" cy="250" r="6"/>
+  <circle class="art-node art-node-delay" cx="880" cy="250" r="6"/>
+  <circle class="art-node" cx="1000" cy="44" r="6"/>
+  <path class="art-core" d="M1000 132 1036 153v42l-36 21-36-21v-42z"/>
+  <path class="art-core-lines" d="m980 158 20 12 20-12m-40 12v18l20 12 20-12v-18m-20 0v30"/>
+  <circle class="art-packet" r="3.5"><animateMotion dur="5s" repeatCount="indefinite" path="M870 112C908 112 918 144 958 158"/></circle>
+  <circle class="art-packet art-packet-delay" r="3.5"><animateMotion dur="5s" repeatCount="indefinite" path="M1118 250C1082 238 1065 214 1040 196"/></circle>
 </g>
 </svg>`;
 
@@ -91,19 +104,28 @@ const mobileSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="7
 .tag{fill:#E0F2FE;font:700 24px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:1px}
 .tag-box{fill:#0E1B31;stroke:url(#neon);stroke-opacity:.65;stroke-width:2;animation:tag-glow 5s ease-in-out infinite alternate}
 .frame{fill:none;stroke:#64748B;stroke-opacity:.42}
-.network{fill:none;stroke:url(#neon);stroke-opacity:.55;stroke-width:3;animation:network-pulse 6s ease-in-out infinite alternate}
-.orbit{fill:none;stroke:url(#neon);stroke-width:2;stroke-dasharray:3 10;transform-origin:320px 595px;animation:rotate 24s linear infinite}
-.node{fill:#0D1728;stroke:url(#neon);stroke-width:3;filter:url(#glow)}
-.pulse{fill:#A5F3FC;filter:url(#glow);animation:pulse 2.4s ease-in-out infinite alternate}
+.art-orbit{fill:none;stroke:url(#neon);stroke-opacity:.42;stroke-width:1.5;stroke-dasharray:3 9;transform-box:view-box;transform-origin:320px 610px;animation:rotate 32s linear infinite}
+.art-orbit-inner{stroke-opacity:.26;stroke-dasharray:2 7;animation:rotate-reverse 24s linear infinite}
+.art-route{fill:none;stroke:url(#neon);stroke-opacity:.52;stroke-width:2;stroke-dasharray:7 9;animation:route-flow 5s linear infinite}
+.art-route-delay{animation-delay:-2.5s}
+.art-node{fill:#0D1728;stroke:url(#neon);stroke-width:2.5;filter:url(#glow);transform-box:fill-box;transform-origin:center;animation:node-pulse 3s ease-in-out infinite}
+.art-node-delay{animation-delay:-1.5s}
+.art-core{fill:#0D1728;stroke:url(#neon);stroke-width:2;filter:url(#glow);transform-box:fill-box;transform-origin:center;animation:core-pulse 4s ease-in-out infinite}
+.art-core-lines{fill:none;stroke:#A5F3FC;stroke-opacity:.85;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.art-packet{fill:#A5F3FC;filter:url(#glow);animation:packet-pulse 2s ease-in-out infinite}
+.art-packet-delay{animation-delay:-1s}
 .sweep{opacity:.06;fill:url(#neon);animation:sweep 16s linear infinite}
 @keyframes grid-pulse{to{opacity:.62}}
 @keyframes halo-drift{to{transform:scale(1.05);opacity:.65}}
 @keyframes tag-glow{to{stroke-opacity:.9}}
-@keyframes network-pulse{to{stroke-opacity:.78}}
 @keyframes sweep{from{transform:translateX(-100px)}to{transform:translateX(640px)}}
 @keyframes rotate{to{transform:rotate(360deg)}}
-@keyframes pulse{from{opacity:.2;transform:scale(.7)}to{opacity:1;transform:scale(1.25)}}
-@media(prefers-reduced-motion:reduce){.grid,.halo,.tag-box,.network,.sweep,.orbit,.pulse{animation:none}}
+@keyframes rotate-reverse{to{transform:rotate(-360deg)}}
+@keyframes route-flow{to{stroke-dashoffset:-64}}
+@keyframes node-pulse{0%,100%{opacity:.58;transform:scale(.78)}50%{opacity:1;transform:scale(1.18)}}
+@keyframes core-pulse{0%,100%{transform:scale(.96)}50%{transform:scale(1.04)}}
+@keyframes packet-pulse{0%,100%{opacity:.28;transform:scale(.65)}50%{opacity:1;transform:scale(1.35)}}
+@media(prefers-reduced-motion:reduce){.grid,.halo,.tag-box,.sweep,.art-orbit,.art-orbit-inner,.art-route,.art-node,.art-core,.art-packet{animation:none}}
 </style>
 <rect class="base" width="640" height="720" rx="26"/>
 <rect class="grid" x="1" y="1" width="638" height="718" rx="25"/>
@@ -124,15 +146,19 @@ const mobileSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="7
 <text x="320" y="492" text-anchor="middle" class="tag">PYTHON</text>
 <text x="517" y="492" text-anchor="middle" class="tag">GO</text>
 <g aria-hidden="true">
-  <path class="network" d="M220 607 320 552 420 607 370 665 270 665zM220 607l150 58m-50-113 50 113m50-58-150 58"/>
-  <circle class="orbit" cx="320" cy="610" r="85"/>
-  <circle class="node" cx="220" cy="607" r="9"/>
-  <circle class="node" cx="320" cy="552" r="9"/>
-  <circle class="node" cx="420" cy="607" r="9"/>
-  <circle class="node" cx="370" cy="665" r="9"/>
-  <circle class="node" cx="270" cy="665" r="9"/>
-  <circle class="node" cx="320" cy="610" r="16"/>
-  <circle class="pulse" cx="320" cy="610" r="6"/>
+  <circle class="art-orbit" cx="320" cy="610" r="108"/>
+  <ellipse class="art-orbit art-orbit-inner" cx="320" cy="610" rx="82" ry="45"/>
+  <path class="art-route" d="M230 535C256 535 269 565 287 582M410 535C384 535 371 565 353 582M410 680C384 675 370 652 353 637M230 680C256 675 270 652 287 637M320 500C320 525 320 548 320 574"/>
+  <path class="art-route art-route-delay" d="M230 535C256 535 269 565 287 582M410 535C384 535 371 565 353 582"/>
+  <circle class="art-node" cx="230" cy="535" r="6"/>
+  <circle class="art-node art-node-delay" cx="410" cy="535" r="6"/>
+  <circle class="art-node" cx="410" cy="680" r="6"/>
+  <circle class="art-node art-node-delay" cx="230" cy="680" r="6"/>
+  <circle class="art-node" cx="320" cy="500" r="6"/>
+  <path class="art-core" d="M320 570 352 588v38l-32 19-32-19v-38z"/>
+  <path class="art-core-lines" d="m302 592 18 11 18-11m-36 11v17l18 11 18-11v-17m-18 0v28"/>
+  <circle class="art-packet" r="3.5"><animateMotion dur="5s" repeatCount="indefinite" path="M230 535C256 535 269 565 287 582"/></circle>
+  <circle class="art-packet art-packet-delay" r="3.5"><animateMotion dur="5s" repeatCount="indefinite" path="M410 680C384 675 370 652 353 637"/></circle>
 </g>
 </svg>`;
 
