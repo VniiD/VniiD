@@ -30,11 +30,15 @@
 <br>
 <p><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-code-map.svg" alt="No meu laboratório"></p>
 
+<br>
+<br>
 <p align="center">
   <img src="https://skillicons.dev/icons?i=cs,dotnet,python,go,c,java,js,r,fastapi,kafka,postgres&perline=11&theme=dark" alt="C sharp, .NET, Python, Go, C, Java, JavaScript, R, FastAPI, Kafka e PostgreSQL"><br>
   <img src="https://skillicons.dev/icons?i=mongodb,redis,docker,linux,git,rust,azure,terraform,aws,gcp&perline=10&theme=dark" alt="MongoDB, Redis, Docker, Linux, Git, Rust, Azure, Terraform, AWS e Google Cloud"><img src="https://cdn.simpleicons.org/googlegemini/8E75B2" width="48" alt="Google Gemini"><img src="https://cdn.simpleicons.org/githubcopilot/FFFFFF" width="48" alt="GitHub Copilot">
 </p>
 
+<br>
+<br>
 <img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/github-language-map.svg" alt="Mapa animado da distribuição de linguagens nos repositórios públicos">
 
 
