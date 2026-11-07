@@ -1,53 +1,125 @@
 import { mkdir, writeFile } from "node:fs/promises";
 
-const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="280" viewBox="0 0 1200 280" role="img" aria-labelledby="title description">
-<title id="title">Engenharia de Software | Backend, arquitetura e sistemas distribuídos</title>
-<desc id="description">Capa profissional em tons escuros com uma arquitetura de nós conectados e acentos neon em movimento.</desc>
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="title description">
+<title id="title">Vinícius Ferreira | Engenharia de Software e Back-end</title>
+<desc id="description">Engenheiro de Software Jr. com foco em back-end, arquitetura pragmática, segurança desde o desenho e sistemas confiáveis.</desc>
 <defs>
-  <linearGradient id="base" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#070A0F"/><stop offset="60%" stop-color="#0A1420"/><stop offset="100%" stop-color="#0A1B18"/></linearGradient>
-  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#22C55E"/><stop offset="55%" stop-color="#22D3EE"/><stop offset="100%" stop-color="#3B82F6"/></linearGradient>
-  <radialGradient id="green-halo"><stop stop-color="#22C55E" stop-opacity=".2"/><stop offset="1" stop-color="#22C55E" stop-opacity="0"/></radialGradient>
-  <radialGradient id="blue-halo"><stop stop-color="#2563EB" stop-opacity=".2"/><stop offset="1" stop-color="#2563EB" stop-opacity="0"/></radialGradient>
-  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#070B16"/><stop offset=".55" stop-color="#0B1426"/><stop offset="1" stop-color="#11102B"/></linearGradient>
+  <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#22D3EE"/><stop offset=".46" stop-color="#818CF8"/><stop offset=".76" stop-color="#E879F9"/><stop offset="1" stop-color="#34D399"/></linearGradient>
+  <linearGradient id="text" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#F8FAFC"/><stop offset=".63" stop-color="#C4B5FD"/><stop offset="1" stop-color="#67E8F9"/></linearGradient>
+  <radialGradient id="cyan-halo"><stop stop-color="#06B6D4" stop-opacity=".24"/><stop offset="1" stop-color="#06B6D4" stop-opacity="0"/></radialGradient>
+  <radialGradient id="violet-halo"><stop stop-color="#8B5CF6" stop-opacity=".25"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>
+  <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#94A3B8" stroke-opacity=".09"/></pattern>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs>
 <style>
-.base{fill:url(#base)}.halo{opacity:.9}.network{fill:none;stroke:#64748b;stroke-opacity:.2;stroke-width:1}
-.orbit{fill:none;stroke:url(#accent);stroke-opacity:.65;stroke-width:1.5;stroke-dasharray:3 10;transform-origin:1012px 140px;animation:rotate 36s linear infinite}
-.link{stroke:url(#accent);stroke-opacity:.34;stroke-width:1.5}.node{fill:#0b1520;stroke:#22d3ee;stroke-width:1.5}
-.node-main{fill:#08120f;stroke:#22c55e;stroke-width:2}.node-accent{fill:#fb7185;filter:url(#glow)}
-.pulse{fill:#a5f3fc;filter:url(#glow);animation:pulse 3s ease-in-out infinite alternate}
-.eyebrow{fill:#5eead4;font:600 12px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:4px}
-.title{fill:#f8fafc;font:700 38px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:1.5px}
-.subtitle{fill:#a7b8c8;font:500 15px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:2px}
-.tech{fill:#67e8f9;font:600 11px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:2px}
-.rule{stroke:url(#accent);stroke-width:3;stroke-linecap:round}
+.base{fill:url(#background)}.grid{fill:url(#grid)}.halo{opacity:.9}
+.eyebrow{fill:#67E8F9;font:700 18px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:4px}
+.name{fill:url(#text);font:800 57px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-1.5px}
+.role{fill:#F8FAFC;font:700 25px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.7px}
+.focus{fill:#C4B5FD;font:600 18px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:1.4px}
+.tag{fill:#E0F2FE;font:700 18px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:1px}
+.tag-box{fill:#0E1B31;stroke:url(#neon);stroke-opacity:.55;stroke-width:1}
+.frame{fill:none;stroke:#64748B;stroke-opacity:.42}
+.network{fill:none;stroke:url(#neon);stroke-opacity:.42;stroke-width:2}
+.orbit{fill:none;stroke:url(#neon);stroke-width:2;stroke-dasharray:3 10;transform-origin:1006px 166px;animation:rotate 24s linear infinite}
+.node{fill:#0D1728;stroke:url(#neon);stroke-width:3;filter:url(#glow)}
+.pulse{fill:#A5F3FC;filter:url(#glow);animation:pulse 2.4s ease-in-out infinite alternate}
+.scan{stroke:url(#neon);stroke-width:2;stroke-dasharray:24 20;animation:scan 5s linear infinite}
 @keyframes rotate{to{transform:rotate(360deg)}}
-@keyframes pulse{from{opacity:.2}to{opacity:1}}
+@keyframes pulse{from{opacity:.2;transform:scale(.7)}to{opacity:1;transform:scale(1.25)}}
+@keyframes scan{to{stroke-dashoffset:-176}}
+@media(prefers-reduced-motion:reduce){.orbit,.pulse,.scan{animation:none}}
+</style>
+<rect class="base" width="1200" height="340" rx="26"/>
+<rect class="grid" x="1" y="1" width="1198" height="338" rx="25"/>
+<ellipse class="halo" cx="358" cy="166" rx="490" ry="260" fill="url(#cyan-halo)"/>
+<ellipse class="halo" cx="1020" cy="172" rx="360" ry="255" fill="url(#violet-halo)"/>
+<rect class="frame" x=".5" y=".5" width="1199" height="339" rx="26"/>
+<text x="54" y="66" class="eyebrow">SOFTWARE ENGINEERING · BACK-END</text>
+<text x="50" y="139" class="name">VINÍCIUS FERREIRA</text>
+<text x="56" y="185" class="role">Engenheiro de Software Jr. · Back-end</text>
+<text x="56" y="222" class="focus">ARQUITETURA PRAGMÁTICA · SYSTEM DESIGN · SEGURANÇA</text>
+<rect class="tag-box" x="56" y="255" width="125" height="42" rx="13"/>
+<rect class="tag-box" x="195" y="255" width="125" height="42" rx="13"/>
+<rect class="tag-box" x="334" y="255" width="125" height="42" rx="13"/>
+<rect class="tag-box" x="473" y="255" width="138" height="42" rx="13"/>
+<text x="118" y="282" text-anchor="middle" class="tag">.NET / C#</text>
+<text x="257" y="282" text-anchor="middle" class="tag">PYTHON</text>
+<text x="396" y="282" text-anchor="middle" class="tag">GO</text>
+<text x="542" y="282" text-anchor="middle" class="tag">42 SÃO PAULO</text>
+<path class="scan" d="M0 326H1200"/>
+<g aria-hidden="true">
+  <path class="network" d="M864 112 1006 74 1117 137 1056 254 914 242 864 112M1006 74l50 180m-192-142 192 142m61-117L914 242"/>
+  <circle class="orbit" cx="1006" cy="166" r="115"/>
+  <circle class="node" cx="864" cy="112" r="9"/>
+  <circle class="node" cx="1006" cy="74" r="9"/>
+  <circle class="node" cx="1117" cy="137" r="9"/>
+  <circle class="node" cx="1056" cy="254" r="9"/>
+  <circle class="node" cx="914" cy="242" r="9"/>
+  <circle class="node" cx="1006" cy="166" r="17"/>
+  <circle class="pulse" cx="1006" cy="166" r="6"/>
+</g>
+</svg>`;
+
+const mobileSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="720" viewBox="0 0 640 720" role="img" aria-labelledby="title description">
+<title id="title">Vinícius Ferreira | Engenharia de Software e Back-end</title>
+<desc id="description">Engenheiro de Software Jr. com foco em back-end, arquitetura pragmática, System Design e segurança.</desc>
+<defs>
+  <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#070B16"/><stop offset=".55" stop-color="#0B1426"/><stop offset="1" stop-color="#11102B"/></linearGradient>
+  <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#22D3EE"/><stop offset=".46" stop-color="#818CF8"/><stop offset=".76" stop-color="#E879F9"/><stop offset="1" stop-color="#34D399"/></linearGradient>
+  <linearGradient id="text" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#F8FAFC"/><stop offset=".63" stop-color="#C4B5FD"/><stop offset="1" stop-color="#67E8F9"/></linearGradient>
+  <radialGradient id="halo"><stop stop-color="#8B5CF6" stop-opacity=".24"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>
+  <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#94A3B8" stroke-opacity=".09"/></pattern>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<style>
+.base{fill:url(#background)}.grid{fill:url(#grid)}.halo{fill:url(#halo)}
+.eyebrow{fill:#67E8F9;font:700 21px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:3px}
+.name{fill:url(#text);font:800 66px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-1px}
+.role{fill:#F8FAFC;font:700 31px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.focus{fill:#C4B5FD;font:700 22px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:1px}
+.tag{fill:#E0F2FE;font:700 24px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:1px}
+.tag-box{fill:#0E1B31;stroke:url(#neon);stroke-opacity:.65;stroke-width:2}
+.frame{fill:none;stroke:#64748B;stroke-opacity:.42}
+.network{fill:none;stroke:url(#neon);stroke-opacity:.55;stroke-width:3}
+.orbit{fill:none;stroke:url(#neon);stroke-width:2;stroke-dasharray:3 10;transform-origin:320px 595px;animation:rotate 24s linear infinite}
+.node{fill:#0D1728;stroke:url(#neon);stroke-width:3;filter:url(#glow)}
+.pulse{fill:#A5F3FC;filter:url(#glow);animation:pulse 2.4s ease-in-out infinite alternate}
+@keyframes rotate{to{transform:rotate(360deg)}}
+@keyframes pulse{from{opacity:.2;transform:scale(.7)}to{opacity:1;transform:scale(1.25)}}
 @media(prefers-reduced-motion:reduce){.orbit,.pulse{animation:none}}
 </style>
-<rect class="base" width="1200" height="280" rx="22"/>
-<ellipse class="halo" cx="265" cy="145" rx="430" ry="260" fill="url(#green-halo)"/>
-<ellipse class="halo" cx="1030" cy="150" rx="330" ry="230" fill="url(#blue-halo)"/>
-<path class="network" d="M715 0v280M1180 0v280M760 38h440M760 242h440"/>
-<text x="86" y="79" class="eyebrow">VINÍCIUS DE ALMEIDA FERREIRA</text>
-<text x="82" y="145" class="title">ENGENHARIA DE SOFTWARE</text>
-<text x="86" y="184" class="subtitle">BACKEND · ARQUITETURA · SISTEMAS DISTRIBUÍDOS</text>
-<path class="rule" d="M87 214h84"/>
-<text x="188" y="218" class="tech">.NET / C#  ·  PYTHON  ·  GO</text>
+<rect class="base" width="640" height="720" rx="26"/>
+<rect class="grid" x="1" y="1" width="638" height="718" rx="25"/>
+<ellipse class="halo" cx="320" cy="590" rx="280" ry="180"/>
+<rect class="frame" x=".5" y=".5" width="639" height="719" rx="26"/>
+<text x="38" y="62" class="eyebrow">SOFTWARE ENGINEERING</text>
+<text x="34" y="153" class="name">VINÍCIUS</text>
+<text x="34" y="230" class="name">FERREIRA</text>
+<text x="40" y="294" class="role">Engenheiro de Software Jr.</text>
+<text x="40" y="338" class="role">Back-end</text>
+<text x="40" y="393" class="focus">ARQUITETURA · SYSTEM DESIGN</text>
+<text x="40" y="423" class="focus">SEGURANÇA · CONFIABILIDADE</text>
+<rect class="tag-box" x="40" y="458" width="166" height="52" rx="15"/>
+<rect class="tag-box" x="237" y="458" width="166" height="52" rx="15"/>
+<rect class="tag-box" x="434" y="458" width="166" height="52" rx="15"/>
+<text x="123" y="492" text-anchor="middle" class="tag">.NET / C#</text>
+<text x="320" y="492" text-anchor="middle" class="tag">PYTHON</text>
+<text x="517" y="492" text-anchor="middle" class="tag">GO</text>
 <g aria-hidden="true">
-  <path class="link" d="M899 95 1012 140 1122 88M1012 140l-25 76 136-12M1012 140l118-5"/>
-  <circle class="orbit" cx="1012" cy="140" r="96"/>
-  <circle class="node" cx="899" cy="95" r="7"/>
-  <circle class="node" cx="1122" cy="88" r="7"/>
-  <circle class="node" cx="987" cy="216" r="7"/>
-  <circle class="node" cx="1123" cy="204" r="7"/>
-  <circle class="node" cx="1130" cy="135" r="5"/>
-  <circle class="node-main" cx="1012" cy="140" r="15"/>
-  <circle cx="1012" cy="140" r="5" fill="#22c55e"/>
-  <circle class="node-accent" cx="899" cy="95" r="2.5"/>
-  <circle class="pulse" cx="1122" cy="88" r="2"/>
+  <path class="network" d="M220 607 320 552 420 607 370 665 270 665zM220 607l150 58m-50-113 50 113m50-58-150 58"/>
+  <circle class="orbit" cx="320" cy="610" r="85"/>
+  <circle class="node" cx="220" cy="607" r="9"/>
+  <circle class="node" cx="320" cy="552" r="9"/>
+  <circle class="node" cx="420" cy="607" r="9"/>
+  <circle class="node" cx="370" cy="665" r="9"/>
+  <circle class="node" cx="270" cy="665" r="9"/>
+  <circle class="node" cx="320" cy="610" r="16"/>
+  <circle class="pulse" cx="320" cy="610" r="6"/>
 </g>
 </svg>`;
 
 await mkdir("dist", { recursive: true });
 await writeFile("dist/profile-cover.svg", svg);
+await writeFile("dist/profile-cover-mobile.svg", mobileSvg);

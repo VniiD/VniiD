@@ -10,11 +10,15 @@ const explosionPause = 6;
 const variants = [
   {
     file: "dist/github-contribution-grid-snake.svg",
-    gridLineColor: "#d0d7de",
+    backgroundColor: "#080D18",
+    emptyColor: "#101827",
+    gridLineColor: "#2B3A50",
   },
   {
     file: "dist/github-contribution-grid-snake-dark.svg",
-    gridLineColor: "#30363d",
+    backgroundColor: "#080D18",
+    emptyColor: "#101827",
+    gridLineColor: "#2B3A50",
   },
 ];
 
@@ -207,7 +211,7 @@ function createSnakeSvg(grid, variant) {
       );
     }
     cells.push(
-      `<rect class="${className}" x="${cell.x + canvasPadding}" y="${cell.y + canvasPadding}" width="12" height="12" rx="2" fill="${cell.hasContribution ? cell.fill : "none"}"${cell.hasContribution ? "" : ` stroke="${variant.gridLineColor}" stroke-width="1" stroke-opacity=".8"`}/>`,
+      `<rect class="${className}" x="${cell.x + canvasPadding}" y="${cell.y + canvasPadding}" width="12" height="12" rx="2" fill="${cell.hasContribution ? cell.fill : variant.emptyColor}" stroke="${cell.hasContribution ? "none" : variant.gridLineColor}" stroke-width="1" stroke-opacity=".9"/>`,
     );
     headFrames.push(`${stepPercent}%{transform:translate(${point[0]}px,${point[1]}px)}`);
 
@@ -266,6 +270,9 @@ function createSnakeSvg(grid, variant) {
       visibilityFrames.push(`${dim}%{opacity:.12}${bright}%{opacity:1}`);
     }
 
+    visibilityFrames.push(
+      `${percentAt(burst.blinkStart + 0.15)}%{opacity:1}${percentAt(burst.time - 0.08)}%{opacity:.18}`,
+    );
     const start = percentAt(burst.time);
     const hidden = percentAt(burst.time + 0.01);
     const resumeHold = percentAt(burst.time + burst.pause - 0.01);
@@ -277,6 +284,7 @@ function createSnakeSvg(grid, variant) {
   visibilityFrames.push("100%{opacity:0}");
   const explosionElements = [];
   const explosionStyles = [];
+  const coilElements = [];
   for (const [burstIndex, burst] of bursts.entries()) {
     const fragmentCount = burst.segments + 1;
     const start = percentAt(burst.time);
@@ -286,6 +294,31 @@ function createSnakeSvg(grid, variant) {
     const end = percentAt(burst.time + burst.pause * 0.68);
     const [centerX, centerY] = points[burst.index];
     const coreName = `burst-${burstIndex}-core`;
+    const coilName = `burst-${burstIndex}-coil`;
+    const coilStartTime = burst.blinkStart + 0.15;
+    const coilFinishTime = burst.time - 0.08;
+    const coilPathPoints = [];
+    for (let point = 0; point <= 96; point += 1) {
+      const progress = point / 96;
+      const angle = progress * Math.PI * 2 * 3;
+      const radius = 43 - progress * 39;
+      const x = (centerX + Math.cos(angle) * radius).toFixed(2);
+      const y = (centerY + Math.sin(angle) * radius).toFixed(2);
+      coilPathPoints.push(`${point === 0 ? "M" : "L"}${x} ${y}`);
+    }
+    explosionStyles.push(
+      `.coil-${coilName}{animation:${coilName} ${duration} linear infinite;transform-box:fill-box;transform-origin:center}@keyframes ${coilName}{0%,${percentAt(coilStartTime)}%{opacity:0;stroke-dashoffset:1000;transform:rotate(0deg) scale(1.2)}${percentAt(coilStartTime + 0.02)}%{opacity:.9;stroke-dashoffset:1000}${percentAt(coilFinishTime)}%{opacity:1;stroke-dashoffset:0;transform:rotate(720deg) scale(.8)}${start}%,100%{opacity:0;stroke-dashoffset:0;transform:rotate(900deg) scale(.2)}}`,
+    );
+    coilElements.push(
+      `<path class="coil coil-${coilName}" d="${coilPathPoints.join(" ")}" pathLength="1000"/>`,
+    );
+    const shockName = `burst-${burstIndex}-shockwave`;
+    explosionStyles.push(
+      `.shockwave-${shockName}{animation:${shockName} ${duration} ease-out infinite;transform-box:fill-box;transform-origin:center}@keyframes ${shockName}{0%,${start}%{opacity:0;transform:scale(.1)}${reveal}%{opacity:.95;transform:scale(.2)}${spread}%{opacity:.65;transform:scale(1.4)}${fade}%{opacity:.18;transform:scale(2.4)}${end}%,100%{opacity:0;transform:scale(3.2)}}`,
+    );
+    explosionElements.push(
+      `<circle class="shockwave shockwave-${shockName}" cx="${centerX}" cy="${centerY}" r="22" fill="none" stroke="${gradient.at(-1)}" stroke-width="3"/>`,
+    );
     explosionStyles.push(
       `.spark-${coreName}{animation:${coreName} ${duration} linear infinite}@keyframes ${coreName}{0%,${start}%{opacity:0;transform:translate(${centerX}px,${centerY}px) scale(.1)}${reveal}%{opacity:1;transform:translate(${centerX}px,${centerY}px) scale(.7)}${spread}%{opacity:.9;transform:translate(${centerX}px,${centerY}px) scale(2.4)}${fade}%,${end}%,100%{opacity:0;transform:translate(${centerX}px,${centerY}px) scale(3.2)}}`,
     );
@@ -318,23 +351,28 @@ function createSnakeSvg(grid, variant) {
   const lastPoint = points.at(-1);
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title description">
 <title id="title">Minhoca pixel-art que cresce com as contribuições de VniiD</title>
-<desc id="description">A minhoca percorre a grade original de contribuições. A cada quadrado ativo, a cauda cresce com um gradiente que vai do claro ao escuro e desaparece suavemente. Ao chegar a 24 quadrados no corpo, pisca três vezes e explode nesses mesmos quadrados, continuando no mesmo ponto da grade.</desc>
-<defs><filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><clipPath id="grid-clip"><rect width="${width}" height="${height}"/></clipPath></defs>
+<desc id="description">Sobre uma grade escura quadriculada, a minhoca percorre as contribuições. A cauda vai do claro ao escuro e desaparece na ponta. Ao chegar a 24 blocos, ela se enrola, pisca e explode em partículas radiais, continuando na grade.</desc>
+<defs><filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><linearGradient id="neon-coil" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#22D3EE"/><stop offset=".5" stop-color="#818CF8"/><stop offset="1" stop-color="#F472B6"/></linearGradient><pattern id="checker" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M16 0H0V16" fill="none" stroke="#64748b" stroke-opacity=".12" stroke-width=".7"/></pattern><clipPath id="grid-clip"><rect width="${width}" height="${height}"/></clipPath></defs>
 <style>
 .grid-cell{shape-rendering:crispEdges}
 .worm{animation:worm-visibility ${duration} linear infinite}
 .tail-segment{filter:url(#glow);shape-rendering:crispEdges}
 .snake-head{transform:translate(${firstPoint[0]}px,${firstPoint[1]}px);filter:url(#glow);animation:crawl ${duration} steps(1,end) infinite}
 .spark{filter:url(#glow);shape-rendering:crispEdges}
+.coil{fill:none;stroke:url(#neon-coil);stroke-width:6;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:url(#glow)}
+.shockwave{filter:url(#glow)}
 @keyframes crawl{${headFrames.join("")}}
 @keyframes worm-visibility{${visibilityFrames.join("")}}
 ${eatenCellStyles.join("")}
 ${segmentStyles.join("")}
 ${explosionStyles.join("")}
-@media(prefers-reduced-motion:reduce){.worm,.tail-segment,.snake-head,.spark,.grid-cell{animation:none}}
+@media(prefers-reduced-motion:reduce){.worm,.tail-segment,.snake-head,.grid-cell{animation:none}.coil,.shockwave,.spark{display:none}}
 </style>
+<rect width="${width}" height="${height}" fill="${variant.backgroundColor}"/>
+<rect width="${width}" height="${height}" fill="url(#checker)"/>
 ${cells.join("")}
 <g class="worm">${segmentElements.join("")}<g class="snake-head"><rect x="-6" y="-6" width="12" height="12" rx="2" fill="${gradient.at(-1)}" stroke="${gradient.at(-2)}" stroke-width="1.5"/></g></g>
+<g class="coils" aria-hidden="true" clip-path="url(#grid-clip)">${coilElements.join("")}</g>
 <g class="explosions" aria-hidden="true" clip-path="url(#grid-clip)">${explosionElements.join("")}</g>
 <desc>Grade percorrida da posição ${firstPoint[0]},${firstPoint[1]} até ${lastPoint[0]},${lastPoint[1]}.</desc>
 </svg>`;

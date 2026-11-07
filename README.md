@@ -1,70 +1,48 @@
-<img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/profile-cover.svg" alt="Engenharia de Software, back-end, arquitetura e sistemas distribuídos">
+<picture>
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/VniiD/VniiD/output/profile-cover-mobile.svg">
+  <img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/profile-cover.svg" alt="Vinícius Ferreira, Engenheiro de Software Jr. com foco em back-end, arquitetura pragmática, System Design e segurança">
+</picture>
 
-## Vinícius Ferreira
+## Engenharia de software começa antes do código
 
-**Engenheiro de Software Jr. · Back-end**<br>
-**.NET / C# · Python · Go · Cadete 42 São Paulo**
+Transformo problemas de negócio em serviços back-end confiáveis. Primeiro entendo as regras e os riscos. Depois defino limites, contratos e arquitetura. A tecnologia vem para resolver o problema, não para criar outro.
 
-Mais de 10 anos em operações industriais de alta exigência ensinaram-me a conferir dados, antecipar casos de borda e procurar a causa raiz. Hoje levo esse rigor para software: **entender o negócio, desenhar antes de codificar e entregar sistemas confiáveis**.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg" width="32" alt=""> **Arquitetura pragmática:** monólito modular, eventos ou serviços independentes, conforme latência, consistência, escala e custo. Padrões servem ao problema, não o contrário.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-lab.svg" width="32" alt=""> **Fundamentos de sistemas:** memória, CPU, rede, I/O e concorrência ajudam a explicar o comportamento do software, não só a sintaxe.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-security.svg" width="32" alt=""> **Segurança desde o desenho:** confidencialidade, integridade, disponibilidade, confiabilidade, rastreabilidade e não repúdio orientam requisitos e validações. ISO/IEC 27001 é referência, não alegação de certificação. Segredos e chaves não entram no código.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-ai.svg" width="32" alt=""> **IA sob revisão:** acelera tarefas; decisões de arquitetura, segurança e validação continuam humanas.
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg" width="36" alt=""> <strong>Arquitetura pragmática</strong><br>
-      A solução depende do contexto: latência, consistência, escala, operação e custo — não do padrão da moda.
-    </td>
-    <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-lab.svg" width="36" alt=""> <strong>Do silício ao negócio</strong><br>
-      Código é memória, CPU, rede, dados e regras de negócio. Fundamentos ajudam a decidir com clareza.
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-articles.svg" width="36" alt=""> <strong>Engenharia antes da IDE</strong><br>
-      Requisitos, modelos e contratos explícitos reduzem ambiguidade e complexidade acidental.
-    </td>
-    <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-education.svg" width="36" alt=""> <strong>IA com responsabilidade</strong><br>
-      IA acelera tarefas; arquitetura, segurança e validação continuam sob responsabilidade de quem constrói.
-    </td>
-  </tr>
-</table>
+**Objetivo:** estágio ou trainee em Engenharia de Software e Tecnologia em grandes bancos e fintechs, com foco em back-end e System Design, do requisito à operação.
 
-<h3><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-activity.svg" width="38" alt=""> Atividade</h3>
+### [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-activity.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-activity.svg) [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-code-map.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-code-map.svg) Atividade · Mapa do código
 
-<img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-contribution-grid-snake.svg" alt="Animação neon sobre a grade original de contribuições do GitHub">
+<img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-contribution-grid-snake.svg" alt="Minhoca neon enrola e explode em partículas radiais sobre uma grade escura quadriculada de contribuições">
 
-<h3><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-articles.svg" width="38" alt=""> Artigos</h3>
+<img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-language-map.svg" alt="Mapa animado da distribuição de linguagens nos repositórios públicos">
 
-**Arquitetura · Governança · Sistemas distribuídos · Segurança**
+<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-articles.svg" width="48" alt=""> Artigos<br><small>Arquitetura · Governança · Sistemas distribuídos · Segurança</small></h2>
 
-| 00 | 01 | 02 |
-|:---:|:---:|:---:|
-| [**Engenharia sem atalhos**](https://www.linkedin.com/pulse/engenharia-sem-atalhos-do-ch%C3%A3o-de-f%C3%A1brica-%C3%A0-era-da-ia-ferreira-cjq7f/)<br>Do chão de fábrica à era da IA | [**Arquitetura e modelagem**](https://www.linkedin.com/pulse/arquitetura-modelagem-e-governan%C3%A7a-na-era-da-ia-vinicius-ferreira-uzpbf/)<br>Governança na era da IA | [**Security by Design**](https://www.linkedin.com/pulse/security-design-blindagem-e-frameworks-corporativos-na-ferreira-3yjrf/)<br>Blindagem e frameworks corporativos |
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-articles.svg" width="32" alt=""> **00 · [Engenharia sem atalhos](https://www.linkedin.com/pulse/engenharia-sem-atalhos-do-ch%C3%A3o-de-f%C3%A1brica-%C3%A0-era-da-ia-ferreira-cjq7f/)**<br>
+  Fundamentos de computação, engenharia pragmática e responsabilidade na era da IA.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-code-map.svg" width="32" alt=""> **01 · [Arquitetura, modelagem e governança](https://www.linkedin.com/pulse/arquitetura-modelagem-e-governan%C3%A7a-na-era-da-ia-vinicius-ferreira-uzpbf/)**<br>
+  Requisitos, modelo C4, trade-offs e contratos antes da implementação.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg" width="32" alt=""> **02 · [Security by Design](https://www.linkedin.com/pulse/security-design-blindagem-e-frameworks-corporativos-na-ferreira-3yjrf/)**<br>
+  Segurança no ciclo de desenvolvimento, na arquitetura e na cadeia de dependências.
 
-<h3><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-lab.svg" width="38" alt=""> No meu laboratório</h3>
+### [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-lab.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-lab.svg) No meu laboratório
 
-<img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/lab-banner.svg" alt="Animação neon de circuitos e ferramentas de engenharia">
+<p align="center">
+  <strong>BACK-END · DADOS · MENSAGERIA · INFRAESTRUTURA</strong><br><br>
+  <img src="https://skillicons.dev/icons?i=cs,dotnet,python,go,c&perline=5&theme=dark" alt="C sharp, .NET, Python, Go e C"><br><br>
+  <img src="https://skillicons.dev/icons?i=fastapi,kafka,postgres,mongodb,redis,docker,linux,git&perline=4&theme=dark" alt="FastAPI, Kafka, PostgreSQL, MongoDB, Redis, Docker, Linux e Git"><br><br>
+  <strong>EM DESENVOLVIMENTO</strong><br><br>
+  <img src="https://skillicons.dev/icons?i=rust,azure,terraform&perline=3&theme=dark" alt="Rust, Azure e Terraform">
+  <br><br>
+  <strong>OUTROS FUNDAMENTOS E PLATAFORMAS</strong><br><br>
+  <img src="https://skillicons.dev/icons?i=java,js,r,aws,gcp&perline=5&theme=dark" alt="Java, JavaScript, R, AWS e Google Cloud">
+</p>
 
-**Linguagens**
-
-<img src="https://skillicons.dev/icons?i=cs,dotnet,python,go,c&perline=5&theme=dark" alt="C sharp, .NET, Python, Go e C">
-
-**Back-end, dados e infraestrutura**
-
-<img src="https://skillicons.dev/icons?i=fastapi,kafka,postgres,mongodb,redis,docker,linux,git&perline=4&theme=dark" alt="FastAPI, Kafka, PostgreSQL, MongoDB, Redis, Docker, Linux e Git">
-
-**Em desenvolvimento**
-
-<img src="https://skillicons.dev/icons?i=rust,azure,terraform&perline=3&theme=dark" alt="Rust, Azure e Terraform">
-
-<h3><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-code-map.svg" width="38" alt=""> Mapa do código</h3>
-
-<img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-language-map.svg" alt="Mapa animado das linguagens e dos principais projetos nos repositórios públicos">
-
-<h3><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-projects.svg" width="38" alt=""> Projetos</h3>
-
-<img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/projects-banner.svg" alt="Animação neon de módulos e projetos conectados">
+### [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-projects.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-projects.svg) Projetos
 
 ### <a href="https://github.com/VniiD/SplitPay">SplitPay POS</a>
 
@@ -104,75 +82,24 @@ Ledger de partidas dobradas com gRPC/mTLS, PostgreSQL, Kafka e SDK Go. O ledger 
 
 <img src="https://skillicons.dev/icons?i=go,postgres,kafka&theme=dark" alt="Go, PostgreSQL e Kafka">
 
-<h3><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg" width="38" alt=""> Fundamentos · 42 São Paulo</h3>
+### [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg) Fundamentos · 42 São Paulo
 
-<img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/foundations-banner.svg" alt="Animação neon de um chip e fundamentos de computação">
+- **[Push_swap](https://github.com/VniiD/Push_Swap)** · 660 operações para 100 números, 4.930 para 500.
+- **[Libft](https://github.com/VniiD/Libft)** · reimplementação de funções da libc em C.
+- **[ft_printf](https://github.com/VniiD/Printf)** · formatação variádica e baixo nível.
+- **[get_next_line](https://github.com/VniiD/Get_Next_Line)** · leitura incremental e gestão de memória.
+- [`.NET Fundamentos`](https://github.com/VniiD/.Net_Fundamentos) · [Python OOP](https://github.com/VniiD/Python42SP)
 
-<table>
-  <tr>
-    <td width="50%" valign="top"><h3><a href="https://github.com/VniiD/Push_Swap">Push_swap</a></h3>660 operações / 100 números · 4.930 / 500</td>
-    <td width="50%" valign="top"><h3><a href="https://github.com/VniiD/Libft">Libft</a></h3>Biblioteca padrão reimplementada em C</td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top"><h3><a href="https://github.com/VniiD/Printf">ft_printf</a></h3>Formatação variádica e baixo nível</td>
-    <td width="50%" valign="top"><h3><a href="https://github.com/VniiD/Get_Next_Line">get_next_line</a></h3>Leitura incremental e gestão de memória</td>
-  </tr>
-</table>
+<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-education.svg" width="48" alt=""> Formação</h2>
 
-<a href="https://github.com/VniiD/.Net_Fundamentos">.NET Fundamentos</a> ·
-<a href="https://github.com/VniiD/Python42SP">Python OOP</a>
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-degree.svg" width="32" alt=""> **Engenharia de Software, UniCesumar** · 6º semestre, cursando. Conclusão prevista para dezembro de 2027.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-degree.svg" width="32" alt=""> **Análise e Desenvolvimento de Sistemas, UniCesumar** · concluído em 2026.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-degree.svg" width="32" alt=""> **Gestão da Tecnologia da Informação, UniCesumar** · concluída em 2026, simultaneamente a ADS.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-42.svg" width="32" alt=""> **42 São Paulo, formação de desenvolvedor** · Cadete no Common Core V2, Piscine aprovada e Missão Python concluída a 100%.
 
-<h3><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-education.svg" width="38" alt=""> Formação</h3>
+<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-courses.svg" width="48" alt=""> Cursos</h2>
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-degree.svg" width="40" alt="Ícone de graduação"><br>
-      <strong>UniCesumar</strong><br>
-      Engenharia de Software · 7º semestre · dez/2027<br>
-      ADS + Gestão de TI · concluídas em 2026
-    </td>
-    <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-42.svg" width="40" alt="Ícone 42 São Paulo"><br>
-      <strong>42 São Paulo · Common Core V2</strong><br>
-      Cadete · Piscine aprovada<br>
-      Missão Python · 100%
-    </td>
-  </tr>
-</table>
-
-<h3><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-courses.svg" width="38" alt=""> Cursos e trilhas</h3>
-
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-cisco.svg" width="36" alt="Ícone Cisco"> <strong>Cisco</strong><br>
-      Cibersegurança · Redes · Python Essentials
-    </td>
-    <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-santander.svg" width="36" alt="Ícone Santander"> <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-dio.svg" width="36" alt="Ícone DIO"> <strong>Santander · DIO</strong><br>
-      Concluídos: DevOps na nuvem · Dados com Python<br>
-      Em andamento: n8n · Rust/IA · .NET/Azure · Go
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-google.svg" width="36" alt="Ícone Google"> <strong>Google · Coursera</strong><br>
-      Certificado Profissional de Cibersegurança · 7/9 módulos
-    </td>
-    <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-enap.svg" width="36" alt="Ícone ENAP"> <strong>ENAP</strong><br>
-      Análise de Dados em R
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-ibsec.svg" width="36" alt="Ícone IBSEC"> <strong>IBSEC</strong><br>
-      Introduction to Cybersecurity · Fundamentos em Informática
-    </td>
-    <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-isc2.svg" width="36" alt="Ícone ISC2"> <strong>ISC2</strong><br>
-      Certified in Cybersecurity · curso preparatório
-    </td>
-  </tr>
-</table>
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-cisco.svg" width="32" alt=""> **Cisco** · Introdução à Cibersegurança, Networking Basics e Python Essentials 1.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-dio.svg" width="32" alt=""> **DIO** · Data Analytics com Python. Cursando Developer .NET/C#, APIs e Azure.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-google.svg" width="32" alt=""> **Google / Coursera** · Google Cybersecurity Certificate, 7 de 9 módulos.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-enap.svg" width="32" alt=""> **ENAP** · Análise de Dados em R.
