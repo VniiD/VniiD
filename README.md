@@ -2,7 +2,7 @@
   <source media="(max-width: 600px)" srcset="https://github.com/VniiD/VniiD/raw/refs/heads/output/profile-cover-mobile.svg">
   <img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/profile-cover.svg" alt="Vinícius Ferreira, Engenheiro de Software com foco em back-end, arquitetura pragmática, System Design e segurança">
 </picture>
-
+<br>
 <br>
 "Não entre em pânico."(ADAMS)
 <br>
@@ -48,11 +48,10 @@
 <br>
 <a href="https://vniid.github.io/VniiD/"><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/github-language-map.svg" alt="Mapa da distribuição de linguagens; clique para explorar e abrir os projetos"></a>
 
-
+<br>
 <br>
 <br>
 <p><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-projects.svg" alt="Projetos"></p>
-<br>
 <br>
 
 <p align="center">
