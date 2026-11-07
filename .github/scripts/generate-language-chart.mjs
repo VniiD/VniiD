@@ -169,8 +169,9 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="${heig
 <desc id="description">Gráfico animado com a distribuição das linguagens nos repositórios públicos.</desc>
 <defs>
   <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#08111f"/><stop offset="1" stop-color="#101d2d"/></linearGradient>
-  <radialGradient id="ambient-cyan"><stop stop-color="#22D3EE" stop-opacity=".16"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
-  <radialGradient id="ambient-violet"><stop stop-color="#C084FC" stop-opacity=".13"/><stop offset="1" stop-color="#C084FC" stop-opacity="0"/></radialGradient>
+  <linearGradient id="ambient-sheen" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#22D3EE" stop-opacity="0"/><stop offset=".48" stop-color="#22D3EE" stop-opacity=".28"/><stop offset=".68" stop-color="#C084FC" stop-opacity=".22"/><stop offset="1" stop-color="#C084FC" stop-opacity="0"/></linearGradient>
+  <radialGradient id="ambient-cyan"><stop stop-color="#22D3EE" stop-opacity=".28"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
+  <radialGradient id="ambient-violet"><stop stop-color="#C084FC" stop-opacity=".24"/><stop offset="1" stop-color="#C084FC" stop-opacity="0"/></radialGradient>
   <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#64748b" stroke-opacity=".1"/></pattern>
   <clipPath id="background-clip"><rect width="1200" height="${height}" rx="22"/></clipPath>
   <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
@@ -183,8 +184,9 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="${heig
 .center-title{fill:#f8fafc;font-size:23px;font-weight:800}
 .center-detail{fill:#a5f3fc;font-size:15px}
 .frame{fill:none;stroke:#334155;stroke-opacity:.8}
-.ambient-glow{transform-box:fill-box;transform-origin:center;opacity:.36;animation:ambient-drift 26s ease-in-out infinite alternate}
-.ambient-violet{animation-delay:-13s}
+.ambient-glow{transform-box:fill-box;transform-origin:center;opacity:.65;animation:ambient-drift 18s ease-in-out infinite alternate}
+.ambient-violet{animation-delay:-9s}
+.ambient-sheen{opacity:0;animation:ambient-sweep 20s ease-in-out infinite}
 .slice{transform:rotate(-90deg);transform-origin:174px ${centerY}px;stroke-dasharray:0 ${circumference.toFixed(2)};animation:draw 1.2s cubic-bezier(.2,.8,.2,1) var(--delay) both,pulse 3.2s ease-in-out var(--pulse-delay) infinite;filter:url(#glow)}
 .language-row{opacity:0;animation:enter .45s ease-out var(--delay) forwards}
 .slice-link,.language-link{cursor:pointer}
@@ -196,14 +198,16 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="${heig
 @keyframes enter{to{opacity:1}}
 @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes pulse{0%,100%{stroke-opacity:.68}50%{stroke-opacity:1}}
-@keyframes ambient-drift{from{transform:translateX(-28px);opacity:.25}to{transform:translateX(28px);opacity:.48}}
-@media(prefers-reduced-motion:reduce){.ambient-glow,.slice,.language-row,.bar{animation:none;opacity:1}.ambient-glow{opacity:.36}.slice{stroke-dasharray:var(--dash)}}
+@keyframes ambient-drift{from{transform:translateX(-110px);opacity:.34}to{transform:translateX(110px);opacity:.68}}
+@keyframes ambient-sweep{0%{transform:translateX(-520px);opacity:0}15%{opacity:.7}82%{opacity:.7}100%{transform:translateX(1720px);opacity:0}}
+@media(prefers-reduced-motion:reduce){.ambient-glow,.ambient-sheen,.slice,.language-row,.bar{animation:none;opacity:1}.ambient-glow{opacity:.5}.ambient-sheen{opacity:0}.slice{stroke-dasharray:var(--dash)}}
 </style>
 <g clip-path="url(#background-clip)">
   <rect width="1200" height="${height}" rx="22" fill="url(#background)"/>
   <ellipse class="ambient-glow ambient-cyan" cx="275" cy="${centerY - 55}" rx="390" ry="260" fill="url(#ambient-cyan)"/>
   <ellipse class="ambient-glow ambient-violet" cx="930" cy="${centerY + 65}" rx="360" ry="250" fill="url(#ambient-violet)"/>
   <rect x="1" y="1" width="1198" height="${height - 2}" rx="21" fill="url(#grid)"/>
+  <rect class="ambient-sheen" x="-520" y="0" width="520" height="${height}" fill="url(#ambient-sheen)"/>
 </g>
 <rect class="frame" x=".5" y=".5" width="1199" height="${height - 1}" rx="22"/>
 <text x="56" y="62" class="heading">MAPA DO CÓDIGO</text>

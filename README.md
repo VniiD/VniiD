@@ -46,7 +46,7 @@
 
 <br>
 <br>
-<a href="https://vniid.github.io/VniiD/"><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/github-language-map.svg?v=ambient-20261107" alt="Mapa animado da distribuição de linguagens; clique para explorar e abrir os projetos"></a>
+<a href="https://vniid.github.io/VniiD/"><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/github-language-map.svg?v=ambient-20261107c" alt="Mapa animado da distribuição de linguagens; clique para explorar e abrir os projetos"></a>
 
 <br>
 <br>
