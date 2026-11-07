@@ -14,7 +14,7 @@ Transformo problemas de negócio em serviços back-end confiáveis. Primeiro ent
 
 **Objetivo:** estágio ou trainee em Engenharia de Software e Tecnologia em grandes bancos e fintechs, com foco em back-end e System Design, do requisito à operação.
 
-<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-articles.svg" width="48" alt=""> Artigos<br><small>Arquitetura · Governança · Sistemas distribuídos · Segurança</small></h2>
+<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-articles.svg" width="48" alt=""> Artigos</h2>
 
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-articles.svg" width="32" alt=""> **00 · [Engenharia sem atalhos](https://www.linkedin.com/pulse/engenharia-sem-atalhos-do-ch%C3%A3o-de-f%C3%A1brica-%C3%A0-era-da-ia-ferreira-cjq7f/)**<br>
   Fundamentos de computação, engenharia pragmática e responsabilidade na era da IA.
