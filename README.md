@@ -79,6 +79,7 @@
 
 
 <big><h2>Cursos</h2></big>
+<br>
 
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-cisco.svg" width="32" alt=""> **Cisco** — Introdução à Cibersegurança, Networking Basics e Python Essentials 1.
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-dio.svg" width="32" alt=""> **DIO** — Data Analytics com Python. Cursando Developer .NET/C#, APIs e Azure.
