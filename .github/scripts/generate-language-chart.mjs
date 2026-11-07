@@ -80,17 +80,17 @@ if (remainder > 0) {
 const totalBytes = top.reduce((sum, [, bytes]) => sum + bytes, 0);
 const otherLanguageNames = new Set(otherLanguages.map(([language]) => language));
 const colors = {
-  C: "#A8B9CC",
-  "C#": "#9B4F96",
-  Go: "#00ADD8",
-  Java: "#F89820",
-  JavaScript: "#F1E05A",
-  Python: "#3572A5",
-  Rust: "#DEA584",
-  TypeScript: "#3178C6",
-  Outros: "#94A3B8",
+  C: "#A3E635",
+  "C#": "#C084FC",
+  Go: "#22D3EE",
+  Java: "#FB923C",
+  JavaScript: "#FACC15",
+  Python: "#38BDF8",
+  Rust: "#F97316",
+  TypeScript: "#F472B6",
+  Outros: "#E879F9",
 };
-const palette = ["#22D3EE", "#818CF8", "#F472B6", "#34D399", "#FBBF24", "#94A3B8"];
+const palette = ["#22D3EE", "#A3E635", "#F472B6", "#FB923C", "#818CF8", "#FACC15"];
 const chartRadius = 106;
 const circumference = 2 * Math.PI * chartRadius;
 let offset = 0;
@@ -161,7 +161,7 @@ const legend = slices.map((slice, index) => {
 </g></a>`;
 }).join("");
 const rings = slices.map((slice, index) =>
-  `<a class="slice-link" href="${interactiveMapUrl}#language=${encodeURIComponent(slice.language)}" target="_top"><circle class="slice slice-${index}" cx="174" cy="${centerY}" r="${chartRadius}" fill="none" stroke="${slice.color}" stroke-width="32" stroke-dasharray="${slice.dash}" stroke-dashoffset="-${slice.offset}" pathLength="${circumference.toFixed(2)}" style="--dash:${slice.dash};--delay:${index * 100}ms"><title>${escapeXml(`${slice.language} · ${(slice.ratio * 100).toFixed(1)}% · Projetos: ${slice.projects.map(({ name }) => name).join(", ")}`)}</title></circle></a>`,
+  `<a class="slice-link" href="${interactiveMapUrl}#language=${encodeURIComponent(slice.language)}" target="_top"><circle class="slice slice-${index}" cx="174" cy="${centerY}" r="${chartRadius}" fill="none" stroke="${slice.color}" stroke-width="32" stroke-dasharray="${slice.dash}" stroke-dashoffset="-${slice.offset}" pathLength="${circumference.toFixed(2)}" style="--dash:${slice.dash};--delay:${index * 100}ms;--pulse-delay:${1800 + index * 180}ms;color:${slice.color}"><title>${escapeXml(`${slice.language} · ${(slice.ratio * 100).toFixed(1)}% · Projetos: ${slice.projects.map(({ name }) => name).join(", ")}`)}</title></circle></a>`,
 ).join("");
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="${height}" viewBox="0 0 1200 ${height}" role="img" aria-labelledby="title description">
@@ -180,7 +180,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="${heig
 .center-title{fill:#f8fafc;font-size:23px;font-weight:800}
 .center-detail{fill:#a5f3fc;font-size:15px}
 .frame{fill:none;stroke:#334155;stroke-opacity:.8}
-.slice{transform:rotate(-90deg);transform-origin:174px ${centerY}px;stroke-dasharray:0 ${circumference.toFixed(2)};animation:draw 1.2s cubic-bezier(.2,.8,.2,1) var(--delay) both;filter:url(#glow)}
+.slice{transform:rotate(-90deg);transform-origin:174px ${centerY}px;stroke-dasharray:0 ${circumference.toFixed(2)};animation:draw 1.2s cubic-bezier(.2,.8,.2,1) var(--delay) both,pulse 3.2s ease-in-out var(--pulse-delay) infinite;filter:url(#glow)}
 .language-row{opacity:0;animation:enter .45s ease-out var(--delay) forwards}
 .slice-link,.language-link{cursor:pointer}
 .slice-link:hover .slice,.slice-link:focus .slice{stroke-width:40;filter:url(#glow)}
@@ -190,7 +190,8 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="${heig
 @keyframes draw{to{stroke-dasharray:var(--dash)}}
 @keyframes enter{to{opacity:1}}
 @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-@media(prefers-reduced-motion:reduce){.slice,.language-row,.bar{animation:none;opacity:1}}
+@keyframes pulse{0%,100%{stroke-opacity:.68}50%{stroke-opacity:1}}
+@media(prefers-reduced-motion:reduce){.slice,.language-row,.bar{animation:none;opacity:1}.slice{stroke-dasharray:var(--dash)}}
 </style>
 <rect width="1200" height="${height}" rx="22" fill="url(#background)"/>
 <rect x="1" y="1" width="1198" height="${height - 2}" rx="21" fill="url(#grid)"/>

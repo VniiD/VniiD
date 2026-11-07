@@ -95,9 +95,22 @@
       fill: none;
       stroke-linecap: butt;
       cursor: pointer;
+      filter: drop-shadow(0 0 3px currentColor);
       transition: stroke-width 160ms ease, filter 160ms ease, opacity 160ms ease;
       transform: rotate(-90deg);
       transform-origin: 130px 130px;
+      animation: ring-pulse 3.2s ease-in-out var(--pulse-delay) infinite;
+    }
+
+    @keyframes ring-pulse {
+      0%,
+      100% {
+        stroke-opacity: .68;
+      }
+
+      50% {
+        stroke-opacity: 1;
+      }
     }
 
     .ring:hover,
@@ -271,6 +284,10 @@
         scroll-behavior: auto !important;
         transition-duration: .01ms !important;
       }
+
+      .ring {
+        animation: none;
+      }
     }
   </style>
 </head>
@@ -393,6 +410,7 @@
         );
         slice.dataset.language = language.language;
         slice.style.color = language.color;
+        slice.style.setProperty("--pulse-delay", `${index * 180}ms`);
         slices.push(slice);
         document.querySelector("#slices").append(slice);
 
