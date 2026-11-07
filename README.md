@@ -89,6 +89,5 @@
 <br>
 <br>
 <p><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-activity.svg" alt="Atividade"></p>
-<br>
 
 <img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/github-contribution-grid-snake.svg" alt="Minhoca neon enrola e explode em partículas radiais sobre uma grade escura quadriculada de contribuições">
