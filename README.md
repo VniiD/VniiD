@@ -44,11 +44,13 @@ Transformo problemas de negócio em serviços back-end confiáveis. Primeiro ent
 
 <h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg" width="48" alt=""> Fundamentos</h2>
 
-- **[Push_swap](https://github.com/VniiD/Push_Swap)** — 660 operações para 100 números, 4.930 para 500.
-- **[Libft](https://github.com/VniiD/Libft)** — reimplementação de funções da libc em C.
-- **[ft_printf](https://github.com/VniiD/Printf)** — formatação variádica e baixo nível.
-- **[get_next_line](https://github.com/VniiD/Get_Next_Line)** — leitura incremental e gestão de memória.
-- [`.NET Fundamentos`](https://github.com/VniiD/.Net_Fundamentos) — [Python OOP](https://github.com/VniiD/Python42SP)
+<p align="center">
+  <a href="https://github.com/VniiD/Push_Swap"><img width="49%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/project-42-foundations.svg" alt="42 São Paulo — Push_swap, Libft, ft_printf, get_next_line e Python OOP."></a>
+</p>
+
+### [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg) Outros
+
+- [`.NET Fundamentos`](https://github.com/VniiD/.Net_Fundamentos)
 
 <h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-education.svg" width="48" alt=""> Formação</h2>
 

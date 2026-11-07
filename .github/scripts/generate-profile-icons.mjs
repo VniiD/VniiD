@@ -84,6 +84,17 @@ const dividerSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height=
 
 const projectTiles = [
   {
+    file: "project-42-foundations.svg",
+    title: "42 São Paulo",
+    description: [
+      "Push_swap · Libft · ft_printf",
+      "get_next_line · Python OOP",
+      "Algoritmos, C e fundamentos de programação.",
+    ],
+    stack: "C · Python · Algoritmos",
+    accent: "#F472B6",
+  },
+  {
     file: "project-splitpay.svg",
     title: "SplitPay POS",
     description: [
