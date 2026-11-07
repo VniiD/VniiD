@@ -26,9 +26,8 @@ Transformo problemas de negócio em serviços back-end confiáveis. Primeiro ent
 <h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-code-map.svg" width="48" alt=""> No meu laboratório</h2>
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=cs,dotnet,python,go,c,java,js,r&perline=8&theme=dark" alt="C sharp, .NET, Python, Go, C, Java, JavaScript e R"><br>
-  <img src="https://skillicons.dev/icons?i=fastapi,kafka,postgres,mongodb,redis,docker,linux,git&perline=8&theme=dark" alt="FastAPI, Kafka, PostgreSQL, MongoDB, Redis, Docker, Linux e Git"><br>
-  <img src="https://skillicons.dev/icons?i=rust,azure,terraform,aws,gcp&perline=5&theme=dark" alt="Rust, Azure, Terraform, AWS e Google Cloud"><img src="https://cdn.simpleicons.org/googlegemini/8E75B2" width="48" alt="Google Gemini"><img src="https://cdn.simpleicons.org/githubcopilot/FFFFFF" width="48" alt="GitHub Copilot">
+  <img src="https://skillicons.dev/icons?i=cs,dotnet,python,go,c,java,js,r,fastapi,kafka,postgres&perline=11&theme=dark" alt="C sharp, .NET, Python, Go, C, Java, JavaScript, R, FastAPI, Kafka e PostgreSQL"><br>
+  <img src="https://skillicons.dev/icons?i=mongodb,redis,docker,linux,git,rust,azure,terraform,aws,gcp&perline=10&theme=dark" alt="MongoDB, Redis, Docker, Linux, Git, Rust, Azure, Terraform, AWS e Google Cloud"><img src="https://cdn.simpleicons.org/googlegemini/8E75B2" width="48" alt="Google Gemini"><img src="https://cdn.simpleicons.org/githubcopilot/FFFFFF" width="48" alt="GitHub Copilot">
 </p>
 
 <img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/github-language-map.svg" alt="Mapa animado da distribuição de linguagens nos repositórios públicos">
