@@ -33,51 +33,46 @@ Transformo problemas de negócio em serviços back-end confiáveis. Primeiro ent
 
 <img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/github-language-map.svg" alt="Mapa animado da distribuição de linguagens nos repositórios públicos">
 
-<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-activity.svg" width="48" alt=""> Atividade</h2>
-
-<img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-contribution-grid-snake.svg" alt="Minhoca neon enrola e explode em partículas radiais sobre uma grade escura quadriculada de contribuições">
-
 <h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-projects.svg" width="48" alt=""> Projetos</h2>
 
-### <a href="https://github.com/VniiD/SplitPay">SplitPay POS</a>
+<table>
+  <tbody>
+    <tr>
+      <td valign="top" width="50%">
+        <h3><a href="https://github.com/VniiD/SplitPay">SplitPay POS</a></h3>
+        <p>Pagamentos com Pix e cartões, split, Outbox/Kafka e ledger. <strong>85 testes automatizados.</strong></p>
+        <img src="https://skillicons.dev/icons?i=cs,dotnet,kafka,mongodb,docker&theme=dark" alt="C sharp, .NET, Kafka, MongoDB e Docker">
+      </td>
+      <td valign="top" width="50%">
+        <h3><a href="https://github.com/VniiD/split-payment-platform">Split Payment Platform</a></h3>
+        <p>Pagamentos orientados a eventos, idempotência e transactional outbox.</p>
+        <img src="https://skillicons.dev/icons?i=dotnet,kafka,mongodb,docker&theme=dark" alt=".NET, Kafka, MongoDB e Docker">
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" width="50%">
+        <h3><a href="https://github.com/VniiD/Hackathon_Marlabs_XP_G7">Plataforma XP G7</a></h3>
+        <p>Liderei o back-end de um copiloto financeiro com function calling e transcrição por voz. Destaque de inovação no hackathon.</p>
+        <img src="https://skillicons.dev/icons?i=python,fastapi,postgres,redis,docker&theme=dark" alt="Python, FastAPI, PostgreSQL, Redis e Docker">
+      </td>
+      <td valign="top" width="50%">
+        <h3><a href="https://github.com/VniiD/A_maze_ing">A-Maze-ing</a></h3>
+        <p>Labirintos com Backtracker, Prim e Kruskal; caminho mínimo com BFS e tipagem estrita.</p>
+        <img src="https://skillicons.dev/icons?i=python&theme=dark" alt="Python">
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" width="50%">
+        <h3><a href="https://github.com/VniiD/PIXCore">PixCore</a></h3>
+        <p>Ledger de partidas dobradas com gRPC/mTLS, PostgreSQL, Kafka e SDK Go. O ledger está implementado; os próximos serviços estão no roadmap.</p>
+        <img src="https://skillicons.dev/icons?i=go,postgres,kafka&theme=dark" alt="Go, PostgreSQL e Kafka">
+      </td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 
-Pagamentos com Pix e cartões, split, Outbox/Kafka e ledger. **85 testes automatizados.**
-
-<img src="https://skillicons.dev/icons?i=cs,dotnet,kafka,mongodb,docker&theme=dark" alt="C sharp, .NET, Kafka, MongoDB e Docker">
-
-<img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/neon-divider.svg" alt="">
-
-### <a href="https://github.com/VniiD/split-payment-platform">Split Payment Platform</a>
-
-Pagamentos orientados a eventos, idempotência e transactional outbox.
-
-<img src="https://skillicons.dev/icons?i=dotnet,kafka,mongodb,docker&theme=dark" alt=".NET, Kafka, MongoDB e Docker">
-
-<img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/neon-divider.svg" alt="">
-
-### <a href="https://github.com/VniiD/Hackathon_Marlabs_XP_G7">Plataforma XP G7</a>
-
-Liderei o back-end de um copiloto financeiro com function calling e transcrição por voz. Destaque de inovação no hackathon.
-
-<img src="https://skillicons.dev/icons?i=python,fastapi,postgres,redis,docker&theme=dark" alt="Python, FastAPI, PostgreSQL, Redis e Docker">
-
-<img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/neon-divider.svg" alt="">
-
-### <a href="https://github.com/VniiD/A_maze_ing">A-Maze-ing</a>
-
-Labirintos com Backtracker, Prim e Kruskal; caminho mínimo com BFS e tipagem estrita.
-
-<img src="https://skillicons.dev/icons?i=python&theme=dark" alt="Python">
-
-<img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/neon-divider.svg" alt="">
-
-### <a href="https://github.com/VniiD/PIXCore">PixCore</a>
-
-Ledger de partidas dobradas com gRPC/mTLS, PostgreSQL, Kafka e SDK Go. O ledger está implementado; os próximos serviços estão no roadmap.
-
-<img src="https://skillicons.dev/icons?i=go,postgres,kafka&theme=dark" alt="Go, PostgreSQL e Kafka">
-
-<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg" width="48" alt=""> Fundamentos — 42 São Paulo</h2>
+<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg" width="48" alt=""> Fundamentos</h2>
 
 - **[Push_swap](https://github.com/VniiD/Push_Swap)** — 660 operações para 100 números, 4.930 para 500.
 - **[Libft](https://github.com/VniiD/Libft)** — reimplementação de funções da libc em C.
@@ -98,3 +93,7 @@ Ledger de partidas dobradas com gRPC/mTLS, PostgreSQL, Kafka e SDK Go. O ledger 
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-dio.svg" width="32" alt=""> **DIO** — Data Analytics com Python. Cursando Developer .NET/C#, APIs e Azure.
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-google.svg" width="32" alt=""> **Google / Coursera** — Google Cybersecurity Certificate, 7 de 9 módulos.
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-enap.svg" width="32" alt=""> **ENAP** — Análise de Dados em R.
+
+<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-activity.svg" width="48" alt=""> Atividade</h2>
+
+<img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-contribution-grid-snake.svg" alt="Minhoca neon enrola e explode em partículas radiais sobre uma grade escura quadriculada de contribuições">
