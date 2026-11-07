@@ -9,6 +9,8 @@
 
 ## Engenharia de software começa antes do código
 
+"Não entre em pânico."(ADAMS)
+
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg" width="32" alt=""> **Arquitetura pragmática:** monólito modular, eventos ou serviços independentes, conforme latência, consistência, escala e custo. Padrões servem ao problema, não o contrário.
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-lab.svg" width="32" alt=""> **Fundamentos de sistemas:** memória, CPU, rede, I/O e concorrência ajudam a explicar o comportamento do software, não só a sintaxe.
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-security.svg" width="32" alt=""> **Segurança desde o desenho:** confidencialidade, integridade, disponibilidade, confiabilidade, rastreabilidade e não repúdio orientam requisitos e validações. ISO/IEC 27001 é referência, não alegação de certificação. Segredos e chaves não entram no código.
