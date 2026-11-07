@@ -18,7 +18,7 @@ Transformo problemas de negócio em serviços back-end confiáveis. Primeiro ent
 
 <img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-contribution-grid-snake.svg" alt="Minhoca neon enrola e explode em partículas radiais sobre uma grade escura quadriculada de contribuições">
 
-<img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/e1899880ebdba34600d040b758cb0bb87a615e44/github-language-map.svg" alt="Mapa animado da distribuição de linguagens nos repositórios públicos">
+<img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/github-language-map.svg" alt="Mapa animado da distribuição de linguagens nos repositórios públicos">
 
 <h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-articles.svg" width="48" alt=""> Artigos<br><small>Arquitetura · Governança · Sistemas distribuídos · Segurança</small></h2>
 
