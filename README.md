@@ -3,10 +3,9 @@
   <img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/profile-cover.svg" alt="Vinícius Ferreira, Engenheiro de Software com foco em back-end, arquitetura pragmática, System Design e segurança">
 </picture>
 
+"Não entre em pânico."(ADAMS)
 
 ## Engenharia de software começa antes do código
-
-"Não entre em pânico."(ADAMS)
 
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg" width="32" alt=""> **Arquitetura pragmática:** monólito modular, eventos ou serviços independentes, conforme latência, consistência, escala e custo. Padrões servem ao problema, não o contrário.
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-lab.svg" width="32" alt=""> **Fundamentos de sistemas:** memória, CPU, rede, I/O e concorrência ajudam a explicar o comportamento do software, não só a sintaxe.
