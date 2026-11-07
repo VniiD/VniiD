@@ -143,19 +143,25 @@ const height = 120 + slices.length * rowHeight + 22;
 const centerY = Math.round(height / 2);
 const firstRowY = 112;
 const barWidth = 610;
+const interactiveMapUrl = `https://${username.toLowerCase()}.github.io/${username}/`;
 const legend = slices.map((slice, index) => {
   const y = firstRowY + index * rowHeight;
   const percent = `${(slice.ratio * 100).toFixed(1)}%`;
-  return `<g class="language-row row-${index}" style="--delay:${index * 100}ms">
+  const projectNames = slice.projects.map(({ name }) => name).join(", ");
+  const href = `${interactiveMapUrl}#language=${encodeURIComponent(slice.language)}`;
+  return `<a class="language-link row-${index}" href="${href}" target="_top" style="--delay:${index * 100}ms">
+  <title>${escapeXml(`${slice.language} · ${percent} · Projetos: ${projectNames}`)}</title>
+  <rect class="row-hit-area" x="350" y="${y - 24}" width="790" height="${rowHeight}" fill="transparent"/>
+  <g class="language-row">
   <circle cx="365" cy="${y - 6}" r="7" fill="${slice.color}"/>
   <text x="384" y="${y}" class="language">${escapeXml(slice.language)}</text>
   <text x="1120" y="${y}" text-anchor="end" class="percent">${percent}</text>
   <rect x="365" y="${y + 10}" width="${barWidth}" height="9" rx="4.5" fill="#1e293b"/>
   <rect class="bar" x="365" y="${y + 10}" width="${(slice.ratio * barWidth).toFixed(2)}" height="9" rx="4.5" fill="${slice.color}"/>
-</g>`;
+</g></a>`;
 }).join("");
 const rings = slices.map((slice, index) =>
-  `<circle class="slice slice-${index}" cx="174" cy="${centerY}" r="${chartRadius}" fill="none" stroke="${slice.color}" stroke-width="32" stroke-dasharray="${slice.dash}" stroke-dashoffset="-${slice.offset}" pathLength="${circumference.toFixed(2)}" style="--dash:${slice.dash};--delay:${index * 100}ms"><title>${escapeXml(slice.language)} · ${(slice.ratio * 100).toFixed(1)}%</title></circle>`,
+  `<a class="slice-link" href="${interactiveMapUrl}#language=${encodeURIComponent(slice.language)}" target="_top"><circle class="slice slice-${index}" cx="174" cy="${centerY}" r="${chartRadius}" fill="none" stroke="${slice.color}" stroke-width="32" stroke-dasharray="${slice.dash}" stroke-dashoffset="-${slice.offset}" pathLength="${circumference.toFixed(2)}" style="--dash:${slice.dash};--delay:${index * 100}ms"><title>${escapeXml(`${slice.language} · ${(slice.ratio * 100).toFixed(1)}% · Projetos: ${slice.projects.map(({ name }) => name).join(", ")}`)}</title></circle></a>`,
 ).join("");
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="${height}" viewBox="0 0 1200 ${height}" role="img" aria-labelledby="title description">
@@ -176,6 +182,10 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="${heig
 .frame{fill:none;stroke:#334155;stroke-opacity:.8}
 .slice{transform:rotate(-90deg);transform-origin:174px ${centerY}px;stroke-dasharray:0 ${circumference.toFixed(2)};animation:draw 1.2s cubic-bezier(.2,.8,.2,1) var(--delay) both;filter:url(#glow)}
 .language-row{opacity:0;animation:enter .45s ease-out var(--delay) forwards}
+.slice-link,.language-link{cursor:pointer}
+.slice-link:hover .slice,.slice-link:focus .slice{stroke-width:40;filter:url(#glow)}
+.language-link:hover .language,.language-link:focus .language{fill:#67e8f9;text-decoration:underline}
+.language-link:hover .bar,.language-link:focus .bar{filter:url(#glow)}
 .bar{transform-box:fill-box;transform-origin:left center;animation:grow .8s cubic-bezier(.2,.8,.2,1) var(--delay) both}
 @keyframes draw{to{stroke-dasharray:var(--dash)}}
 @keyframes enter{to{opacity:1}}

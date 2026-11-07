@@ -41,7 +41,7 @@
 
 <br>
 <br>
-<img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/github-language-map.svg" alt="Mapa animado da distribuição de linguagens nos repositórios públicos">
+<a href="https://vniid.github.io/VniiD/"><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/github-language-map.svg" alt="Mapa da distribuição de linguagens; clique para explorar e abrir os projetos"></a>
 
 
 <br>

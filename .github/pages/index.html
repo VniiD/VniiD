@@ -428,7 +428,12 @@
       document.querySelector("#updated").textContent =
         `Dados atualizados em ${new Date(data.updatedAt).toLocaleString("pt-BR")}. Percentuais calculados sobre bytes de código.`;
       if (data.languages.length > 0) {
-        showLanguage(data.languages[0], buttons[0], slices, buttons);
+        const requestedLanguage = new URLSearchParams(location.hash.slice(1)).get("language");
+        const requestedIndex = data.languages.findIndex(
+          (language) => language.language === requestedLanguage,
+        );
+        const selectedIndex = requestedIndex >= 0 ? requestedIndex : 0;
+        showLanguage(data.languages[selectedIndex], buttons[selectedIndex], slices, buttons);
       }
     }
 
