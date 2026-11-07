@@ -23,7 +23,7 @@ Transformo problemas de negócio em serviços back-end confiáveis. Primeiro ent
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg" width="32" alt=""> **02 — [Security by Design](https://www.linkedin.com/pulse/security-design-blindagem-e-frameworks-corporativos-na-ferreira-3yjrf/)**<br>
   Segurança no ciclo de desenvolvimento, na arquitetura e na cadeia de dependências.
 
-### [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-code-map.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-code-map.svg) No meu laboratório
+<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-code-map.svg" width="48" alt=""> No meu laboratório</h2>
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=cs,dotnet,python,go,c,fastapi,kafka,postgres,mongodb,redis,docker,linux,git,rust,azure,terraform,java,js,r,aws,gcp&perline=7&theme=dark" alt="C sharp, .NET, Python, Go, C, FastAPI, Kafka, PostgreSQL, MongoDB, Redis, Docker, Linux, Git, Rust, Azure, Terraform, Java, JavaScript, R, AWS e Google Cloud"><br><br>
@@ -33,11 +33,11 @@ Transformo problemas de negócio em serviços back-end confiáveis. Primeiro ent
 
 <img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/github-language-map.svg" alt="Mapa animado da distribuição de linguagens nos repositórios públicos">
 
-### [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-activity.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-activity.svg) Atividade
+<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-activity.svg" width="48" alt=""> Atividade</h2>
 
 <img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-contribution-grid-snake.svg" alt="Minhoca neon enrola e explode em partículas radiais sobre uma grade escura quadriculada de contribuições">
 
-### [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-projects.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-projects.svg) Projetos
+<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-projects.svg" width="48" alt=""> Projetos</h2>
 
 ### <a href="https://github.com/VniiD/SplitPay">SplitPay POS</a>
 
@@ -77,7 +77,7 @@ Ledger de partidas dobradas com gRPC/mTLS, PostgreSQL, Kafka e SDK Go. O ledger 
 
 <img src="https://skillicons.dev/icons?i=go,postgres,kafka&theme=dark" alt="Go, PostgreSQL e Kafka">
 
-### [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg) Fundamentos — 42 São Paulo
+<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg" width="48" alt=""> Fundamentos — 42 São Paulo</h2>
 
 - **[Push_swap](https://github.com/VniiD/Push_Swap)** — 660 operações para 100 números, 4.930 para 500.
 - **[Libft](https://github.com/VniiD/Libft)** — reimplementação de funções da libc em C.
