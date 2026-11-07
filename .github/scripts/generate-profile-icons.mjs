@@ -82,6 +82,98 @@ const dividerSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height=
 <path d="M4 4h1192" stroke="url(#neon)" stroke-width="1.5"/>
 </svg>`;
 
+const projectTiles = [
+  {
+    file: "project-splitpay.svg",
+    title: "SplitPay POS",
+    description: [
+      "Pagamentos com Pix e cartões, split,",
+      "Outbox/Kafka e ledger.",
+      "85 testes automatizados.",
+    ],
+    stack: "C# · .NET · Kafka · MongoDB · Docker",
+    accent: "#34D399",
+  },
+  {
+    file: "project-split-payment-platform.svg",
+    title: "Split Payment Platform",
+    description: [
+      "Pagamentos orientados a eventos,",
+      "idempotência e transactional outbox.",
+    ],
+    stack: ".NET · Kafka · MongoDB · Docker",
+    accent: "#22D3EE",
+  },
+  {
+    file: "project-xp-g7.svg",
+    title: "Plataforma XP G7",
+    description: [
+      "Back-end de copiloto financeiro com",
+      "function calling e transcrição por voz.",
+      "Destaque de inovação no hackathon.",
+    ],
+    stack: "Python · FastAPI · PostgreSQL · Redis",
+    accent: "#818CF8",
+  },
+  {
+    file: "project-a-maze-ing.svg",
+    title: "A-Maze-ing",
+    description: [
+      "Labirintos com Backtracker, Prim e Kruskal;",
+      "caminho mínimo com BFS e tipagem estrita.",
+    ],
+    stack: "Python",
+    accent: "#F472B6",
+  },
+  {
+    file: "project-pixcore.svg",
+    title: "PixCore",
+    description: [
+      "Ledger de partidas dobradas com gRPC/mTLS,",
+      "PostgreSQL, Kafka e SDK Go.",
+      "Próximos serviços no roadmap.",
+    ],
+    stack: "Go · PostgreSQL · Kafka",
+    accent: "#FBBF24",
+  },
+];
+
+function escapeXml(text) {
+  return text.replace(/[<>&'"]/g, (character) => ({
+    "<": "&lt;",
+    ">": "&gt;",
+    "&": "&amp;",
+    "'": "&apos;",
+    '"': "&quot;",
+  })[character]);
+}
+
+function createProjectTile({ title, description, stack, accent }) {
+  const descriptionLines = description.map(
+    (line, index) => `<text x="34" y="${105 + index * 30}" class="description">${escapeXml(line)}</text>`,
+  ).join("");
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="240" viewBox="0 0 640 240" role="img" aria-labelledby="title description">
+<title id="title">${escapeXml(title)}</title>
+<desc id="description">${escapeXml(description.join(" "))} ${escapeXml(stack)}</desc>
+<defs>
+  <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0B1424"/><stop offset="1" stop-color="#11102A"/></linearGradient>
+  <linearGradient id="border"><stop stop-color="${accent}"/><stop offset="1" stop-color="#818CF8"/></linearGradient>
+  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#94A3B8" stroke-opacity=".07"/></pattern>
+</defs>
+<style>
+.title{fill:#F8FAFC;font:700 29px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.description{fill:#CBD5E1;font:500 19px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.stack{fill:${accent};font:700 15px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.5px}
+</style>
+<rect x="2" y="2" width="636" height="236" rx="22" fill="url(#background)" stroke="url(#border)" stroke-width="2"/>
+<rect x="3" y="3" width="634" height="234" rx="21" fill="url(#grid)"/>
+<path d="M34 67h572" stroke="${accent}" stroke-opacity=".45"/>
+<text x="34" y="49" class="title">${escapeXml(title)}</text>
+${descriptionLines}
+<text x="34" y="216" class="stack">${escapeXml(stack)}</text>
+</svg>`;
+}
+
 await mkdir("dist", { recursive: true });
 
 for (const [name, icon] of Object.entries(icons)) {
@@ -89,3 +181,7 @@ for (const [name, icon] of Object.entries(icons)) {
 }
 
 await writeFile("dist/neon-divider.svg", dividerSvg);
+
+for (const tile of projectTiles) {
+  await writeFile(`dist/${tile.file}`, createProjectTile(tile));
+}

@@ -35,42 +35,13 @@ Transformo problemas de negócio em serviços back-end confiáveis. Primeiro ent
 
 <h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-projects.svg" width="48" alt=""> Projetos</h2>
 
-<table>
-  <tbody>
-    <tr>
-      <td valign="top" width="50%">
-        <h3><a href="https://github.com/VniiD/SplitPay">SplitPay POS</a></h3>
-        <p>Pagamentos com Pix e cartões, split, Outbox/Kafka e ledger. <strong>85 testes automatizados.</strong></p>
-        <img src="https://skillicons.dev/icons?i=cs,dotnet,kafka,mongodb,docker&theme=dark" alt="C sharp, .NET, Kafka, MongoDB e Docker">
-      </td>
-      <td valign="top" width="50%">
-        <h3><a href="https://github.com/VniiD/split-payment-platform">Split Payment Platform</a></h3>
-        <p>Pagamentos orientados a eventos, idempotência e transactional outbox.</p>
-        <img src="https://skillicons.dev/icons?i=dotnet,kafka,mongodb,docker&theme=dark" alt=".NET, Kafka, MongoDB e Docker">
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" width="50%">
-        <h3><a href="https://github.com/VniiD/Hackathon_Marlabs_XP_G7">Plataforma XP G7</a></h3>
-        <p>Liderei o back-end de um copiloto financeiro com function calling e transcrição por voz. Destaque de inovação no hackathon.</p>
-        <img src="https://skillicons.dev/icons?i=python,fastapi,postgres,redis,docker&theme=dark" alt="Python, FastAPI, PostgreSQL, Redis e Docker">
-      </td>
-      <td valign="top" width="50%">
-        <h3><a href="https://github.com/VniiD/A_maze_ing">A-Maze-ing</a></h3>
-        <p>Labirintos com Backtracker, Prim e Kruskal; caminho mínimo com BFS e tipagem estrita.</p>
-        <img src="https://skillicons.dev/icons?i=python&theme=dark" alt="Python">
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" width="50%">
-        <h3><a href="https://github.com/VniiD/PIXCore">PixCore</a></h3>
-        <p>Ledger de partidas dobradas com gRPC/mTLS, PostgreSQL, Kafka e SDK Go. O ledger está implementado; os próximos serviços estão no roadmap.</p>
-        <img src="https://skillicons.dev/icons?i=go,postgres,kafka&theme=dark" alt="Go, PostgreSQL e Kafka">
-      </td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+<p align="center">
+  <a href="https://github.com/VniiD/SplitPay"><img width="49%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/project-splitpay.svg" alt="SplitPay POS — pagamentos com Pix e cartões, split, Outbox/Kafka e ledger. 85 testes automatizados."></a>
+  <a href="https://github.com/VniiD/split-payment-platform"><img width="49%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/project-split-payment-platform.svg" alt="Split Payment Platform — pagamentos orientados a eventos, idempotência e transactional outbox."></a><br>
+  <a href="https://github.com/VniiD/Hackathon_Marlabs_XP_G7"><img width="49%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/project-xp-g7.svg" alt="Plataforma XP G7 — back-end de copiloto financeiro com function calling e transcrição por voz."></a>
+  <a href="https://github.com/VniiD/A_maze_ing"><img width="49%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/project-a-maze-ing.svg" alt="A-Maze-ing — labirintos com Backtracker, Prim, Kruskal e caminho mínimo com BFS."></a><br>
+  <a href="https://github.com/VniiD/PIXCore"><img width="49%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/project-pixcore.svg" alt="PixCore — ledger de partidas dobradas com gRPC/mTLS, PostgreSQL, Kafka e SDK Go."></a>
+</p>
 
 <h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg" width="48" alt=""> Fundamentos</h2>
 
