@@ -14,7 +14,7 @@
 
 **Objetivo:** Engenharia de Software e Tecnologia em grandes bancos e fintechs, com foco em back-end e System Design, do requisito à operação.
 
-
+<br>
 <p><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-articles.svg" alt="Artigos"></p>
 
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-articles.svg" width="32" alt=""> **00 — [Engenharia sem atalhos](https://www.linkedin.com/pulse/engenharia-sem-atalhos-do-ch%C3%A3o-de-f%C3%A1brica-%C3%A0-era-da-ia-ferreira-cjq7f/)**<br>
@@ -25,6 +25,7 @@
   Segurança no ciclo de desenvolvimento, na arquitetura e na cadeia de dependências.
 
 
+<br>
 <p><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-code-map.svg" alt="No meu laboratório"></p>
 
 <p align="center">
@@ -35,6 +36,7 @@
 <img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/github-language-map.svg" alt="Mapa animado da distribuição de linguagens nos repositórios públicos">
 
 
+<br>
 <p><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-projects.svg" alt="Projetos"></p>
 
 <p align="center">
@@ -50,6 +52,7 @@
 </p>
 
 
+<br>
 <p><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-education.svg" alt="Formação"></p>
 
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-degree.svg" width="32" alt=""> **Engenharia de Software, UniCesumar** — 6º semestre, cursando. Conclusão prevista para dezembro de 2027.
@@ -58,6 +61,7 @@
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-42.svg" width="32" alt=""> **42 São Paulo, formação de desenvolvedor** — Cadete no Common Core V2, Piscine aprovada e Missão Python concluída a 100%.
 
 
+<br>
 <h3><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-courses.svg" width="48" alt=""> <big><strong>Cursos</strong></big></h3>
 
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-cisco.svg" width="32" alt=""> **Cisco** — Introdução à Cibersegurança, Networking Basics e Python Essentials 1.
@@ -65,6 +69,7 @@
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-google.svg" width="32" alt=""> **Google / Coursera** — Google Cybersecurity Certificate, 7 de 9 módulos.
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-enap.svg" width="32" alt=""> **ENAP** — Análise de Dados em R.
 
+<br>
 <p><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-activity.svg" alt="Atividade"></p>
 
 <img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/github-contribution-grid-snake.svg" alt="Minhoca neon enrola e explode em partículas radiais sobre uma grade escura quadriculada de contribuições">
