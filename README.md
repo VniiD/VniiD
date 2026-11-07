@@ -3,6 +3,7 @@
   <img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/profile-cover.svg" alt="Vinícius Ferreira, Engenheiro de Software com foco em back-end, arquitetura pragmática, System Design e segurança">
 </picture>
 
+
 ## Engenharia de software começa antes do código
 
 "Não entre em pânico."(ADAMS)
@@ -14,6 +15,7 @@
 
 **Objetivo:** Engenharia de Software e Tecnologia em grandes bancos e fintechs, com foco em back-end e System Design, do requisito à operação.
 
+
 <h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-articles.svg" width="48" alt=""> Artigos</h2>
 
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-articles.svg" width="32" alt=""> **00 — [Engenharia sem atalhos](https://www.linkedin.com/pulse/engenharia-sem-atalhos-do-ch%C3%A3o-de-f%C3%A1brica-%C3%A0-era-da-ia-ferreira-cjq7f/)**<br>
@@ -23,6 +25,7 @@
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg" width="32" alt=""> **02 — [Security by Design](https://www.linkedin.com/pulse/security-design-blindagem-e-frameworks-corporativos-na-ferreira-3yjrf/)**<br>
   Segurança no ciclo de desenvolvimento, na arquitetura e na cadeia de dependências.
 
+
 <h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-code-map.svg" width="48" alt=""> No meu laboratório</h2>
 
 <p align="center">
@@ -31,6 +34,7 @@
 </p>
 
 <img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/github-language-map.svg" alt="Mapa animado da distribuição de linguagens nos repositórios públicos">
+
 
 <h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-projects.svg" width="48" alt=""> Projetos</h2>
 
@@ -46,12 +50,14 @@
   <a href="https://github.com/VniiD/PIXCore"><img width="49%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/project-pixcore.svg" alt="PixCore — ledger de partidas dobradas com gRPC/mTLS, PostgreSQL, Kafka e SDK Go."></a>
 </p>
 
+
 <h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-education.svg" width="48" alt=""> Formação</h2>
 
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-degree.svg" width="32" alt=""> **Engenharia de Software, UniCesumar** — 6º semestre, cursando. Conclusão prevista para dezembro de 2027.
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-degree.svg" width="32" alt=""> **Análise e Desenvolvimento de Sistemas, UniCesumar** — concluído em 2026.
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-degree.svg" width="32" alt=""> **Gestão da Tecnologia da Informação, UniCesumar** — concluída em 2026, simultaneamente a ADS.
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-42.svg" width="32" alt=""> **42 São Paulo, formação de desenvolvedor** — Cadete no Common Core V2, Piscine aprovada e Missão Python concluída a 100%.
+
 
 <h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-courses.svg" width="48" alt=""> Cursos</h2>
 
