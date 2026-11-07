@@ -6,6 +6,7 @@
 ## Engenharia de software começa antes do código
 
 "Não entre em pânico."(ADAMS)
+<br>
 
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg" width="32" alt=""> **Arquitetura pragmática:** monólito modular, eventos ou serviços independentes, conforme latência, consistência, escala e custo. Padrões servem ao problema, não o contrário.
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-lab.svg" width="32" alt=""> **Fundamentos de sistemas:** memória, CPU, rede, I/O e concorrência ajudam a explicar o comportamento do software, não só a sintaxe.
