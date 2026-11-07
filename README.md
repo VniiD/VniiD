@@ -5,7 +5,7 @@
 
 ## Engenharia de software começa antes do código
 
-Transformo problemas de negócio em serviços back-end confiáveis. Primeiro entendo as regras e os riscos. Depois defino limites, contratos e arquitetura. A tecnologia vem para resolver o problema, não para criar outro.
+"Não entre em pânico."(ADAMS)
 
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg" width="32" alt=""> **Arquitetura pragmática:** monólito modular, eventos ou serviços independentes, conforme latência, consistência, escala e custo. Padrões servem ao problema, não o contrário.
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-lab.svg" width="32" alt=""> **Fundamentos de sistemas:** memória, CPU, rede, I/O e concorrência ajudam a explicar o comportamento do software, não só a sintaxe.
