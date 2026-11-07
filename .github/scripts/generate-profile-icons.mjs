@@ -177,6 +177,23 @@ function escapeXml(text) {
   })[character]);
 }
 
+function createBannerMotion(motion, accent) {
+  switch (motion) {
+    case "pages":
+      return `<animateTransform attributeName="transform" type="rotate" values="-3 32 32;3 32 32;-3 32 32" dur="3.6s" repeatCount="indefinite"/>`;
+    case "network":
+      return `<circle cx="32" cy="32" r="25" fill="none" stroke="${accent}" stroke-opacity=".35" stroke-width="1"/><circle cx="32" cy="7" r="2.5" fill="${accent}"><animateTransform attributeName="transform" type="rotate" values="0 32 32;360 32 32" dur="5s" repeatCount="indefinite"/></circle><circle cx="32" cy="32" r="3" fill="${accent}" fill-opacity=".85"><animate attributeName="r" values="2;4;2" dur="1.8s" repeatCount="indefinite"/></circle>`;
+    case "tilt":
+      return `<animateTransform attributeName="transform" type="rotate" values="0 32 32;8 32 32;0 32 32;-8 32 32;0 32 32" dur="4s" repeatCount="indefinite"/>`;
+    case "rise":
+      return `<animateTransform attributeName="transform" type="translate" values="0 2;0 -3;0 2" dur="2.8s" repeatCount="indefinite"/>`;
+    case "signal":
+      return `<animate attributeName="stroke-dashoffset" values="0;-24" dur="1.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".65;1;.65" dur="1.4s" repeatCount="indefinite"/>`;
+    default:
+      throw new Error(`Unknown section banner animation: ${motion}`);
+  }
+}
+
 function createSectionBanner({ title, icon, motion }) {
   const { accent, markup } = icons[icon];
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="112" viewBox="0 0 1200 112" role="img" aria-labelledby="title description">
@@ -190,15 +207,8 @@ function createSectionBanner({ title, icon, motion }) {
 <style>
 .title{fill:#F8FAFC;font:700 30px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.4px}
 .mark{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
-.banner-icon{transform-box:fill-box;transform-origin:center;animation:${motion} 4s ease-in-out infinite}
 .banner-sweep{pointer-events:none}
-@keyframes pages{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
-@keyframes network{0%,100%{transform:scale(.94);opacity:.7}50%{transform:scale(1.04);opacity:1}}
-@keyframes tilt{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
-@keyframes rise{0%,100%{transform:translateY(2px)}50%{transform:translateY(-3px)}}
-@keyframes trace{0%,100%{stroke-dasharray:1 0;opacity:.78}50%{stroke-dasharray:5 2;opacity:1}}
-@keyframes signal{0%,100%{transform:scaleX(.92);opacity:.7}50%{transform:scaleX(1.08);opacity:1}}
-@media(prefers-reduced-motion:reduce){.banner-icon{animation:none}.banner-sweep{display:none}}
+@media(prefers-reduced-motion:reduce){.banner-sweep{display:none}}
 </style>
 <rect x="2" y="2" width="1196" height="108" rx="16" fill="url(#background)" stroke="url(#border)" stroke-width="2"/>
 <rect x="3" y="3" width="1194" height="106" rx="15" fill="url(#grid)"/>
@@ -209,7 +219,8 @@ function createSectionBanner({ title, icon, motion }) {
   <circle cx="32" cy="32" r="30" fill="${accent}" fill-opacity=".08" stroke="${accent}" stroke-opacity=".5">
     <animate attributeName="stroke-opacity" values=".25;.8;.25" dur="3s" repeatCount="indefinite"/>
   </circle>
-  <g class="mark banner-icon motion-${motion}">${markup}</g>
+  ${motion === "network" ? createBannerMotion(motion, accent) : ""}
+  <g class="mark" ${motion === "signal" ? 'stroke-dasharray="4 4"' : ""}>${markup}${createBannerMotion(motion, accent)}</g>
 </svg>
 <text x="116" y="68" class="title">${escapeXml(title)}</text>
 </svg>`;
