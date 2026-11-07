@@ -10,11 +10,11 @@ const explosionPause = 6;
 const variants = [
   {
     file: "dist/github-contribution-grid-snake.svg",
-    emptyColor: "#EBEDF0",
+    gridLineColor: "#d0d7de",
   },
   {
     file: "dist/github-contribution-grid-snake-dark.svg",
-    emptyColor: "#161B22",
+    gridLineColor: "#30363d",
   },
 ];
 
@@ -207,7 +207,7 @@ function createSnakeSvg(grid, variant) {
       );
     }
     cells.push(
-      `<rect class="${className}" x="${cell.x + canvasPadding}" y="${cell.y + canvasPadding}" width="12" height="12" rx="2" fill="${cell.fill}"/>`,
+      `<rect class="${className}" x="${cell.x + canvasPadding}" y="${cell.y + canvasPadding}" width="12" height="12" rx="2" fill="${cell.hasContribution ? cell.fill : "none"}"${cell.hasContribution ? "" : ` stroke="${variant.gridLineColor}" stroke-width="1" stroke-opacity=".8"`}/>`,
     );
     headFrames.push(`${stepPercent}%{transform:translate(${point[0]}px,${point[1]}px)}`);
 
@@ -281,16 +281,24 @@ function createSnakeSvg(grid, variant) {
     const fragmentCount = burst.segments + 1;
     const start = percentAt(burst.time);
     const reveal = percentAt(burst.time + 0.05);
-    const spread = percentAt(burst.time + burst.pause * 0.45);
-    const end = percentAt(burst.time + burst.pause);
+    const spread = percentAt(burst.time + burst.pause * 0.12);
+    const fade = percentAt(burst.time + burst.pause * 0.56);
+    const end = percentAt(burst.time + burst.pause * 0.68);
+    const [centerX, centerY] = points[burst.index];
+    const coreName = `burst-${burstIndex}-core`;
+    explosionStyles.push(
+      `.spark-${coreName}{animation:${coreName} ${duration} linear infinite}@keyframes ${coreName}{0%,${start}%{opacity:0;transform:translate(${centerX}px,${centerY}px) scale(.1)}${reveal}%{opacity:1;transform:translate(${centerX}px,${centerY}px) scale(.7)}${spread}%{opacity:.9;transform:translate(${centerX}px,${centerY}px) scale(2.4)}${fade}%,${end}%,100%{opacity:0;transform:translate(${centerX}px,${centerY}px) scale(3.2)}}`,
+    );
+    explosionElements.push(
+      `<circle class="spark spark-${coreName}" cx="0" cy="0" r="8" fill="${gradient.at(-1)}" fill-opacity=".85"/>`,
+    );
 
     for (let fragment = 0; fragment < fragmentCount; fragment += 1) {
       const segment = fragment;
-      const pointIndex = Math.max(0, burst.index - segment);
-      const [x, y] = points[pointIndex];
-      const angle = (Math.PI * 2 * fragment) / fragmentCount;
-      const dx = Math.round(Math.cos(angle) * 14);
-      const dy = Math.round(Math.sin(angle) * 14);
+      const angle = (Math.PI * 2 * fragment) / fragmentCount - Math.PI / 2;
+      const distance = 42 + (fragment % 3) * 12;
+      const dx = Math.round(Math.cos(angle) * distance);
+      const dy = Math.round(Math.sin(angle) * distance);
       const tailPosition = segment === 0
         ? 0
         : (segment - 1) / Math.max(1, tailLimit - 1);
@@ -298,10 +306,10 @@ function createSnakeSvg(grid, variant) {
       const opacity = 1 - tailPosition;
       const name = `burst-${burstIndex}-segment-${segment}`;
       explosionStyles.push(
-        `.spark-${name}{animation:${name} ${duration} linear infinite}@keyframes ${name}{0%,${start}%{opacity:0;transform:translate(${x}px,${y}px) scale(.15)}${reveal}%{opacity:1;transform:translate(${x}px,${y}px) scale(1)}${spread}%{opacity:1;transform:translate(${x + dx}px,${y + dy}px) scale(1.05)}${end}%,100%{opacity:0;transform:translate(${x + dx}px,${y + dy}px) scale(.2)}}`,
+        `.spark-${name}{animation:${name} ${duration} cubic-bezier(.12,.75,.22,1) infinite}@keyframes ${name}{0%,${start}%{opacity:0;transform:translate(${centerX}px,${centerY}px) scale(.12)}${reveal}%{opacity:1;transform:translate(${centerX}px,${centerY}px) scale(.65)}${spread}%{opacity:1;transform:translate(${centerX + dx}px,${centerY + dy}px) scale(1.25)}${fade}%{opacity:.65;transform:translate(${centerX + dx * 1.16}px,${centerY + dy * 1.16}px) scale(.8)}${end}%,100%{opacity:0;transform:translate(${centerX + dx * 1.25}px,${centerY + dy * 1.25}px) scale(.15)}}`,
       );
       explosionElements.push(
-        `<rect class="spark spark-${name}" x="-6" y="-6" width="12" height="12" rx="2" fill="${color}" fill-opacity="${opacity.toFixed(2)}"/>`,
+        `<rect class="spark spark-${name}" x="-3.5" y="-3.5" width="7" height="7" rx="1.5" fill="${color}" fill-opacity="${opacity.toFixed(2)}"/>`,
       );
     }
   }
@@ -325,7 +333,6 @@ ${segmentStyles.join("")}
 ${explosionStyles.join("")}
 @media(prefers-reduced-motion:reduce){.worm,.tail-segment,.snake-head,.spark,.grid-cell{animation:none}}
 </style>
-<rect width="${width}" height="${height}" fill="${variant.emptyColor}"/>
 ${cells.join("")}
 <g class="worm">${segmentElements.join("")}<g class="snake-head"><rect x="-6" y="-6" width="12" height="12" rx="2" fill="${gradient.at(-1)}" stroke="${gradient.at(-2)}" stroke-width="1.5"/></g></g>
 <g class="explosions" aria-hidden="true" clip-path="url(#grid-clip)">${explosionElements.join("")}</g>

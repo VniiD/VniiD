@@ -91,7 +91,8 @@ const colors = {
   Outros: "#94A3B8",
 };
 const palette = ["#22D3EE", "#818CF8", "#F472B6", "#34D399", "#FBBF24", "#94A3B8"];
-const circumference = 2 * Math.PI * 58;
+const chartRadius = 106;
+const circumference = 2 * Math.PI * chartRadius;
 let offset = 0;
 const slices = top.map(([language, bytes], index) => {
   const ratio = bytes / totalBytes;
@@ -137,42 +138,72 @@ const escapeXml = (text) =>
     '"': "&quot;",
   })[character]);
 
+const rowHeight = 56;
+const height = 120 + slices.length * rowHeight + 22;
+const centerY = Math.round(height / 2);
+const firstRowY = 112;
+const barWidth = 610;
 const legend = slices.map((slice, index) => {
-  const y = 46 + index * 22;
+  const y = firstRowY + index * rowHeight;
   const percent = `${(slice.ratio * 100).toFixed(1)}%`;
-  return `<g><circle cx="238" cy="${y - 4}" r="5" fill="${slice.color}"/><text x="252" y="${y}" class="label">${escapeXml(slice.language)}</text><text x="420" y="${y}" text-anchor="end" class="value">${percent}</text></g>`;
+  const projectNames = slice.projects.slice(0, 3).map(({ name }) => name).join("  ·  ");
+  const remaining = slice.projects.length - 3;
+  const projectLabel = remaining > 0
+    ? `${projectNames}  ·  +${remaining}`
+    : projectNames;
+  const safeProjectLabel = escapeXml(projectLabel || "Sem projetos listados");
+  return `<g class="language-row row-${index}" style="--delay:${index * 100}ms">
+  <circle cx="365" cy="${y - 6}" r="7" fill="${slice.color}"/>
+  <text x="384" y="${y}" class="language">${escapeXml(slice.language)}</text>
+  <text x="1120" y="${y}" text-anchor="end" class="percent">${percent}</text>
+  <rect x="365" y="${y + 10}" width="${barWidth}" height="9" rx="4.5" fill="#1e293b"/>
+  <rect class="bar" x="365" y="${y + 10}" width="${(slice.ratio * barWidth).toFixed(2)}" height="9" rx="4.5" fill="${slice.color}"/>
+  <text x="365" y="${y + 43}" class="projects">${safeProjectLabel}</text>
+</g>`;
 }).join("");
 const rings = slices.map((slice, index) =>
-  `<circle class="slice slice-${index}" cx="104" cy="104" r="58" fill="none" stroke="${slice.color}" stroke-width="24" stroke-dasharray="${slice.dash}" stroke-dashoffset="-${slice.offset}" pathLength="${circumference.toFixed(2)}" style="--dash:${slice.dash}"><title>${escapeXml(slice.language)} · ${(slice.ratio * 100).toFixed(1)}% · ${slice.repositories} repositórios</title></circle>`,
-).join("");
-const animationDelays = slices.map((_, index) =>
-  `.slice-${index}{animation-delay:${index * 100}ms}`,
+  `<circle class="slice slice-${index}" cx="174" cy="${centerY}" r="${chartRadius}" fill="none" stroke="${slice.color}" stroke-width="32" stroke-dasharray="${slice.dash}" stroke-dashoffset="-${slice.offset}" pathLength="${circumference.toFixed(2)}" style="--dash:${slice.dash};--delay:${index * 100}ms"><title>${escapeXml(slice.language)} · ${(slice.ratio * 100).toFixed(1)}%</title></circle>`,
 ).join("");
 
-const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="480" height="208" viewBox="0 0 480 208" role="img" aria-labelledby="title description">
-<title id="title">Linguagens dos repositórios públicos de ${username}</title>
-<desc id="description">Distribuição calculada a partir dos bytes de código reportados pela API de linguagens do GitHub.</desc>
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="${height}" viewBox="0 0 1200 ${height}" role="img" aria-labelledby="title description">
+<title id="title">Mapa animado do código de ${username}</title>
+<desc id="description">Gráfico animado com a distribuição das linguagens e os principais repositórios públicos em que aparecem.</desc>
+<defs>
+  <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#08111f"/><stop offset="1" stop-color="#101d2d"/></linearGradient>
+  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#64748b" stroke-opacity=".1"/></pattern>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
 <style>
-.label,.value,.center-title,.center-subtitle{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
-.label{fill:#cbd5e1;font-size:13px}.value{fill:#f8fafc;font-size:13px;font-weight:700}
-.center-title{fill:#f8fafc;font-size:14px;font-weight:700}.center-subtitle{fill:#94a3b8;font-size:10px}
-.slice{transform:rotate(-90deg);transform-origin:104px 104px;stroke-dasharray:0 ${circumference.toFixed(2)};animation:draw 1.15s cubic-bezier(.2,.8,.2,1) both}
-.slice:hover{stroke-width:30}
-@keyframes draw{to{stroke-dasharray:var(--dash);opacity:1}}
-${animationDelays}
-@media(prefers-reduced-motion:reduce){.slice{animation:none}}
+.heading,.language,.percent,.projects,.center-title,.center-detail{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.heading{fill:#f8fafc;font-size:27px;font-weight:800;letter-spacing:2px}
+.language{fill:#e2e8f0;font-size:20px;font-weight:700}
+.percent{fill:#f8fafc;font-size:19px;font-weight:800}
+.projects{fill:#94a3b8;font-size:16px}
+.center-title{fill:#f8fafc;font-size:23px;font-weight:800}
+.center-detail{fill:#a5f3fc;font-size:15px}
+.frame{fill:none;stroke:#334155;stroke-opacity:.8}
+.slice{transform:rotate(-90deg);transform-origin:174px ${centerY}px;stroke-dasharray:0 ${circumference.toFixed(2)};animation:draw 1.2s cubic-bezier(.2,.8,.2,1) var(--delay) both;filter:url(#glow)}
+.language-row{opacity:0;animation:enter .45s ease-out var(--delay) forwards}
+.bar{transform-box:fill-box;transform-origin:left center;animation:grow .8s cubic-bezier(.2,.8,.2,1) var(--delay) both}
+@keyframes draw{to{stroke-dasharray:var(--dash)}}
+@keyframes enter{to{opacity:1}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){.slice,.language-row,.bar{animation:none;opacity:1}}
 </style>
-<rect width="480" height="208" rx="18" fill="#0b1220"/>
-<circle cx="104" cy="104" r="58" fill="none" stroke="#1e293b" stroke-width="24"/>
+<rect width="1200" height="${height}" rx="22" fill="url(#background)"/>
+<rect x="1" y="1" width="1198" height="${height - 2}" rx="21" fill="url(#grid)"/>
+<rect class="frame" x=".5" y=".5" width="1199" height="${height - 1}" rx="22"/>
+<text x="56" y="62" class="heading">CODE MAP</text>
+<text x="1120" y="62" text-anchor="end" class="center-detail">${repositories.length} REPOSITÓRIOS</text>
+<circle cx="174" cy="${centerY}" r="106" fill="none" stroke="#1e293b" stroke-width="32"/>
 ${rings}
-<text x="104" y="100" text-anchor="middle" class="center-title">GitHub</text>
-<text x="104" y="118" text-anchor="middle" class="center-subtitle">linguagens</text>
+<text x="174" y="${centerY - 5}" text-anchor="middle" class="center-title">CÓDIGO</text>
+<text x="174" y="${centerY + 22}" text-anchor="middle" class="center-detail">${slices.length} STACKS</text>
 ${legend}
-<text x="238" y="190" class="center-subtitle">Bytes de código em ${repositories.length} repositórios públicos</text>
 </svg>`;
 
 await mkdir("dist", { recursive: true });
-await writeFile("dist/github-language-donut.svg", svg);
+await writeFile("dist/github-language-map.svg", svg);
 await writeFile(
   "dist/languages.json",
   JSON.stringify(
