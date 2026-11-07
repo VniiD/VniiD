@@ -2,7 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="title description">
 <title id="title">Vinícius Ferreira | Engenharia de Software e Back-end</title>
-<desc id="description">Engenheiro de Software Jr. com foco em back-end, arquitetura pragmática, segurança desde o desenho e sistemas confiáveis.</desc>
+<desc id="description">Engenheiro de Software com foco em back-end, arquitetura pragmática, segurança desde o desenho e sistemas confiáveis.</desc>
 <defs>
   <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#070B16"/><stop offset=".55" stop-color="#0B1426"/><stop offset="1" stop-color="#11102B"/></linearGradient>
   <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#22D3EE"/><stop offset=".46" stop-color="#818CF8"/><stop offset=".76" stop-color="#E879F9"/><stop offset="1" stop-color="#34D399"/></linearGradient>
@@ -38,7 +38,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" v
 <rect class="frame" x=".5" y=".5" width="1199" height="339" rx="26"/>
 <text x="54" y="66" class="eyebrow">SOFTWARE ENGINEERING · BACK-END</text>
 <text x="50" y="139" class="name">VINÍCIUS FERREIRA</text>
-<text x="56" y="185" class="role">Engenheiro de Software Jr. · Back-end</text>
+<text x="56" y="185" class="role">Engenheiro de Software · Back-end</text>
 <text x="56" y="222" class="focus">ARQUITETURA PRAGMÁTICA · SYSTEM DESIGN · SEGURANÇA</text>
 <rect class="tag-box" x="56" y="255" width="125" height="42" rx="13"/>
 <rect class="tag-box" x="195" y="255" width="125" height="42" rx="13"/>
@@ -64,7 +64,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" v
 
 const mobileSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="720" viewBox="0 0 640 720" role="img" aria-labelledby="title description">
 <title id="title">Vinícius Ferreira | Engenharia de Software e Back-end</title>
-<desc id="description">Engenheiro de Software Jr. com foco em back-end, arquitetura pragmática, System Design e segurança.</desc>
+<desc id="description">Engenheiro de Software com foco em back-end, arquitetura pragmática, System Design e segurança.</desc>
 <defs>
   <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#070B16"/><stop offset=".55" stop-color="#0B1426"/><stop offset="1" stop-color="#11102B"/></linearGradient>
   <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#22D3EE"/><stop offset=".46" stop-color="#818CF8"/><stop offset=".76" stop-color="#E879F9"/><stop offset="1" stop-color="#34D399"/></linearGradient>
@@ -97,7 +97,7 @@ const mobileSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="7
 <text x="38" y="62" class="eyebrow">SOFTWARE ENGINEERING</text>
 <text x="34" y="153" class="name">VINÍCIUS</text>
 <text x="34" y="230" class="name">FERREIRA</text>
-<text x="40" y="294" class="role">Engenheiro de Software Jr.</text>
+<text x="40" y="294" class="role">Engenheiro de Software</text>
 <text x="40" y="338" class="role">Back-end</text>
 <text x="40" y="393" class="focus">ARQUITETURA · SYSTEM DESIGN</text>
 <text x="40" y="423" class="focus">SEGURANÇA · CONFIABILIDADE</text>

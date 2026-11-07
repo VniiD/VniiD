@@ -1,6 +1,6 @@
 <picture>
   <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/VniiD/VniiD/output/profile-cover-mobile.svg">
-  <img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/profile-cover.svg" alt="Vinícius Ferreira, Engenheiro de Software Jr. com foco em back-end, arquitetura pragmática, System Design e segurança">
+  <img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/profile-cover.svg" alt="Vinícius Ferreira, Engenheiro de Software com foco em back-end, arquitetura pragmática, System Design e segurança">
 </picture>
 
 ## Engenharia de software começa antes do código
@@ -12,7 +12,7 @@ Transformo problemas de negócio em serviços back-end confiáveis. Primeiro ent
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-security.svg" width="32" alt=""> **Segurança desde o desenho:** confidencialidade, integridade, disponibilidade, confiabilidade, rastreabilidade e não repúdio orientam requisitos e validações. ISO/IEC 27001 é referência, não alegação de certificação. Segredos e chaves não entram no código.
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-ai.svg" width="32" alt=""> **IA sob revisão:** acelera tarefas; decisões de arquitetura, segurança e validação continuam humanas.
 
-**Objetivo:** estágio ou trainee em Engenharia de Software e Tecnologia em grandes bancos e fintechs, com foco em back-end e System Design, do requisito à operação.
+**Objetivo:** Engenharia de Software e Tecnologia em grandes bancos e fintechs, com foco em back-end e System Design, do requisito à operação.
 
 <h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-articles.svg" width="48" alt=""> Artigos</h2>
 
