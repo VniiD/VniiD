@@ -17,6 +17,7 @@
 <br>
 <br>
 <p><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-articles.svg" alt="Artigos"></p>
+<br>
 
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-articles.svg" width="32" alt=""> **00 — [Engenharia sem atalhos](https://www.linkedin.com/pulse/engenharia-sem-atalhos-do-ch%C3%A3o-de-f%C3%A1brica-%C3%A0-era-da-ia-ferreira-cjq7f/)**<br>
   Fundamentos de computação, engenharia pragmática e responsabilidade na era da IA.
@@ -29,6 +30,7 @@
 <br>
 <br>
 <p><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-code-map.svg" alt="No meu laboratório"></p>
+<br>
 
 <br>
 <br>
@@ -45,6 +47,7 @@
 <br>
 <br>
 <p><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-projects.svg" alt="Projetos"></p>
+<br>
 
 <p align="center">
   <a href="https://github.com/VniiD/Push_Swap"><img width="49%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/project-42-foundations.svg" alt="42 São Paulo — Push_swap, Libft, ft_printf, get_next_line e Python OOP."></a>
@@ -62,6 +65,7 @@
 <br>
 <br>
 <p><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-education.svg" alt="Formação"></p>
+<br>
 
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-degree.svg" width="32" alt=""> **Engenharia de Software, UniCesumar** — 6º semestre, cursando. Conclusão prevista para dezembro de 2027.
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-degree.svg" width="32" alt=""> **Análise e Desenvolvimento de Sistemas, UniCesumar** — concluído em 2026.
@@ -79,5 +83,6 @@
 <br>
 <br>
 <p><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-activity.svg" alt="Atividade"></p>
+<br>
 
 <img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/github-contribution-grid-snake.svg" alt="Minhoca neon enrola e explode em partículas radiais sobre uma grade escura quadriculada de contribuições">
