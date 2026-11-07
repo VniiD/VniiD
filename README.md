@@ -30,7 +30,6 @@
 <br>
 <br>
 <p><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-code-map.svg" alt="No meu laboratório"></p>
-<br>
 
 <br>
 <br>
