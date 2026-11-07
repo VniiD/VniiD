@@ -3,10 +3,6 @@
   <img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/profile-cover.svg" alt="Vinícius Ferreira, Engenheiro de Software com foco em back-end, arquitetura pragmática, System Design e segurança">
 </picture>
 
-
-
-"Não entre em pânico."(ADAMS)
-
 ## Engenharia de software começa antes do código
 
 "Não entre em pânico."(ADAMS)
