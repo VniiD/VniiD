@@ -159,6 +159,15 @@ const projectTiles = [
   },
 ];
 
+const sectionBanners = [
+  { file: "section-articles.svg", title: "Artigos", icon: "articles" },
+  { file: "section-code-map.svg", title: "No meu laboratório", icon: "code-map" },
+  { file: "section-projects.svg", title: "Projetos", icon: "projects" },
+  { file: "section-education.svg", title: "Formação", icon: "education" },
+  { file: "section-courses.svg", title: "Cursos", icon: "courses" },
+  { file: "section-activity.svg", title: "Atividade", icon: "activity" },
+];
+
 function escapeXml(text) {
   return text.replace(/[<>&'"]/g, (character) => ({
     "<": "&lt;",
@@ -167,6 +176,38 @@ function escapeXml(text) {
     "'": "&apos;",
     '"': "&quot;",
   })[character]);
+}
+
+function createSectionBanner({ title, icon }) {
+  const { accent, markup } = icons[icon];
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="112" viewBox="0 0 1200 112" role="img" aria-labelledby="title description">
+<title id="title">${escapeXml(title)}</title>
+<desc id="description">Banner animado da seção ${escapeXml(title)}.</desc>
+<defs>
+  <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0B1424"/><stop offset="1" stop-color="#11102A"/></linearGradient>
+  <linearGradient id="border"><stop stop-color="${accent}" stop-opacity=".85"/><stop offset="1" stop-color="#818CF8" stop-opacity=".55"/></linearGradient>
+  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#94A3B8" stroke-opacity=".07"/></pattern>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3"/></filter>
+</defs>
+<style>
+.title{fill:#F8FAFC;font:700 30px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.4px}
+.mark{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+</style>
+<rect x="2" y="2" width="1196" height="108" rx="16" fill="url(#background)" stroke="url(#border)" stroke-width="2"/>
+<rect x="3" y="3" width="1194" height="106" rx="15" fill="url(#grid)"/>
+<svg x="28" y="24" width="64" height="64" viewBox="0 0 64 64" style="color:${accent}">
+  <circle cx="32" cy="32" r="30" fill="${accent}" fill-opacity=".08" stroke="${accent}" stroke-opacity=".5"/>
+  <g class="mark">${markup}</g>
+</svg>
+<text x="116" y="68" class="title">${escapeXml(title)}</text>
+<path d="M28 94h1144" stroke="${accent}" stroke-opacity=".2"/>
+<path d="M28 94h1144" stroke="${accent}" stroke-width="2" stroke-dasharray="72 1072" stroke-linecap="round">
+  <animate attributeName="stroke-dashoffset" values="1144;0" dur="8s" repeatCount="indefinite"/>
+</path>
+<circle cy="94" r="4" fill="${accent}" filter="url(#glow)" opacity=".8">
+  <animate attributeName="cx" values="28;1172;28" dur="8s" repeatCount="indefinite"/>
+</circle>
+</svg>`;
 }
 
 function createProjectTile({ title, description, stack, accent }) {
@@ -205,4 +246,8 @@ await writeFile("dist/neon-divider.svg", dividerSvg);
 
 for (const tile of projectTiles) {
   await writeFile(`dist/${tile.file}`, createProjectTile(tile));
+}
+
+for (const banner of sectionBanners) {
+  await writeFile(`dist/${banner.file}`, createSectionBanner(banner));
 }

@@ -17,7 +17,7 @@
 **Objetivo:** Engenharia de Software e Tecnologia em grandes bancos e fintechs, com foco em back-end e System Design, do requisito à operação.
 
 
-<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-articles.svg" width="48" alt=""> Artigos</h2>
+<h2><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-articles.svg" alt="Artigos"></h2>
 
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-articles.svg" width="32" alt=""> **00 — [Engenharia sem atalhos](https://www.linkedin.com/pulse/engenharia-sem-atalhos-do-ch%C3%A3o-de-f%C3%A1brica-%C3%A0-era-da-ia-ferreira-cjq7f/)**<br>
   Fundamentos de computação, engenharia pragmática e responsabilidade na era da IA.
@@ -27,7 +27,7 @@
   Segurança no ciclo de desenvolvimento, na arquitetura e na cadeia de dependências.
 
 
-<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-code-map.svg" width="48" alt=""> No meu laboratório</h2>
+<h2><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-code-map.svg" alt="No meu laboratório"></h2>
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=cs,dotnet,python,go,c,java,js,r,fastapi,kafka,postgres&perline=11&theme=dark" alt="C sharp, .NET, Python, Go, C, Java, JavaScript, R, FastAPI, Kafka e PostgreSQL"><br>
@@ -37,7 +37,7 @@
 <img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/github-language-map.svg" alt="Mapa animado da distribuição de linguagens nos repositórios públicos">
 
 
-<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-projects.svg" width="48" alt=""> Projetos</h2>
+<h2><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-projects.svg" alt="Projetos"></h2>
 
 <p align="center">
   <a href="https://github.com/VniiD/Push_Swap"><img width="49%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/project-42-foundations.svg" alt="42 São Paulo — Push_swap, Libft, ft_printf, get_next_line e Python OOP."></a>
@@ -52,7 +52,7 @@
 </p>
 
 
-<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-education.svg" width="48" alt=""> Formação</h2>
+<h2><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-education.svg" alt="Formação"></h2>
 
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-degree.svg" width="32" alt=""> **Engenharia de Software, UniCesumar** — 6º semestre, cursando. Conclusão prevista para dezembro de 2027.
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-degree.svg" width="32" alt=""> **Análise e Desenvolvimento de Sistemas, UniCesumar** — concluído em 2026.
@@ -60,13 +60,13 @@
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-42.svg" width="32" alt=""> **42 São Paulo, formação de desenvolvedor** — Cadete no Common Core V2, Piscine aprovada e Missão Python concluída a 100%.
 
 
-<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-courses.svg" width="48" alt=""> Cursos</h2>
+<h2><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-courses.svg" alt="Cursos"></h2>
 
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-cisco.svg" width="32" alt=""> **Cisco** — Introdução à Cibersegurança, Networking Basics e Python Essentials 1.
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-dio.svg" width="32" alt=""> **DIO** — Data Analytics com Python. Cursando Developer .NET/C#, APIs e Azure.
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-google.svg" width="32" alt=""> **Google / Coursera** — Google Cybersecurity Certificate, 7 de 9 módulos.
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-enap.svg" width="32" alt=""> **ENAP** — Análise de Dados em R.
 
-<h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-activity.svg" width="48" alt=""> Atividade</h2>
+<h2><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-activity.svg" alt="Atividade"></h2>
 
 <img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-contribution-grid-snake.svg" alt="Minhoca neon enrola e explode em partículas radiais sobre uma grade escura quadriculada de contribuições">
