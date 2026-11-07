@@ -36,18 +36,15 @@ Transformo problemas de negócio em serviços back-end confiáveis. Primeiro ent
 
 <p align="center">
   <a href="https://github.com/VniiD/Push_Swap"><img width="49%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/project-42-foundations.svg" alt="42 São Paulo — Push_swap, Libft, ft_printf, get_next_line e Python OOP."></a>
+  <a href="https://github.com/VniiD/.Net_Fundamentos"><img width="49%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/project-dotnet-foundations.svg" alt=".NET Fundamentos — exercícios e práticas de programação em C#."></a><br>
   <a href="https://github.com/VniiD/SplitPay"><img width="49%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/project-splitpay.svg" alt="SplitPay POS — pagamentos com Pix e cartões, split, Outbox/Kafka e ledger. 85 testes automatizados."></a>
-  <br>
   <a href="https://github.com/VniiD/split-payment-platform"><img width="49%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/project-split-payment-platform.svg" alt="Split Payment Platform — pagamentos orientados a eventos, idempotência e transactional outbox."></a>
-  <a href="https://github.com/VniiD/Hackathon_Marlabs_XP_G7"><img width="49%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/project-xp-g7.svg" alt="Plataforma XP G7 — back-end de copiloto financeiro com function calling e transcrição por voz."></a>
   <br>
+  <a href="https://github.com/VniiD/Hackathon_Marlabs_XP_G7"><img width="49%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/project-xp-g7.svg" alt="Plataforma XP G7 — back-end de copiloto financeiro com function calling e transcrição por voz."></a>
   <a href="https://github.com/VniiD/A_maze_ing"><img width="49%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/project-a-maze-ing.svg" alt="A-Maze-ing — labirintos com Backtracker, Prim, Kruskal e caminho mínimo com BFS."></a>
+  <br>
   <a href="https://github.com/VniiD/PIXCore"><img width="49%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/project-pixcore.svg" alt="PixCore — ledger de partidas dobradas com gRPC/mTLS, PostgreSQL, Kafka e SDK Go."></a>
 </p>
-
-### [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg) Outros
-
-- [`.NET Fundamentos`](https://github.com/VniiD/.Net_Fundamentos)
 
 <h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-education.svg" width="48" alt=""> Formação</h2>
 

@@ -95,6 +95,16 @@ const projectTiles = [
     accent: "#F472B6",
   },
   {
+    file: "project-dotnet-foundations.svg",
+    title: ".NET Fundamentos",
+    description: [
+      "Exercícios e práticas dos",
+      "fundamentos de programação em C#.",
+    ],
+    stack: ".NET · C#",
+    accent: "#A78BFA",
+  },
+  {
     file: "project-splitpay.svg",
     title: "SplitPay POS",
     description: [
