@@ -210,9 +210,11 @@ function createSnakeSvg(grid, variant) {
         `.commit-${eaten}{animation:consume-${eaten} ${duration} linear infinite}@keyframes consume-${eaten}{0%,${stepPercent}%{opacity:1}${fadePercent}%,99.9999%{opacity:0}100%{opacity:1}}`,
       );
     }
-    cells.push(
-      `<rect class="${className}" x="${cell.x + canvasPadding}" y="${cell.y + canvasPadding}" width="12" height="12" rx="2" fill="${cell.hasContribution ? cell.fill : variant.emptyColor}" stroke="${cell.hasContribution ? "none" : variant.gridLineColor}" stroke-width="1" stroke-opacity=".9"/>`,
-    );
+    const cellX = cell.x + canvasPadding;
+    const cellY = cell.y + canvasPadding;
+    const emptyCell = `<rect x="${cellX}" y="${cellY}" width="12" height="12" rx="2" fill="${variant.emptyColor}" stroke="${variant.gridLineColor}" stroke-width="1" stroke-opacity=".9"/>`;
+    const contributionCell = `<rect class="${className}" x="${cellX}" y="${cellY}" width="12" height="12" rx="2" fill="${cell.fill}"/>`;
+    cells.push(cell.hasContribution ? `${emptyCell}${contributionCell}` : emptyCell);
     headFrames.push(`${stepPercent}%{transform:translate(${point[0]}px,${point[1]}px)}`);
 
     const burst = burstByIndex.get(index);
