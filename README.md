@@ -23,12 +23,6 @@ Transformo problemas de negócio em serviços back-end confiáveis. Primeiro ent
 - <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg" width="32" alt=""> **02 · [Security by Design](https://www.linkedin.com/pulse/security-design-blindagem-e-frameworks-corporativos-na-ferreira-3yjrf/)**<br>
   Segurança no ciclo de desenvolvimento, na arquitetura e na cadeia de dependências.
 
-### [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-activity.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-activity.svg) [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-code-map.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-code-map.svg) Atividade · Mapa do código
-
-<img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-contribution-grid-snake.svg" alt="Minhoca neon enrola e explode em partículas radiais sobre uma grade escura quadriculada de contribuições">
-
-<img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/github-language-map.svg" alt="Mapa animado da distribuição de linguagens nos repositórios públicos">
-
 ### [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-lab.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-lab.svg) No meu laboratório
 
 <p align="center">
@@ -41,6 +35,12 @@ Transformo problemas de negócio em serviços back-end confiáveis. Primeiro ent
   <strong>OUTROS FUNDAMENTOS E PLATAFORMAS</strong><br><br>
   <img src="https://skillicons.dev/icons?i=java,js,r,aws,gcp&perline=5&theme=dark" alt="Java, JavaScript, R, AWS e Google Cloud">
 </p>
+
+### [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-activity.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-activity.svg) [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-code-map.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-code-map.svg) Atividade · Mapa do código
+
+<img width="100%" src="https://raw.githubusercontent.com/VniiD/VniiD/output/github-contribution-grid-snake.svg" alt="Minhoca neon enrola e explode em partículas radiais sobre uma grade escura quadriculada de contribuições">
+
+<img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/github-language-map.svg" alt="Mapa animado da distribuição de linguagens nos repositórios públicos">
 
 ### [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-projects.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-projects.svg) Projetos
 
