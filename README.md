@@ -16,11 +16,11 @@ Transformo problemas de negócio em serviços back-end confiáveis. Primeiro ent
 
 <h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-articles.svg" width="48" alt=""> Artigos</h2>
 
-- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-articles.svg" width="32" alt=""> **00 · [Engenharia sem atalhos](https://www.linkedin.com/pulse/engenharia-sem-atalhos-do-ch%C3%A3o-de-f%C3%A1brica-%C3%A0-era-da-ia-ferreira-cjq7f/)**<br>
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-articles.svg" width="32" alt=""> **00 — [Engenharia sem atalhos](https://www.linkedin.com/pulse/engenharia-sem-atalhos-do-ch%C3%A3o-de-f%C3%A1brica-%C3%A0-era-da-ia-ferreira-cjq7f/)**<br>
   Fundamentos de computação, engenharia pragmática e responsabilidade na era da IA.
-- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-code-map.svg" width="32" alt=""> **01 · [Arquitetura, modelagem e governança](https://www.linkedin.com/pulse/arquitetura-modelagem-e-governan%C3%A7a-na-era-da-ia-vinicius-ferreira-uzpbf/)**<br>
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-code-map.svg" width="32" alt=""> **01 — [Arquitetura, modelagem e governança](https://www.linkedin.com/pulse/arquitetura-modelagem-e-governan%C3%A7a-na-era-da-ia-vinicius-ferreira-uzpbf/)**<br>
   Requisitos, modelo C4, trade-offs e contratos antes da implementação.
-- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg" width="32" alt=""> **02 · [Security by Design](https://www.linkedin.com/pulse/security-design-blindagem-e-frameworks-corporativos-na-ferreira-3yjrf/)**<br>
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg" width="32" alt=""> **02 — [Security by Design](https://www.linkedin.com/pulse/security-design-blindagem-e-frameworks-corporativos-na-ferreira-3yjrf/)**<br>
   Segurança no ciclo de desenvolvimento, na arquitetura e na cadeia de dependências.
 
 ### [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-code-map.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-code-map.svg) No meu laboratório
@@ -77,24 +77,24 @@ Ledger de partidas dobradas com gRPC/mTLS, PostgreSQL, Kafka e SDK Go. O ledger 
 
 <img src="https://skillicons.dev/icons?i=go,postgres,kafka&theme=dark" alt="Go, PostgreSQL e Kafka">
 
-### [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg) Fundamentos · 42 São Paulo
+### [![](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg)](https://raw.githubusercontent.com/VniiD/VniiD/output/icon-foundations.svg) Fundamentos — 42 São Paulo
 
-- **[Push_swap](https://github.com/VniiD/Push_Swap)** · 660 operações para 100 números, 4.930 para 500.
-- **[Libft](https://github.com/VniiD/Libft)** · reimplementação de funções da libc em C.
-- **[ft_printf](https://github.com/VniiD/Printf)** · formatação variádica e baixo nível.
-- **[get_next_line](https://github.com/VniiD/Get_Next_Line)** · leitura incremental e gestão de memória.
-- [`.NET Fundamentos`](https://github.com/VniiD/.Net_Fundamentos) · [Python OOP](https://github.com/VniiD/Python42SP)
+- **[Push_swap](https://github.com/VniiD/Push_Swap)** — 660 operações para 100 números, 4.930 para 500.
+- **[Libft](https://github.com/VniiD/Libft)** — reimplementação de funções da libc em C.
+- **[ft_printf](https://github.com/VniiD/Printf)** — formatação variádica e baixo nível.
+- **[get_next_line](https://github.com/VniiD/Get_Next_Line)** — leitura incremental e gestão de memória.
+- [`.NET Fundamentos`](https://github.com/VniiD/.Net_Fundamentos) — [Python OOP](https://github.com/VniiD/Python42SP)
 
 <h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-education.svg" width="48" alt=""> Formação</h2>
 
-- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-degree.svg" width="32" alt=""> **Engenharia de Software, UniCesumar** · 6º semestre, cursando. Conclusão prevista para dezembro de 2027.
-- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-degree.svg" width="32" alt=""> **Análise e Desenvolvimento de Sistemas, UniCesumar** · concluído em 2026.
-- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-degree.svg" width="32" alt=""> **Gestão da Tecnologia da Informação, UniCesumar** · concluída em 2026, simultaneamente a ADS.
-- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-42.svg" width="32" alt=""> **42 São Paulo, formação de desenvolvedor** · Cadete no Common Core V2, Piscine aprovada e Missão Python concluída a 100%.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-degree.svg" width="32" alt=""> **Engenharia de Software, UniCesumar** — 6º semestre, cursando. Conclusão prevista para dezembro de 2027.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-degree.svg" width="32" alt=""> **Análise e Desenvolvimento de Sistemas, UniCesumar** — concluído em 2026.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-degree.svg" width="32" alt=""> **Gestão da Tecnologia da Informação, UniCesumar** — concluída em 2026, simultaneamente a ADS.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-42.svg" width="32" alt=""> **42 São Paulo, formação de desenvolvedor** — Cadete no Common Core V2, Piscine aprovada e Missão Python concluída a 100%.
 
 <h2><img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-courses.svg" width="48" alt=""> Cursos</h2>
 
-- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-cisco.svg" width="32" alt=""> **Cisco** · Introdução à Cibersegurança, Networking Basics e Python Essentials 1.
-- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-dio.svg" width="32" alt=""> **DIO** · Data Analytics com Python. Cursando Developer .NET/C#, APIs e Azure.
-- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-google.svg" width="32" alt=""> **Google / Coursera** · Google Cybersecurity Certificate, 7 de 9 módulos.
-- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-enap.svg" width="32" alt=""> **ENAP** · Análise de Dados em R.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-cisco.svg" width="32" alt=""> **Cisco** — Introdução à Cibersegurança, Networking Basics e Python Essentials 1.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-dio.svg" width="32" alt=""> **DIO** — Data Analytics com Python. Cursando Developer .NET/C#, APIs e Azure.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-google.svg" width="32" alt=""> **Google / Coursera** — Google Cybersecurity Certificate, 7 de 9 módulos.
+- <img src="https://raw.githubusercontent.com/VniiD/VniiD/output/icon-enap.svg" width="32" alt=""> **ENAP** — Análise de Dados em R.
