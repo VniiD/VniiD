@@ -8,7 +8,6 @@
 <br>
 <br>
 <br>
-<br>
 
 ## Engenharia de software começa antes do código
 
@@ -53,6 +52,7 @@
 <br>
 <br>
 <p><img width="100%" src="https://github.com/VniiD/VniiD/raw/refs/heads/output/section-projects.svg" alt="Projetos"></p>
+<br>
 <br>
 
 <p align="center">
