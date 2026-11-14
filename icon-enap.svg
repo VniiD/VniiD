@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+<title id="title">enap</title>
+<style>svg{color:#34D399}.mark{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}</style>
+<circle cx="32" cy="32" r="30" fill="#34D399" fill-opacity=".08" stroke="#34D399" stroke-opacity=".5"/>
+<g class="mark"><path d="M10 54h44M15 48V35h8v13m8 0V25h8v23m8 0V13h8v35"/></g>
+</svg>

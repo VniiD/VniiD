@@ -1,0 +1,173 @@
+{
+  "updatedAt": "2026-11-14T10:27:21.658Z",
+  "repositoryCount": 11,
+  "totalBytes": 1541946,
+  "languages": [
+    {
+      "language": "Python",
+      "bytes": 418871,
+      "repositories": 3,
+      "projects": [
+        {
+          "name": "Hackathon_Marlabs_XP_G7",
+          "url": "https://github.com/VniiD/Hackathon_Marlabs_XP_G7",
+          "bytes": 233494
+        },
+        {
+          "name": "Python42SP",
+          "url": "https://github.com/VniiD/Python42SP",
+          "bytes": 122682
+        },
+        {
+          "name": "A_maze_ing",
+          "url": "https://github.com/VniiD/A_maze_ing",
+          "bytes": 62695
+        }
+      ],
+      "ratio": 0.2716508879039863,
+      "color": "#38BDF8",
+      "dash": "180.92 485.09",
+      "offset": "0.00"
+    },
+    {
+      "language": "C#",
+      "bytes": 363842,
+      "repositories": 3,
+      "projects": [
+        {
+          "name": "SplitPay",
+          "url": "https://github.com/VniiD/SplitPay",
+          "bytes": 224922
+        },
+        {
+          "name": "split-payment-platform",
+          "url": "https://github.com/VniiD/split-payment-platform",
+          "bytes": 122951
+        },
+        {
+          "name": ".Net_Fundamentos",
+          "url": "https://github.com/VniiD/.Net_Fundamentos",
+          "bytes": 15969
+        }
+      ],
+      "ratio": 0.23596286770094413,
+      "color": "#C084FC",
+      "dash": "157.16 508.86",
+      "offset": "180.92"
+    },
+    {
+      "language": "C",
+      "bytes": 183202,
+      "repositories": 4,
+      "projects": [
+        {
+          "name": "Libft",
+          "url": "https://github.com/VniiD/Libft",
+          "bytes": 111258
+        },
+        {
+          "name": "Push_Swap",
+          "url": "https://github.com/VniiD/Push_Swap",
+          "bytes": 42859
+        },
+        {
+          "name": "Printf",
+          "url": "https://github.com/VniiD/Printf",
+          "bytes": 18614
+        },
+        {
+          "name": "Get_Next_Line",
+          "url": "https://github.com/VniiD/Get_Next_Line",
+          "bytes": 10471
+        }
+      ],
+      "ratio": 0.11881220224313951,
+      "color": "#A3E635",
+      "dash": "79.13 586.89",
+      "offset": "338.08"
+    },
+    {
+      "language": "TypeScript",
+      "bytes": 142466,
+      "repositories": 1,
+      "projects": [
+        {
+          "name": "Hackathon_Marlabs_XP_G7",
+          "url": "https://github.com/VniiD/Hackathon_Marlabs_XP_G7",
+          "bytes": 142466
+        }
+      ],
+      "ratio": 0.09239363765008632,
+      "color": "#F472B6",
+      "dash": "61.54 604.48",
+      "offset": "417.21"
+    },
+    {
+      "language": "Go",
+      "bytes": 131835,
+      "repositories": 1,
+      "projects": [
+        {
+          "name": "PIXCore",
+          "url": "https://github.com/VniiD/PIXCore",
+          "bytes": 131835
+        }
+      ],
+      "ratio": 0.08549910308143087,
+      "color": "#22D3EE",
+      "dash": "56.94 609.07",
+      "offset": "478.75"
+    },
+    {
+      "language": "Outros",
+      "bytes": 301730,
+      "repositories": 8,
+      "projects": [
+        {
+          "name": "SplitPay",
+          "url": "https://github.com/VniiD/SplitPay",
+          "bytes": 118682
+        },
+        {
+          "name": "Hackathon_Marlabs_XP_G7",
+          "url": "https://github.com/VniiD/Hackathon_Marlabs_XP_G7",
+          "bytes": 93751
+        },
+        {
+          "name": "split-payment-platform",
+          "url": "https://github.com/VniiD/split-payment-platform",
+          "bytes": 66597
+        },
+        {
+          "name": "PIXCore",
+          "url": "https://github.com/VniiD/PIXCore",
+          "bytes": 17327
+        },
+        {
+          "name": "Push_Swap",
+          "url": "https://github.com/VniiD/Push_Swap",
+          "bytes": 1884
+        },
+        {
+          "name": "Libft",
+          "url": "https://github.com/VniiD/Libft",
+          "bytes": 1828
+        },
+        {
+          "name": "A_maze_ing",
+          "url": "https://github.com/VniiD/A_maze_ing",
+          "bytes": 909
+        },
+        {
+          "name": "Printf",
+          "url": "https://github.com/VniiD/Printf",
+          "bytes": 752
+        }
+      ],
+      "ratio": 0.1956813014204129,
+      "color": "#E879F9",
+      "dash": "130.33 535.69",
+      "offset": "535.69"
+    }
+  ]
+}
