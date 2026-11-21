@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title description">
+<title id="title">Mapa animado do código de VniiD</title>
+<desc id="description">Gráfico animado com a distribuição das linguagens nos repositórios públicos.</desc>
+<defs>
+  <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#08111f"/><stop offset="1" stop-color="#101d2d"/></linearGradient>
+  <linearGradient id="ambient-sheen" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#22D3EE" stop-opacity="0"/><stop offset=".48" stop-color="#22D3EE" stop-opacity=".28"/><stop offset=".68" stop-color="#C084FC" stop-opacity=".22"/><stop offset="1" stop-color="#C084FC" stop-opacity="0"/></linearGradient>
+  <radialGradient id="ambient-cyan"><stop stop-color="#22D3EE" stop-opacity=".28"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
+  <radialGradient id="ambient-violet"><stop stop-color="#C084FC" stop-opacity=".24"/><stop offset="1" stop-color="#C084FC" stop-opacity="0"/></radialGradient>
+  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#64748b" stroke-opacity=".1"/></pattern>
+  <clipPath id="background-clip"><rect width="1200" height="430" rx="22"/></clipPath>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<style>
+.heading,.language,.percent,.center-title,.center-detail{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.heading{fill:#f8fafc;font-size:27px;font-weight:800;letter-spacing:2px}
+.language{fill:#e2e8f0;font-size:20px;font-weight:700}
+.percent{fill:#f8fafc;font-size:19px;font-weight:800}
+.center-title{fill:#f8fafc;font-size:23px;font-weight:800}
+.center-detail{fill:#a5f3fc;font-size:15px}
+.frame{fill:none;stroke:#334155;stroke-opacity:.8}
+.ambient-glow{transform-box:fill-box;transform-origin:center;opacity:.65;animation:ambient-drift 18s ease-in-out infinite alternate}
+.ambient-violet{animation-delay:-9s}
+.ambient-sheen{opacity:0;animation:ambient-sweep 20s ease-in-out infinite}
+.slice{transform:rotate(-90deg);transform-origin:174px 215px;stroke-dasharray:0 666.02;animation:draw 1.2s cubic-bezier(.2,.8,.2,1) var(--delay) both,pulse 3.2s ease-in-out var(--pulse-delay) infinite;filter:url(#glow)}
+.language-row{opacity:0;animation:enter .45s ease-out var(--delay) forwards}
+.slice-link,.language-link{cursor:pointer}
+.slice-link:hover .slice,.slice-link:focus .slice{stroke-width:40;filter:url(#glow)}
+.language-link:hover .language,.language-link:focus .language{fill:#67e8f9;text-decoration:underline}
+.language-link:hover .bar,.language-link:focus .bar{filter:url(#glow)}
+.bar{transform-box:fill-box;transform-origin:left center;animation:grow .8s cubic-bezier(.2,.8,.2,1) var(--delay) both}
+@keyframes draw{to{stroke-dasharray:var(--dash)}}
+@keyframes enter{to{opacity:1}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes pulse{0%,100%{stroke-opacity:.68}50%{stroke-opacity:1}}
+@keyframes ambient-drift{from{transform:translateX(-110px);opacity:.34}to{transform:translateX(110px);opacity:.68}}
+@keyframes ambient-sweep{0%{transform:translateX(-520px);opacity:0}15%{opacity:.7}82%{opacity:.7}100%{transform:translateX(1720px);opacity:0}}
+@media(prefers-reduced-motion:reduce){.ambient-glow,.ambient-sheen,.slice,.language-row,.bar{animation:none;opacity:1}.ambient-glow{opacity:.5}.ambient-sheen{opacity:0}.slice{stroke-dasharray:var(--dash)}}
+</style>
+<g clip-path="url(#background-clip)">
+  <rect width="1200" height="430" rx="22" fill="url(#background)"/>
+  <ellipse class="ambient-glow ambient-cyan" cx="275" cy="160" rx="390" ry="260" fill="url(#ambient-cyan)"/>
+  <ellipse class="ambient-glow ambient-violet" cx="930" cy="280" rx="360" ry="250" fill="url(#ambient-violet)"/>
+  <rect x="1" y="1" width="1198" height="428" rx="21" fill="url(#grid)"/>
+  <rect class="ambient-sheen" x="-520" y="0" width="520" height="430" fill="url(#ambient-sheen)"/>
+</g>
+<rect class="frame" x=".5" y=".5" width="1199" height="429" rx="22"/>
+<text x="56" y="62" class="heading">MAPA DO CÓDIGO</text>
+<text x="1120" y="62" text-anchor="end" class="center-detail">11 REPOSITÓRIOS</text>
+<circle cx="174" cy="215" r="106" fill="none" stroke="#1e293b" stroke-width="32"/>
+<a class="slice-link" href="https://vniid.github.io/VniiD/#language=Python" target="_top"><circle class="slice slice-0" cx="174" cy="215" r="106" fill="none" stroke="#38BDF8" stroke-width="32" stroke-dasharray="180.92 485.09" stroke-dashoffset="-0.00" pathLength="666.02" style="--dash:180.92 485.09;--delay:0ms;--pulse-delay:1800ms;color:#38BDF8"><title>Python · 27.2% · Projetos: Hackathon_Marlabs_XP_G7, Python42SP, A_maze_ing</title></circle></a><a class="slice-link" href="https://vniid.github.io/VniiD/#language=C%23" target="_top"><circle class="slice slice-1" cx="174" cy="215" r="106" fill="none" stroke="#C084FC" stroke-width="32" stroke-dasharray="157.16 508.86" stroke-dashoffset="-180.92" pathLength="666.02" style="--dash:157.16 508.86;--delay:100ms;--pulse-delay:1980ms;color:#C084FC"><title>C# · 23.6% · Projetos: SplitPay, split-payment-platform, .Net_Fundamentos</title></circle></a><a class="slice-link" href="https://vniid.github.io/VniiD/#language=C" target="_top"><circle class="slice slice-2" cx="174" cy="215" r="106" fill="none" stroke="#A3E635" stroke-width="32" stroke-dasharray="79.13 586.89" stroke-dashoffset="-338.08" pathLength="666.02" style="--dash:79.13 586.89;--delay:200ms;--pulse-delay:2160ms;color:#A3E635"><title>C · 11.9% · Projetos: Libft, Push_Swap, Printf, Get_Next_Line</title></circle></a><a class="slice-link" href="https://vniid.github.io/VniiD/#language=TypeScript" target="_top"><circle class="slice slice-3" cx="174" cy="215" r="106" fill="none" stroke="#F472B6" stroke-width="32" stroke-dasharray="61.54 604.48" stroke-dashoffset="-417.21" pathLength="666.02" style="--dash:61.54 604.48;--delay:300ms;--pulse-delay:2340ms;color:#F472B6"><title>TypeScript · 9.2% · Projetos: Hackathon_Marlabs_XP_G7</title></circle></a><a class="slice-link" href="https://vniid.github.io/VniiD/#language=Go" target="_top"><circle class="slice slice-4" cx="174" cy="215" r="106" fill="none" stroke="#22D3EE" stroke-width="32" stroke-dasharray="56.94 609.07" stroke-dashoffset="-478.75" pathLength="666.02" style="--dash:56.94 609.07;--delay:400ms;--pulse-delay:2520ms;color:#22D3EE"><title>Go · 8.5% · Projetos: PIXCore</title></circle></a><a class="slice-link" href="https://vniid.github.io/VniiD/#language=Outros" target="_top"><circle class="slice slice-5" cx="174" cy="215" r="106" fill="none" stroke="#E879F9" stroke-width="32" stroke-dasharray="130.33 535.69" stroke-dashoffset="-535.69" pathLength="666.02" style="--dash:130.33 535.69;--delay:500ms;--pulse-delay:2700ms;color:#E879F9"><title>Outros · 19.6% · Projetos: SplitPay, Hackathon_Marlabs_XP_G7, split-payment-platform, PIXCore, Push_Swap, Libft, A_maze_ing, Printf</title></circle></a>
+<text x="174" y="210" text-anchor="middle" class="center-title">CÓDIGO</text>
+<text x="174" y="237" text-anchor="middle" class="center-detail">6 LINGUAGENS</text>
+<a class="language-link row-0" href="https://vniid.github.io/VniiD/#language=Python" target="_top" style="--delay:0ms">
+  <title>Python · 27.2% · Projetos: Hackathon_Marlabs_XP_G7, Python42SP, A_maze_ing</title>
+  <rect class="row-hit-area" x="350" y="88" width="790" height="48" fill="transparent"/>
+  <g class="language-row">
+  <circle cx="365" cy="106" r="7" fill="#38BDF8"/>
+  <text x="384" y="112" class="language">Python</text>
+  <text x="1120" y="112" text-anchor="end" class="percent">27.2%</text>
+  <rect x="365" y="122" width="610" height="9" rx="4.5" fill="#1e293b"/>
+  <rect class="bar" x="365" y="122" width="165.71" height="9" rx="4.5" fill="#38BDF8"/>
+</g></a><a class="language-link row-1" href="https://vniid.github.io/VniiD/#language=C%23" target="_top" style="--delay:100ms">
+  <title>C# · 23.6% · Projetos: SplitPay, split-payment-platform, .Net_Fundamentos</title>
+  <rect class="row-hit-area" x="350" y="136" width="790" height="48" fill="transparent"/>
+  <g class="language-row">
+  <circle cx="365" cy="154" r="7" fill="#C084FC"/>
+  <text x="384" y="160" class="language">C#</text>
+  <text x="1120" y="160" text-anchor="end" class="percent">23.6%</text>
+  <rect x="365" y="170" width="610" height="9" rx="4.5" fill="#1e293b"/>
+  <rect class="bar" x="365" y="170" width="143.94" height="9" rx="4.5" fill="#C084FC"/>
+</g></a><a class="language-link row-2" href="https://vniid.github.io/VniiD/#language=C" target="_top" style="--delay:200ms">
+  <title>C · 11.9% · Projetos: Libft, Push_Swap, Printf, Get_Next_Line</title>
+  <rect class="row-hit-area" x="350" y="184" width="790" height="48" fill="transparent"/>
+  <g class="language-row">
+  <circle cx="365" cy="202" r="7" fill="#A3E635"/>
+  <text x="384" y="208" class="language">C</text>
+  <text x="1120" y="208" text-anchor="end" class="percent">11.9%</text>
+  <rect x="365" y="218" width="610" height="9" rx="4.5" fill="#1e293b"/>
+  <rect class="bar" x="365" y="218" width="72.48" height="9" rx="4.5" fill="#A3E635"/>
+</g></a><a class="language-link row-3" href="https://vniid.github.io/VniiD/#language=TypeScript" target="_top" style="--delay:300ms">
+  <title>TypeScript · 9.2% · Projetos: Hackathon_Marlabs_XP_G7</title>
+  <rect class="row-hit-area" x="350" y="232" width="790" height="48" fill="transparent"/>
+  <g class="language-row">
+  <circle cx="365" cy="250" r="7" fill="#F472B6"/>
+  <text x="384" y="256" class="language">TypeScript</text>
+  <text x="1120" y="256" text-anchor="end" class="percent">9.2%</text>
+  <rect x="365" y="266" width="610" height="9" rx="4.5" fill="#1e293b"/>
+  <rect class="bar" x="365" y="266" width="56.36" height="9" rx="4.5" fill="#F472B6"/>
+</g></a><a class="language-link row-4" href="https://vniid.github.io/VniiD/#language=Go" target="_top" style="--delay:400ms">
+  <title>Go · 8.5% · Projetos: PIXCore</title>
+  <rect class="row-hit-area" x="350" y="280" width="790" height="48" fill="transparent"/>
+  <g class="language-row">
+  <circle cx="365" cy="298" r="7" fill="#22D3EE"/>
+  <text x="384" y="304" class="language">Go</text>
+  <text x="1120" y="304" text-anchor="end" class="percent">8.5%</text>
+  <rect x="365" y="314" width="610" height="9" rx="4.5" fill="#1e293b"/>
+  <rect class="bar" x="365" y="314" width="52.15" height="9" rx="4.5" fill="#22D3EE"/>
+</g></a><a class="language-link row-5" href="https://vniid.github.io/VniiD/#language=Outros" target="_top" style="--delay:500ms">
+  <title>Outros · 19.6% · Projetos: SplitPay, Hackathon_Marlabs_XP_G7, split-payment-platform, PIXCore, Push_Swap, Libft, A_maze_ing, Printf</title>
+  <rect class="row-hit-area" x="350" y="328" width="790" height="48" fill="transparent"/>
+  <g class="language-row">
+  <circle cx="365" cy="346" r="7" fill="#E879F9"/>
+  <text x="384" y="352" class="language">Outros</text>
+  <text x="1120" y="352" text-anchor="end" class="percent">19.6%</text>
+  <rect x="365" y="362" width="610" height="9" rx="4.5" fill="#1e293b"/>
+  <rect class="bar" x="365" y="362" width="119.37" height="9" rx="4.5" fill="#E879F9"/>
+</g></a>
+</svg>

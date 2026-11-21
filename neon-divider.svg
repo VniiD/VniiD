@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="8" viewBox="0 0 1200 8" role="img" aria-label="Divisor neon">
+<defs><linearGradient id="neon"><stop stop-color="#22D3EE" stop-opacity="0"/><stop offset=".25" stop-color="#22D3EE"/><stop offset=".72" stop-color="#34D399"/><stop offset="1" stop-color="#34D399" stop-opacity="0"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="2"/></filter></defs>
+<path d="M4 4h1192" stroke="url(#neon)" stroke-width="5" opacity=".45" filter="url(#glow)"/>
+<path d="M4 4h1192" stroke="url(#neon)" stroke-width="1.5"/>
+</svg>

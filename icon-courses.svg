@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+<title id="title">courses</title>
+<style>svg{color:#FBBF24}.mark{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}</style>
+<circle cx="32" cy="32" r="30" fill="#FBBF24" fill-opacity=".08" stroke="#FBBF24" stroke-opacity=".5"/>
+<g class="mark"><path d="M12 12h40v40H12z"/><path d="M21 22h22m-22 8h22m-22 8h14"/><path d="M46 42v14l-7-4-7 4V42"/></g>
+</svg>

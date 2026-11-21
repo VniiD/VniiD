@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+<title id="title">foundations</title>
+<style>svg{color:#F472B6}.mark{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}</style>
+<circle cx="32" cy="32" r="30" fill="#F472B6" fill-opacity=".08" stroke="#F472B6" stroke-opacity=".5"/>
+<g class="mark"><rect x="17" y="17" width="30" height="30" rx="4"/><rect x="25" y="25" width="14" height="14" rx="2"/><path d="M23 7v10m9-10v10m9-10v10M23 47v10m9-10v10m9-10v10M7 23h10m-10 9h10m-10 9h10m30-18h10m-10 9h10m-10 9h10"/></g>
+</svg>
