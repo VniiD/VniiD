@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+<title id="title">google</title>
+<style>svg{color:#60A5FA}.mark{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}</style>
+<circle cx="32" cy="32" r="30" fill="#60A5FA" fill-opacity=".08" stroke="#60A5FA" stroke-opacity=".5"/>
+<g class="mark"><text x="32" y="45" text-anchor="middle" fill="currentColor" stroke="none" font-family="ui-sans-serif,system-ui,sans-serif" font-size="38" font-weight="800">G</text></g>
+</svg>

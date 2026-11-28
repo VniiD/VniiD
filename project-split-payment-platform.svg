@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="240" viewBox="0 0 640 240" role="img" aria-labelledby="title description">
+<title id="title">Split Payment Platform</title>
+<desc id="description">Pagamentos orientados a eventos, idempotência e transactional outbox. .NET · Kafka · MongoDB · Docker</desc>
+<defs>
+  <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0B1424"/><stop offset="1" stop-color="#11102A"/></linearGradient>
+  <linearGradient id="border"><stop stop-color="#22D3EE"/><stop offset="1" stop-color="#818CF8"/></linearGradient>
+  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#94A3B8" stroke-opacity=".07"/></pattern>
+</defs>
+<style>
+.title{fill:#F8FAFC;font:700 29px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.description{fill:#CBD5E1;font:500 19px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.stack{fill:#22D3EE;font:700 15px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.5px}
+</style>
+<rect x="2" y="2" width="636" height="236" rx="22" fill="url(#background)" stroke="url(#border)" stroke-width="2"/>
+<rect x="3" y="3" width="634" height="234" rx="21" fill="url(#grid)"/>
+<path d="M34 67h572" stroke="#22D3EE" stroke-opacity=".45"/>
+<text x="34" y="49" class="title">Split Payment Platform</text>
+<text x="34" y="105" class="description">Pagamentos orientados a eventos,</text><text x="34" y="135" class="description">idempotência e transactional outbox.</text>
+<text x="34" y="216" class="stack">.NET · Kafka · MongoDB · Docker</text>
+</svg>

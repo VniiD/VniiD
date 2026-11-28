@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+<title id="title">activity</title>
+<style>svg{color:#22D3EE}.mark{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}</style>
+<circle cx="32" cy="32" r="30" fill="#22D3EE" fill-opacity=".08" stroke="#22D3EE" stroke-opacity=".5"/>
+<g class="mark"><path d="M7 48h11l7-20 11 31 8-20h13"/><path d="M8 13v38M56 13v38" opacity=".45"/></g>
+</svg>

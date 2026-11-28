@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08111f">
+  <meta name="description" content="Gráfico interativo das linguagens nos repositórios públicos de VniiD.">
+  <title>Mapa do código | VniiD</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #08111f;
+      color: #e2e8f0;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 50% 0, rgb(8 145 178 / 18%), transparent 48rem),
+        #08111f;
+    }
+
+    a {
+      color: #67e8f9;
+    }
+
+    main {
+      width: min(100% - 2rem, 940px);
+      margin: 0 auto;
+      padding: 2rem 0 4rem;
+    }
+
+    .back {
+      display: inline-flex;
+      gap: .5rem;
+      align-items: center;
+      margin-bottom: 3rem;
+      color: #a5f3fc;
+      text-decoration: none;
+    }
+
+    .eyebrow {
+      color: #5eead4;
+      font: 700 .75rem ui-monospace, SFMono-Regular, Consolas, monospace;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: .65rem 0;
+      color: #f8fafc;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      letter-spacing: -.055em;
+    }
+
+    .intro {
+      max-width: 46rem;
+      color: #94a3b8;
+      line-height: 1.7;
+    }
+
+    .panel {
+      display: grid;
+      grid-template-columns: minmax(280px, 1fr) minmax(250px, .9fr);
+      gap: 1.5rem;
+      align-items: center;
+      margin-top: 2rem;
+      padding: clamp(1rem, 4vw, 2rem);
+      border: 1px solid #1e3a4b;
+      border-radius: 1.5rem;
+      background: linear-gradient(145deg, rgb(15 31 48 / 96%), rgb(9 20 34 / 96%));
+      box-shadow: 0 24px 80px rgb(0 0 0 / 24%);
+    }
+
+    .chart-wrap {
+      position: relative;
+      min-width: 0;
+    }
+
+    #language-chart {
+      display: block;
+      width: 100%;
+      overflow: visible;
+    }
+
+    .ring {
+      fill: none;
+      stroke-linecap: butt;
+      cursor: pointer;
+      filter: drop-shadow(0 0 3px currentColor);
+      transition: stroke-width 160ms ease, filter 160ms ease, opacity 160ms ease;
+      transform: rotate(-90deg);
+      transform-origin: 130px 130px;
+      animation: ring-pulse 3.2s ease-in-out var(--pulse-delay) infinite;
+    }
+
+    @keyframes ring-pulse {
+      0%,
+      100% {
+        stroke-opacity: .68;
+      }
+
+      50% {
+        stroke-opacity: 1;
+      }
+    }
+
+    .ring:hover,
+    .ring:focus,
+    .ring[aria-pressed="true"] {
+      filter: drop-shadow(0 0 8px currentColor);
+      stroke-width: 33;
+      outline: none;
+    }
+
+    .ring:not(:hover):not(:focus):not([aria-pressed="true"]) {
+      opacity: .88;
+    }
+
+    .center-name {
+      fill: #f8fafc;
+      font: 700 16px ui-monospace, SFMono-Regular, Consolas, monospace;
+      text-anchor: middle;
+    }
+
+    .center-detail {
+      fill: #94a3b8;
+      font: 11px ui-monospace, SFMono-Regular, Consolas, monospace;
+      text-anchor: middle;
+    }
+
+    .center-name,
+    .center-detail {
+      pointer-events: none;
+    }
+
+    .legend {
+      display: grid;
+      gap: .4rem;
+    }
+
+    .legend button {
+      display: grid;
+      grid-template-columns: 12px 1fr auto;
+      gap: .75rem;
+      align-items: center;
+      width: 100%;
+      padding: .7rem .8rem;
+      border: 1px solid transparent;
+      border-radius: .75rem;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+      transition: background 160ms ease, border-color 160ms ease;
+    }
+
+    .legend button:hover,
+    .legend button:focus-visible,
+    .legend button[aria-pressed="true"] {
+      border-color: #255064;
+      background: #12283a;
+      outline: none;
+    }
+
+    .swatch {
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+    }
+
+    .language-name {
+      color: #cbd5e1;
+    }
+
+    .language-percent {
+      color: #f8fafc;
+      font: 700 .85rem ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+
+    .project-card {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      border: 1px solid #1e3a4b;
+      border-radius: 1rem;
+      background: rgb(8 17 31 / 55%);
+    }
+
+    .project-card h2 {
+      margin: 0 0 .5rem;
+      color: #f8fafc;
+      font-size: 1rem;
+    }
+
+    .project-summary {
+      margin: 0 0 .75rem;
+      color: #94a3b8;
+      font-size: .82rem;
+      line-height: 1.5;
+    }
+
+    .project-list {
+      display: grid;
+      gap: .5rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .project-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: baseline;
+    }
+
+    .project-item a {
+      color: #a5f3fc;
+      overflow-wrap: anywhere;
+      text-decoration: none;
+    }
+
+    .project-item a:hover {
+      text-decoration: underline;
+    }
+
+    .project-metric {
+      color: #94a3b8;
+      font-size: .75rem;
+      white-space: nowrap;
+    }
+
+    .note,
+    .updated {
+      color: #64748b;
+      font-size: .82rem;
+      line-height: 1.6;
+    }
+
+    .updated {
+      margin-top: 1.25rem;
+      text-align: center;
+    }
+
+    .error {
+      padding: 1rem;
+      border: 1px solid #7f1d1d;
+      border-radius: .75rem;
+      color: #fecaca;
+    }
+
+    @media (max-width: 700px) {
+      main {
+        padding-top: 1rem;
+      }
+
+      .back {
+        margin-bottom: 2rem;
+      }
+
+      .panel {
+        grid-template-columns: 1fr;
+      }
+
+      .chart-wrap {
+        max-width: 420px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+
+      .ring {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="https://github.com/VniiD/VniiD" aria-label="Voltar ao perfil de VniiD">← Voltar ao perfil</a>
+    <p class="eyebrow">Engenharia de Software · Backend</p>
+    <h1>Mapa do código</h1>
+    <p class="intro">Uma leitura dos bytes de código detectados nos meus repositórios públicos. Passe o mouse sobre uma fatia, clique nela ou navegue pela legenda com o teclado.</p>
+    <section class="panel" aria-label="Distribuição interativa das linguagens">
+      <div class="chart-wrap">
+        <svg id="language-chart" viewBox="0 0 260 260" role="group" aria-labelledby="chart-title chart-description">
+          <title id="chart-title">Linguagens dos repositórios públicos</title>
+          <desc id="chart-description">Gráfico de rosca interativo. Use Tab para navegar pelas linguagens.</desc>
+          <circle cx="130" cy="130" r="82" fill="none" stroke="#1e293b" stroke-width="26"></circle>
+          <g id="slices"></g>
+          <text id="center-name" class="center-name" x="130" y="126">GitHub</text>
+          <text id="center-detail" class="center-detail" x="130" y="148">linguagens</text>
+        </svg>
+      </div>
+      <div>
+        <div id="legend" class="legend" aria-label="Legenda de linguagens"></div>
+        <p id="chart-note" class="note">Calculando a distribuição dos repositórios públicos...</p>
+        <section class="project-card" aria-labelledby="projects-title">
+          <h2 id="projects-title">Projetos nessa linguagem</h2>
+          <p id="project-summary" class="project-summary" aria-live="polite"></p>
+          <ul id="project-list" class="project-list"></ul>
+        </section>
+      </div>
+    </section>
+    <p id="updated" class="updated"></p>
+    <p id="error" class="error" role="alert" hidden>Não foi possível carregar os dados agora. Tente novamente mais tarde.</p>
+  </main>
+  <script>
+    const namespace = "http://www.w3.org/2000/svg";
+    const formatter = new Intl.NumberFormat("pt-BR");
+    const percentFormatter = new Intl.NumberFormat("pt-BR", {
+      maximumFractionDigits: 1,
+      style: "percent",
+    });
+    const repositoryCount = (count) =>
+      `${formatter.format(count)} ${count === 1 ? "repositório" : "repositórios"}`;
+    const publicRepositoryCount = (count) =>
+      `${repositoryCount(count)} ${count === 1 ? "público" : "públicos"}`;
+    const numberBytes = (bytes) => {
+      if (bytes < 1024) return `${formatter.format(bytes)} bytes`;
+      const units = ["KB", "MB", "GB"];
+      let value = bytes;
+      let unit = -1;
+      do {
+        value /= 1024;
+        unit += 1;
+      } while (value >= 1024 && unit < units.length - 1);
+      return `${new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 1 }).format(value)} ${units[unit]}`;
+    };
+
+    function showLanguage(language, button, slices, legendButtons) {
+      document.querySelector("#center-name").textContent = language.language;
+      document.querySelector("#center-detail").textContent =
+        `${percentFormatter.format(language.ratio)} · ${numberBytes(language.bytes)}`;
+      document.querySelector("#projects-title").textContent =
+        `Projetos com ${language.language}`;
+      document.querySelector("#project-summary").textContent =
+        `${publicRepositoryCount(language.projects.length)} · ${percentFormatter.format(language.ratio)} do código total`;
+      const projectList = document.querySelector("#project-list");
+      projectList.replaceChildren();
+      for (const project of language.projects) {
+        const item = document.createElement("li");
+        item.className = "project-item";
+        const link = document.createElement("a");
+        link.href = project.url;
+        link.textContent = project.name;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        const metric = document.createElement("span");
+        metric.className = "project-metric";
+        metric.textContent = numberBytes(project.bytes);
+        item.append(link, metric);
+        projectList.append(item);
+      }
+      for (const [index, slice] of slices.entries()) {
+        slice.setAttribute("aria-pressed", String(slice.dataset.language === language.language));
+        legendButtons[index].setAttribute(
+          "aria-pressed",
+          String(legendButtons[index] === button),
+        );
+      }
+    }
+
+    async function renderChart() {
+      const response = await fetch("./languages.json", { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`Language data request failed: ${response.status}`);
+      }
+
+      const data = await response.json();
+      const radius = 82;
+      const circumference = 2 * Math.PI * radius;
+      let offset = 0;
+      const slices = [];
+      const buttons = [];
+
+      for (const [index, language] of data.languages.entries()) {
+        const length = language.ratio * circumference;
+        const slice = document.createElementNS(namespace, "circle");
+        slice.classList.add("ring");
+        slice.setAttribute("cx", "130");
+        slice.setAttribute("cy", "130");
+        slice.setAttribute("r", String(radius));
+        slice.setAttribute("stroke", language.color);
+        slice.setAttribute("stroke-width", "26");
+        slice.setAttribute("stroke-dasharray", `${length} ${circumference - length}`);
+        slice.setAttribute("stroke-dashoffset", String(-offset));
+        slice.setAttribute("tabindex", "0");
+        slice.setAttribute("role", "button");
+        slice.setAttribute("aria-pressed", "false");
+        slice.setAttribute(
+          "aria-label",
+          `${language.language}, ${percentFormatter.format(language.ratio)}, ${numberBytes(language.bytes)}, ${repositoryCount(language.repositories)}`,
+        );
+        slice.dataset.language = language.language;
+        slice.style.color = language.color;
+        slice.style.setProperty("--pulse-delay", `${index * 180}ms`);
+        slices.push(slice);
+        document.querySelector("#slices").append(slice);
+
+        const button = document.createElement("button");
+        button.type = "button";
+        button.setAttribute("aria-pressed", "false");
+        button.innerHTML = `<span class="swatch" aria-hidden="true"></span><span class="language-name"></span><span class="language-percent"></span>`;
+        button.querySelector(".swatch").style.backgroundColor = language.color;
+        button.querySelector(".language-name").textContent = language.language;
+        button.querySelector(".language-percent").textContent =
+          percentFormatter.format(language.ratio);
+        buttons.push(button);
+        document.querySelector("#legend").append(button);
+
+        const select = () => showLanguage(language, button, slices, buttons);
+        slice.addEventListener("pointerenter", select);
+        slice.addEventListener("focus", select);
+        slice.addEventListener("click", select);
+        slice.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            select();
+          }
+        });
+        button.addEventListener("pointerenter", select);
+        button.addEventListener("focus", select);
+        button.addEventListener("click", select);
+        offset += length;
+      }
+
+      document.querySelector("#chart-note").textContent =
+        `${data.languages.length} grupos de linguagens · ${publicRepositoryCount(data.repositoryCount)} · Passe o mouse ou use Tab.`;
+      document.querySelector("#updated").textContent =
+        `Dados atualizados em ${new Date(data.updatedAt).toLocaleString("pt-BR")}. Percentuais calculados sobre bytes de código.`;
+      if (data.languages.length > 0) {
+        const requestedLanguage = new URLSearchParams(location.hash.slice(1)).get("language");
+        const requestedIndex = data.languages.findIndex(
+          (language) => language.language === requestedLanguage,
+        );
+        const selectedIndex = requestedIndex >= 0 ? requestedIndex : 0;
+        showLanguage(data.languages[selectedIndex], buttons[selectedIndex], slices, buttons);
+      }
+    }
+
+    renderChart().catch((error) => {
+      console.error("Could not render the language chart:", error);
+      document.querySelector("#error").hidden = false;
+      document.querySelector("#chart-note").textContent = "Dados temporariamente indisponíveis.";
+    });
+  </script>
+</body>
+</html>
